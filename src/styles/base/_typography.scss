@@ -1,0 +1,108 @@
+h1,
+.h1 {
+  @include font(40px, 200, 1);
+
+  color: $gray--darken;
+  //letter-spacing: 8px;
+
+  @media (min-width: $breakpoint) {
+    @include font(70px, 200, 1.25);
+  }
+
+  @media (max-width: $md) {
+    @include font(50px, 200, 1.25);
+  }
+
+}
+
+h2,
+.h2 {
+  @include font(24px, 400, 1);
+
+  position: relative;
+  color: #3c3c3a;
+  text-transform: uppercase;
+
+
+  @media (max-width: $md) {
+    @include font(18px, 400, 36px);
+    margin-bottom: 10px;
+  }
+}
+
+h3,
+.h3 {
+  @include font(16px, 400, 1.2);
+
+  color: $color-main;
+  text-transform: uppercase;
+
+  @media (max-width: 480px) {
+    font-size: 14px;
+  }
+
+}
+h4,
+.h4 {
+  @include font(20px, 400, 1.2);
+
+
+  color: $color-secondary;
+  margin: 10px 0;
+  @media (max-width: $md) {
+    font-size: 16px;
+  }
+}
+h5,
+.h5 {
+  @include font(14px, 400, 1.35);
+
+  color: #262626;
+}
+h6,
+.h6 {
+  @include font(16px, 600, 1.22);
+
+  color: $gray--dark;
+
+  margin-top: 20px;
+}
+
+p {
+  @include font(14px, 400, 1.5);
+
+  text-align: left;
+
+  color: #333;
+}
+
+i,
+em {
+  font-style: italic;
+}
+
+b,
+strong {
+  font-weight: bold;
+}
+
+a {
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+
+  color: inherit;
+  text-decoration: none;
+  &:active,
+  &:focus,
+  &:hover {
+    outline: none;
+  }
+  &:hover {
+   text-decoration: none;
+  }
+}
+
+small {
+  font-size: 80%;
+}

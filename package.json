@@ -1,0 +1,27 @@
+{
+  "name": "weshop",
+  "version": "1.0.0",
+  "devDependencies": {
+    "browser-sync": "^2.18.13",
+    "css-mqpacker": "^6.0.1",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-csso": "^3.0.0",
+    "gulp-directory-sync": "^1.2.3",
+    "gulp-imagemin": "^3.4.0",
+    "gulp-jade": "^1.1.0",
+    "gulp-notify": "^3.0.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-postcss": "^7.0.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.6.1",
+    "imagemin-pngquant": "^5.0.1",
+    "rimraf": "^2.6.2",
+    "run-sequence": "^2.2.0"
+  },
+  "scripts": {
+    "gulp": "gulp"
+  },
+  "dependencies": {}
+}

@@ -1,0 +1,48 @@
+.icon {
+  display: inline-block;
+  height: 33px;
+  width: 33px;
+  vertical-align: middle;
+}
+
+.icon {
+  fill: currentColor;
+}
+
+// about
+
+.about__accordion .icon-left-arrow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 22px;
+  height: 24px;
+  transform: translate(-50%,-50%) rotate(-90deg);
+}
+// footer
+
+.to-top .icon-left-arrow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 18px;
+  height: 24px;
+  transform: translate(-50%,-50%) rotate(90deg);
+}
+
+.gray_mod {
+  color: $gray;
+}
+
+.white_mod {
+  color: $color-secondary;
+}
+
+.success_mod {
+  color: $color-success;
+}
+
+
+
+
+

@@ -1,0 +1,15 @@
+.blog {
+
+  background-color: $gray--lightest;
+
+  &__header {
+    display: block;
+    text-align: center;
+    margin: 60px 0;
+  }
+
+  .title {
+    @include title;
+  }
+
+}

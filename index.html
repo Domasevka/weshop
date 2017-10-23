@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>design</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="bower_components/fancybox/dist/jquery.fancybox.min.css">
+		<!--link( rel="stylesheet" type="text/css" href="bower_components/jquery-ui/themes/base/jquery-ui.css")-->
+		<link rel="stylesheet" href="css/style.css">
+		<!--link(href="bower_components/slick-carousel/slgick/slick.css", rel="stylesheet", type="text/css")-->
+	</head>
+	<body class="js-body">
+		<!--form.mfp-hide.popup(id="test-form")
+		fieldset(style="border:0;")
+		  ul
+		    li.control(data-error-message='Please enter a valid information')
+		      //label(for="name") Name
+		      input.js--required( id="name" name="name" type="text" placeholder="Ваше имя")
+		    li.control(data-error-message='Please enter a valid information')
+		      //label(for="email") Email
+		      input.js--required(id="email" name="email" type="email" placeholder="Email")
+		    li.control(data-error-message='Please enter a valid information')
+		      //label(for="phone") Phone
+		    input.js--required(id="phone" name="phone" type="tel" placeholder="Телефон")
+		    li
+		      //label(for="textarea") Textarea
+		      textarea(id="message" name="message" rows="5" placeholder="Сообщение")
+		    li
+		      input.btn.btn_md(value="Send message" type="submit")
+		-->
+		<header class="header">
+			<div class="header__banner">
+				<div class="container">
+					<div class="header__wrap"><a href="#" class="header__logo">LoGo
+							<!--img(src="src/img/" width="130" height="38" alt="LoGo")--></a>
+						<nav class="main-nav">
+							<div class="main-nav__mobile">
+										<svg class="icon icon-bar-menu white_mod">
+											<use xlink:href="src/i/sprite/sprite.svg#bar-menu"></use>
+										</svg>
+							</div>
+							<ul class="main-nav__list">
+								<li class="main-nav__item"><a href="#about" class="main-nav__item-link">О нас</a></li>
+								<li class="main-nav__item"><a href="#projects" class="main-nav__item-link">Дизайн интерьера</a></li>
+								<li class="main-nav__item"><a href="#portfolio" class="main-nav__item-link">Штукатурка</a></li>
+								<li class="main-nav__item"><a href="#testimonials" class="main-nav__item-link">Отзывы</a></li>
+								<li class="main-nav__item"><a href="#addition" class="main-nav__item-link">Дополнительно</a></li>
+								<li class="main-nav__item"><a href="#contact" class="main-nav__item-link">Контакты</a></li>
+							</ul>
+						</nav>
+					</div>
+					<div class="header__title">
+						<!--h3 Дизайн интерьера-->
+						<h1>Студия <br> дизайна</h1>
+					</div>
+				</div>
+			</div>
+		</header>
+		<section id="about" class="about">
+			<div class="container">
+				<header class="about__header">
+					<h2 class="title title_line">О нас</h2>
+				</header>
+				<p>
+					В проектировании интерьеров мы применяем архитектурный подход.
+					Мы стремимся заложить в пространство функциональный и композиционный костяк,
+					а для формирования настроения использовать аксессуары, которые можно легко менять.
+					При этом суть пространства остается прежней.
+				</p>
+				<div class="row about__row">
+					<div class="about__column"><img src="src/img/about.jpg" width="130" height="38" alt="LoGo"></div>
+					<div class="about__column">
+						<div id="accordion" class="about__accordion">
+							<h3>Дизайн интерьера
+										<svg class="icon icon-house-sketch success_mod">
+											<use xlink:href="src/i/sprite/sprite.svg#house-sketch"></use>
+										</svg>
+							</h3>
+							<div>
+								<p>
+									Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer
+									ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit
+									amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut
+									odio. Curabitur malesuada.
+								</p>
+							</div>
+							<h3>Декоративная штукатурка
+										<svg class="icon icon-paint-brush success_mod">
+											<use xlink:href="src/i/sprite/sprite.svg#paint-brush"></use>
+										</svg>
+							</h3>
+							<div>
+								<p>
+									Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer
+									ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit
+									amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut
+									odio. Curabitur malesuada.
+								</p>
+							</div>
+							<h3>Сопровождение проекта
+										<svg class="icon icon-user success_mod">
+											<use xlink:href="src/i/sprite/sprite.svg#user"></use>
+										</svg>
+							</h3>
+							<div>
+								<p>
+									Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer
+									ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit
+									amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut
+									odio. Curabitur malesuada.
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section id="projects" class="projects">
+			<div class="container">
+				<header class="projects__header">
+					<h2 class="title title_line">Дизайн интерьера</h2>
+				</header>
+				<p>
+					В проектировании интерьеров мы применяем архитектурный подход.
+					Мы стремимся заложить в пространство функциональный и композиционный костяк,
+					а для формирования настроения использовать аксессуары, которые можно легко менять.
+					При этом суть пространства остается прежней.
+				</p>
+			</div>
+			<div class="projects__column-wrap">
+				<div class="projects__column">
+					<div class="projects__row">
+						<div class="projects__col"><a href="src/img/gallery/fulls/project1_01.jpg" data-fancybox="images_1" data-caption="My caption" class="projects__img"><img src="src/img/gallery/thumbs/project1_01.jpg"></a>
+							<div class="projects__caption">
+								<ul class="projects__actions">
+									<li><span>
+													<svg class="icon icon-search-symbol white_mod">
+														<use xlink:href="src/i/sprite/sprite.svg#search-symbol"></use>
+													</svg></span></li>
+								</ul>
+								<h4>Проект №1</h4>
+								<p>Описание проекта</p>
+							</div>
+							<div class="projects__img--hide"><a href="src/img/gallery/fulls/project1_02.jpg" data-fancybox="images_1" data-caption="My caption" class="projects__img"><img src="src/img/gallery/fulls/project1_02.jpg"></a><a href="src/img/gallery/fulls/project1_03.jpg" data-fancybox="images_1" data-caption="My caption" class="projects__img"><img src="src/img/gallery/fulls/project1_03.jpg"></a></div>
+						</div>
+						<div class="projects__col"><a href="src/img/gallery/fulls/project2_01.jpg" data-fancybox="images_2" data-caption="My caption" class="projects__img"><img src="src/img/gallery/thumbs/project2_01.jpg"></a>
+							<div class="projects__caption">
+								<ul class="projects__actions">
+									<li><span>
+													<svg class="icon icon-search-symbol white_mod">
+														<use xlink:href="src/i/sprite/sprite.svg#search-symbol"></use>
+													</svg></span></li>
+								</ul>
+								<h4>Проект №2</h4>
+								<p>Описание проекта</p>
+							</div>
+						</div>
+						<div class="projects__col projects__col--1_2"><a href="src/img/gallery/fulls/project5_01.jpg" data-fancybox="images_5" data-caption="My caption" class="projects__img"><img src="src/img/gallery/thumbs/project5_01.jpg"></a>
+							<div class="projects__caption">
+								<ul class="projects__actions">
+									<li><span>
+													<svg class="icon icon-search-symbol white_mod">
+														<use xlink:href="src/i/sprite/sprite.svg#search-symbol"></use>
+													</svg></span></li>
+								</ul>
+								<h4>Проект №5</h4>
+								<p>Описание проекта</p>
+							</div>
+							<div class="projects__img--hide"><a href="src/img/gallery/fulls/project5_02.jpg" data-fancybox="images_5" data-caption="My caption" class="projects__img"><img src="src/img/gallery/fulls/project5_02.jpg"></a></div>
+						</div>
+					</div>
+				</div>
+				<div class="projects__column">
+					<div class="projects__row">
+						<div class="projects__col-wrap">
+							<div class="projects__row">
+								<div class="projects__col_2"><a href="src/img/gallery/fulls/project3_01.jpg" data-fancybox="images_3" data-caption="My caption" class="projects__img"><img src="src/img/gallery/thumbs/project3_01.jpg"></a>
+									<div class="projects__caption">
+										<ul class="projects__actions">
+											<li><span>
+															<svg class="icon icon-search-symbol white_mod">
+																<use xlink:href="src/i/sprite/sprite.svg#search-symbol"></use>
+															</svg></span></li>
+										</ul>
+										<h4>Проект №3</h4>
+										<p>Описание проекта</p>
+									</div>
+								</div>
+								<div class="projects__col_2"><a href="src/img/gallery/fulls/project6_01.jpg" data-fancybox="images_6" data-caption="My caption" class="projects__img"><img src="src/img/gallery/thumbs/project6_01.jpg"></a>
+									<div class="projects__caption">
+										<ul class="projects__actions">
+											<li><span>
+															<svg class="icon icon-search-symbol white_mod">
+																<use xlink:href="src/i/sprite/sprite.svg#search-symbol"></use>
+															</svg></span></li>
+										</ul>
+										<h4>Проект №6</h4>
+										<p>Описание проекта</p>
+									</div>
+									<div class="projects__img--hide"><a href="src/img/gallery/fulls/project6_02.jpg" data-fancybox="images_6" class="projects__img"><img src="src/img/gallery/fulls/project6_02.jpg"></a><a href="src/img/gallery/fulls/project6_03.jpg" data-fancybox="images_6" class="projects__img"><img src="src/img/gallery/fulls/project6_03.jpg"></a><a href="src/img/gallery/fulls/project6_04.jpg" data-fancybox="images_6" class="projects__img"><img src="src/img/gallery/fulls/project6_04.jpg"></a></div>
+								</div>
+							</div>
+						</div>
+						<div class="projects__col-wrap">
+							<div class="projects__row projects__col--vertical">
+								<div class="projects__col_2"><a href="src/img/gallery/fulls/project4_01.jpg" data-fancybox="images_4" class="projects__img"><img src="src/img/gallery/thumbs/project4_01.jpg"></a>
+									<div class="projects__caption">
+										<ul class="projects__actions">
+											<li><span>
+															<svg class="icon icon-search-symbol white_mod">
+																<use xlink:href="src/i/sprite/sprite.svg#search-symbol"></use>
+															</svg></span></li>
+										</ul>
+										<h4>Проект №4</h4>
+										<p>Описание проекта</p>
+									</div>
+									<div class="projects__img--hide"><a href="src/img/gallery/fulls/project4_02.jpg" data-fancybox="images_4" class="projects__img"><img src="src/img/gallery/fulls/project4_02.jpg"></a><a href="src/img/gallery/fulls/project4_03.jpg" data-fancybox="images_4" class="projects__img"><img src="src/img/gallery/fulls/project4_03.jpg"></a></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<div class="btn-group"><a data-popup="popup_order" class="popup-with-form btn btn_center btn_sm">Заказать проект</a></div>
+				<div id="popup_order" class="popup">
+					<div class="popup__container">
+						<div class="popup__content"><span class="popup__close js--popup-close"></span>
+							<div class="popup__section">
+								<div class="popup__title">Заказать проект</div>
+								<form class="form">
+									<div class="form__row">
+										<div data-error-message="Please enter a valid information" class="control">
+											<input id="name" name="name" type="text" placeholder="Ваше имя" class="js--required">
+										</div>
+									</div>
+									<div class="form__row">
+										<div data-error-message="Please enter a valid information" class="control">
+											<input id="email" name="email" type="email" placeholder="Email" class="js--required">
+										</div>
+									</div>
+									<div class="form__row">
+										<div data-error-message="Please enter a valid information" class="control">
+											<input id="phone" name="phone" type="tel" placeholder="Телефон" class="js--required">
+										</div>
+									</div>
+									<div class="form__row">
+										<div data-error-message="Please enter a valid information" class="control">
+											<textarea id="message" name="message" rows="5" placeholder="Сообщение"></textarea>
+										</div>
+									</div>
+									<input value="Send message" type="submit" class="btn btn_md">
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+		<section class="skills">
+			<div class="container">
+				<ul class="row">
+					<li class="skills__item"><span>42</span>
+						<p>Довольных клиента</p>
+					</li>
+					<li class="skills__item"><span>123</span>
+						<p>Реализованных проекта</p>
+					</li>
+					<li class="skills__item"><span>15</span>
+						<p>Лет стажа</p>
+					</li>
+					<li class="skills__item"><span>95</span>
+						<p>Частных интерьера</p>
+					</li>
+					<li class="skills__item"><span>12</span>
+						<p>Видов декора</p>
+					</li>
+				</ul>
+			</div>
+		</section>
+		<section id="portfolio" class="portfolio">
+			<div class="container">
+				<header class="portfolio__header">
+					<h2 class="title title_line">Штукатурка</h2>
+				</header>
+			</div>
+			<div class="portfolio__cols"><a href="src/img/gallery/decor/project_1_1.jpg" data-fancybox="images" data-caption="My caption" class="portfolio__img"><img src="src/img/gallery/decor/project_1.jpg" alt="illustrations">
+							<div class="portfolio__caption">
+								<ul class="portfolio__actions">
+									<li><span>
+													<svg class="icon icon-search-symbol white_mod">
+														<use xlink:href="src/i/sprite/sprite.svg#search-symbol"></use>
+													</svg></span></li>
+								</ul>
+								<h4>Название проекта</h4>
+								<p>Lorem ipsum dolor amet, consectetur magna etiam elit. Etiam sed ultrices.</p>
+							</div></a><a href="src/img/gallery/decor/project_2_1.jpg" data-fancybox="images" data-caption="My caption" class="portfolio__img"><img src="src/img/gallery/decor/project_2.jpg" alt="illustrations">
+							<div class="portfolio__caption">
+								<ul class="portfolio__actions">
+									<li><span>
+													<svg class="icon icon-search-symbol white_mod">
+														<use xlink:href="src/i/sprite/sprite.svg#search-symbol"></use>
+													</svg></span></li>
+								</ul>
+								<h4>Название проекта</h4>
+								<p>Lorem ipsum dolor amet, consectetur magna etiam elit. Etiam sed ultrices.</p>
+							</div></a><a href="src/img/gallery/decor/project_3_1.jpg" data-fancybox="images" data-caption="My caption" class="portfolio__img"><img src="src/img/gallery/decor/project_3.jpg" alt="illustrations">
+							<div class="portfolio__caption">
+								<ul class="portfolio__actions">
+									<li><span>
+													<svg class="icon icon-search-symbol white_mod">
+														<use xlink:href="src/i/sprite/sprite.svg#search-symbol"></use>
+													</svg></span></li>
+								</ul>
+								<h4>Название проекта</h4>
+								<p>Lorem ipsum dolor amet, consectetur magna etiam elit. Etiam sed ultrices.</p>
+							</div></a><a href="src/img/gallery/decor/project_4_1.jpg" data-fancybox="images" data-caption="My caption" class="portfolio__img"><img src="src/img/gallery/decor/project_4.jpg" alt="illustrations">
+							<div class="portfolio__caption">
+								<ul class="portfolio__actions">
+									<li><span>
+													<svg class="icon icon-search-symbol white_mod">
+														<use xlink:href="src/i/sprite/sprite.svg#search-symbol"></use>
+													</svg></span></li>
+								</ul>
+								<h4>Название проекта</h4>
+								<p>Lorem ipsum dolor amet, consectetur magna etiam elit. Etiam sed ultrices.</p>
+							</div></a><a href="src/img/gallery/decor/project_5_1.jpg" data-fancybox="images" data-caption="My caption" class="portfolio__img"><img src="src/img/gallery/decor/project_5.jpg" alt="illustrations">
+							<div class="portfolio__caption">
+								<ul class="portfolio__actions">
+									<li><span>
+													<svg class="icon icon-search-symbol white_mod">
+														<use xlink:href="src/i/sprite/sprite.svg#search-symbol"></use>
+													</svg></span></li>
+								</ul>
+								<h4>Название проекта</h4>
+								<p>Lorem ipsum dolor amet, consectetur magna etiam elit. Etiam sed ultrices.</p>
+							</div></a>
+			</div>
+			<div class="btn-group"><a data-popup="popup_order" class="popup-with-form btn btn_center btn_sm">Заказать проект</a></div>
+					<div id="popup_order" class="popup">
+						<div class="popup__container">
+							<div class="popup__content"><span class="popup__close js--popup-close"></span>
+								<div class="popup__section">
+									<div class="popup__title">Заказать проект</div>
+									<form class="form">
+										<div class="form__row">
+											<div data-error-message="Please enter a valid information" class="control">
+												<input id="name" name="name" type="text" placeholder="Ваше имя" class="js--required">
+											</div>
+										</div>
+										<div class="form__row">
+											<div data-error-message="Please enter a valid information" class="control">
+												<input id="email" name="email" type="email" placeholder="Email" class="js--required">
+											</div>
+										</div>
+										<div class="form__row">
+											<div data-error-message="Please enter a valid information" class="control">
+												<input id="phone" name="phone" type="tel" placeholder="Телефон" class="js--required">
+											</div>
+										</div>
+										<div class="form__row">
+											<div data-error-message="Please enter a valid information" class="control">
+												<textarea id="message" name="message" rows="5" placeholder="Сообщение"></textarea>
+											</div>
+										</div>
+										<input value="Send message" type="submit" class="btn btn_md">
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div id="popup_success" class="popup popup_message">
+						<div class="popup__container">
+							<div class="popup__content"><span class="popup__close js--popup-close"></span>
+								<div class="popup__section">
+									<div class="popup__picture"></div>
+									<div class="popup__text">Спасибо за сообщение. Мы с вами свяжемся!</div>
+								</div>
+							</div>
+						</div>
+					</div>
+			<!--form.mfp-hide.popup(id="test-form")
+			fieldset(style="border:0;")
+			  ul
+			    li.control(data-error-message='Please enter a valid information')
+			      //label(for="name") Name
+			      input.js--required( id="name" name="name" type="text" placeholder="Ваше имя")
+			    li.control(data-error-message='Please enter a valid information')
+			      //label(for="email") Email
+			      input.js--required(id="email" name="email" type="email" placeholder="Email")
+			    li.control(data-error-message='Please enter a valid information')
+			      //label(for="phone") Phone
+			     input.js--required(id="phone" name="phone" type="tel" placeholder="Телефон")
+			    li
+			      //label(for="textarea") Textarea
+			      textarea(id="message" name="message" rows="5" placeholder="Сообщение")
+			    li
+			      input.btn.btn_md(value="Send message" type="submit")
+			
+			-->
+		</section>
+		<section class="services">
+			<div class="services-wrap">
+				<div class="container">
+					<header class="services__header">
+						<h2 class="title title_line">Используемые материалы</h2>
+					</header>
+					<div class="services__list-wrap">
+						<div class="services__list">
+									<div class="services__item"><span class="services__photo"><img src="src/img/services_1.jpg" alt="illustrations" class="services__icon"></span>
+										<h6 class="services__title">Металлизированные</h6>
+										<p class="services__text">Покрытия на водной основе, позволяющие создавать на поверхности имитацию шелка, бархата, приглушенного блеска жемчуга, перламутровые, серебристые или золотые переливы.</p>
+									</div>
+									<div class="services__item"><span class="services__photo"><img src="src/img/services_2.jpg" alt="illustrations" class="services__icon"></span>
+										<h6 class="services__title">Минеральная</h6>
+										<p class="services__text">В основе штукатурки лежит крошка. Среди прочего выделяется стойкостью, экологичностью и относительной невысокой стоимостью.</p>
+									</div>
+									<div class="services__item"><span class="services__photo"><img src="src/img/services_3.jpg" alt="illustrations" class="services__icon"></span>
+										<h6 class="services__title">Веницианская</h6>
+										<p class="services__text">Античная классика, позволяющая создавать на поверхности благородный мрамор и роскошный эффект камня «травертин», с неповторимыми природными узорами, глубинным свечением, структурными переходами и прожилками.</p>
+									</div>
+									<div class="services__item"><span class="services__photo"><img src="src/img/services_4.jpg" alt="illustrations" class="services__icon"></span>
+										<h6 class="services__title">Фактурная</h6>
+										<p class="services__text">Покрытия, позволяющие создать в интерьере любой рельеф, в том числе с иллюзией природного материала: камня, дерева, песка и т.д. Фактурная штукатурка на сегодняшний день считается одним из самых популярных материалов и ее по праву можно назвать универсальным видом отделки.</p>
+									</div>
+									<div class="services__item"><span class="services__photo"><img src="src/img/services_5.jpg" alt="illustrations" class="services__icon"></span>
+										<h6 class="services__title">Фактурная</h6>
+										<p class="services__text">Покрытия, позволяющие создать в интерьере любой рельеф, в том числе с иллюзией природного материала: камня, дерева, песка и т.д. Фактурная штукатурка на сегодняшний день считается одним из самых популярных материалов и ее по праву можно назвать универсальным видом отделки.</p>
+									</div>
+									<div class="services__item"><span class="services__photo"><img src="src/img/services_6.jpg" alt="illustrations" class="services__icon"></span>
+										<h6 class="services__title">Деревянные панели</h6>
+										<p class="services__text">Покрытия на водной основе, позволяющие создавать на поверхности имитацию шелка, бархата, приглушенного блеска жемчуга, перламутровые, серебристые или золотые переливы.</p>
+									</div>
+									<div class="services__item"><span class="services__photo"><img src="src/img/services_7.jpg" alt="illustrations" class="services__icon"></span>
+										<h6 class="services__title">Минеральная</h6>
+										<p class="services__text">В основе штукатурки лежит крошка. Среди прочего выделяется стойкостью, экологичностью и относительной невысокой стоимостью.</p>
+									</div>
+									<div class="services__item"><span class="services__photo"><img src="src/img/services_8.jpg" alt="illustrations" class="services__icon"></span>
+										<h6 class="services__title">Веницианская</h6>
+										<p class="services__text">Античная классика, позволяющая создавать на поверхности благородный мрамор и роскошный эффект камня «травертин», с неповторимыми природными узорами, глубинным свечением, структурными переходами и прожилками.</p>
+									</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="brands">
+			<div class="container">
+				<!--header.brands__headerh2.brands__title.title_line Наши партнеры
+				-->
+				<ul class="brands__list">
+					<li class="brands__item"><a href="#" class="brands__item-link"><img src="src/img/brands_1.jpg"></a></li>
+					<li class="brands__item"><a href="#" class="brands__item-link"><img src="src/img/brands_2.jpg"></a></li>
+					<li class="brands__item"><a href="#" class="brands__item-link"><img src="src/img/brands_3.jpg"></a></li>
+					<li class="brands__item"><a href="#" class="brands__item-link"><img src="src/img/brands_4.jpg"></a></li>
+					<li class="brands__item"><a href="#" class="brands__item-link"><img src="src/img/brands_5.jpg"></a></li>
+					<li class="brands__item"><a href="#" class="brands__item-link"><img src="src/img/brands_6.jpg"></a></li>
+				</ul>
+			</div>
+		</section>
+		<section id="testimonials" class="testimonials">
+			<div class="testimonials-wrap">
+				<div class="container">
+					<!--header.testimonials__headerh2.title_line See what others are saying about us
+					--><a href="" class="testimonials__icon">
+								<svg class="icon icon-quotes white_mod">
+									<use xlink:href="src/i/sprite/sprite.svg#quotes"></use>
+								</svg></a>
+					<div class="testimonials__container">
+						<div class="testimonials__col-wrap">
+							<div class="testimonials__col">
+								<div class="testimonials__img"><img src="src/img/testimonials1.jpg" alt="photo1"></div>
+								<div class="testimonials__text">
+									<p>
+										Eam te nemore molestie, eam eu appareat convenire.
+										His at meliore accusamus. Et est mazim eirmod reprehendunt, posse facete iriure eos eu.
+										Debet congue legimus eu qui. Qui vidisse detraxit consetetur ei, cum in assum deseruisse
+									</p>
+									<div class="testimonials__name">Steve Doe</div>
+								</div>
+							</div>
+						</div>
+						<div class="testimonials__col-wrap">
+							<div class="testimonials__col">
+								<div class="testimonials__img"><img src="src/img/testimonials2.jpg" alt="photo1"></div>
+								<div class="testimonials__text">
+									<p>
+										Eam te nemore molestie, eam eu appareat convenire.
+										His at meliore accusamus. Et est mazim eirmod reprehendunt, posse facete iriure eos eu.
+										Debet congue legimus eu qui. Qui vidisse detraxit consetetur ei, cum in assum deseruisse
+										His at meliore accusamus. Et est mazim eirmod reprehendunt, posse facete iriure eos eu.
+										Debet congue legimus eu qui. Qui vidisse detraxit consetetur ei, cum in assum deseruisse
+									</p>
+									<div class="testimonials__name">Janet Doe</div>
+								</div>
+							</div>
+						</div>
+						<div class="testimonials__col-wrap">
+							<div class="testimonials__col">
+								<div class="testimonials__img"><img src="src/img/testimonials3.jpg" alt="photo1"></div>
+								<div class="testimonials__text">
+									<p>
+										Eam te nemore molestie, eam eu appareat convenire.
+										His at meliore accusamus. Et est mazim eirmod reprehendunt, posse facete iriure eos eu.
+										Debet congue legimus eu qui. Qui vidisse detraxit consetetur ei, cum in assum deseruisse
+									</p>
+									<div class="testimonials__name">John Doe</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section id="addition" class="addition">
+			<div class="addition-wrap">
+				<div class="container">
+					<div class="addition__content">
+						<h2>Дополнительно</h2><span>Перейти к разделу</span>
+						<button class="addition__btn">
+									<svg class="icon icon-arrows_down gray_mod">
+										<use xlink:href="src/i/sprite/sprite.svg#arrows_down"></use>
+									</svg>
+						</button>
+						<div class="addition__text">
+							<h5>Стоимость проекта</h5>
+							<ul>
+								<li>Контактная информация</li>
+								<li>Контактная информация</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<footer id="contact" class="footer">
+			<div class="footer-wrap">
+				<div class="container">
+					<div class="footer__columns">
+						<div class="footer__col">
+							<div class="footer__item">
+								<h4 class="title_line">Телефон</h4>
+								<p class="page-footer__text">8 (029) 250-07-00<br>8 (033) 250-07-00</p>
+							</div>
+							<div class="footer__item">
+								<h4 class="title_line">Контактная информация</h4>
+								<p class="page-footer__text">skype: gurinovich25@list.ru</p>
+							</div>
+							<div class="footer__item">
+								<h4 class="title_line">Email</h4>
+								<div class="footer__link"><a>gurinovich25@list.ru</a></div>
+							</div>
+							<!--.footer__item
+							.social-links
+							  a(href="#").social__link
+							    +icon('fb','gray_mod')
+							  a(href="#").social__link
+							    +icon('twitter','gray_mod')
+							-->
+						</div>
+						<div class="footer__col">
+							<h4 class="title_line">Свяжитесь с нами</h4>
+							<form method="post">
+								<div class="footer__field">
+									<!--label(for="name")-->
+									<div data-error-message="Please enter a valid information" class="control">
+										<input id="name" name="name" type="text" placeholder="Ваше имя" class="js--required">
+									</div>
+								</div>
+								<div class="footer__field">
+									<!--label(for="email")-->
+									<div data-error-message="Please enter a valid information" class="control">
+										<input id="email" name="email" type="email" placeholder="Email" class="js--required">
+									</div>
+								</div>
+								<div class="footer__field">
+									<!--label(for="phone")-->
+									<div data-error-message="Please enter a valid information" class="control">
+										<input id="phone" name="phone" type="Телефон" placeholder="Телефон" class="js--required">
+									</div>
+								</div>
+								<div class="footer__field">
+									<!--label(for="message")-->
+									<div data-error-message="Please enter a valid information" class="control">
+										<textarea id="message" name="message" rows="5" placeholder="Сообщение"></textarea>
+									</div>
+								</div>
+								<ul class="footer__actions">
+									<li>
+										<input value="Send message" data-type="submit" type="submit" class="btn btn_md">
+									</li>
+								</ul>
+							</form>
+						</div><a href="" class="to-top js-to-top">
+									<svg class="icon icon-left-arrow white_mod">
+										<use xlink:href="src/i/sprite/sprite.svg#left-arrow"></use>
+									</svg></a>
+					</div>
+				</div>
+			</div>
+			<div class="footer-copyright">
+				<div class="container">
+					<div class="footer-copyright-wrap">
+						<p>© 2017</p>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
+		<script type="text/javascript" src="bower_components/jquery-ui/jquery-ui.min.js"></script>
+		<script type="text/javascript" src="bower_components/fancybox/dist/jquery.fancybox.js"></script>
+		<script type="text/javascript" src="bower_components/slick-carousel/slick/slick.min.js"></script>
+		<script type="text/javascript" src="bower_components/jquery-navScroll/jquery.navScroll.js"></script>
+		<script src="src/js/index.js" type="text/javascript"></script>
+	</body>
+</html>

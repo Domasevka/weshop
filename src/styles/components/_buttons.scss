@@ -1,0 +1,94 @@
+.btn {
+  @include transition;
+
+  display: inline-block;
+
+  text-align: center;
+  text-decoration: none;
+
+  background-color: $color-main;
+  color: $color-secondary;
+
+  border-style: 1px solid $color-main;
+
+  letter-spacing: 2.5px;
+  word-spacing: 5px;
+  
+  font-size: 24px;
+  padding: 25px 50px;
+
+  &:not(:disabled):hover {
+    cursor: pointer;
+  }
+  &:active {
+    outline: none;
+  }
+  &:disabled {
+    cursor: default;
+  }
+  &_center {
+    display: block;
+    margin: 0 auto;
+  }
+  &_left {
+    display: block;
+    text-align: left;
+  }
+
+  &:hover {
+    border-color: $btn-main-bg;
+    color: $btn-main-color;
+    background-color: $btn-main-bg;
+  }
+}
+
+.btn-group {
+  display: flex;
+  margin-top: 40px;
+  //justify-content: center;
+}
+
+// button medium size
+.btn_md {
+  @include font(14px, 500, 18px);
+  font-family: $font-family;
+
+  text-transform: uppercase;
+  padding: 17px 20px;
+  //min-width: 200px;
+}
+
+// button small size
+
+.btn_sm {
+  @include font(14px, 400, 14px);
+
+  padding: 17px 20px;
+}
+
+.to-top {
+  @include transition;
+  //position: absolute;
+  position: fixed;
+  z-index: 2;
+  top: 100px;
+  display: none;
+  right: 50px;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  color: $btn-main-color;
+  background-color: $color-success;
+  box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.2);
+  &:hover {
+    background-color: $color-success--light;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+  }
+  @media (max-width: $md) {
+    right: 20px;
+    width: 50px;
+    height: 50px;
+  }
+}
