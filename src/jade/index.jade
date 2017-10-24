@@ -8,56 +8,48 @@ html(lang='ru')
 
   body
     include blocks/mixins
-    header.header
-      .header-container
-        .container
-          .header__topline
-            ul.header-nav__contacts
-              li.header-nav__phone
-              li.header-nav__mail
-            .header-nav__search
-            ul.header-nav__user-items
-              li.header-nav__user-item
-                a(href="#") English
-              li.header-nav__user-item
-                a(href="#") USD
-              li.header-nav__user-item
-                a(href="#") Login
-          .header__botline
-            a(href="#").header__logo LoGo
-              //img(src="img/" width="130" height="38" alt="LoGo")
-            nav.main-menu
-              //.main-menu__mobile
-                +icon('bar-menu','success_mod')
-              ul.main-menu__list
-                li.main-menu__item
-                  a.main-menu__item-link(href="#") Home
-                li.main-menu__item
-                  a.main-menu__item-link(href="#") Shop
-                li.main-menu__item
-                  a.main-menu__item-link(href="#") Men
-                li.main-menu__item
-                  a.main-menu__item-link(href="#") Women
-                li.main-menu__item
-                  a.main-menu__item-link(href="#") Page
-                li.main-menu__item
-                  a.main-menu__item-link(href="#") Blog
-                li.main-menu__item
-                  a.main-menu__item-link(href="#") Contact us
-            ul.header-nav__cart-items
-              li.header-nav__cart
-                a(href="#") cart
-              li.header-nav__cart-price
-                span $25
+    header
+      .header
+        .header__container
+          .container
+            .header__topline
+              ul.contacts-nav__items
+                li.contacts-nav__item
+                  a(href="#") (00)-123-456-789
+                li.contacts-nav__item
+                  a(href="#") weshop@gmail.com
+              .header__search
+                form
+                  input
+              ul.user-nav__items
+                each val in ['English', 'USD', 'Login']
+                  li.user-nav__item
+                    a(href="#")= val
 
-      .header__banner
-        .container
-          .header__intro
-            .header__title
-              h1 fashion is nothing
-              h3 but mischief
-            .btn-group
-              a(href="#").btn.btn_left.btn_md Shop Now
+            .header__botline
+              a(href="#").header__logo
+                img(src="img/logo.jpg" width="161" height="52" alt="LoGo")
+              nav.main-menu
+                //.main-menu__mobile
+                  +icon('bar-menu','success_mod')
+                ul.main-menu__list
+                  each val in ['Home', 'Shop', 'Men', 'Women', 'Page', 'Blog', 'Contact us']
+                    li.main-menu__item
+                      a.main-menu__item-link(href="#")= val
+              ul.nav-cart__items
+                li.nav-cart__item
+                  a(href="#") cart
+                li.nav-cart__item
+                  span $25
+
+        .header__banner
+          .container
+            .header__intro
+              .header__title
+                h1 fashion is nothing
+                h3 but mischief
+              .btn-group
+                a(href="#").btn.btn_left.btn_md Shop Now
 
 
     section.second
@@ -75,7 +67,7 @@ html(lang='ru')
               li.second-service__item
                 //+icon('house-sketch','success_mod')
                 div
-                  h4 Дизайн интерьера
+                  h4
                   p Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer
                    |ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit
                    |amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut
@@ -83,7 +75,7 @@ html(lang='ru')
               li.second-service__item
                 //+icon('paint-brush','success_mod')
                 div
-                  h4 Декоративная штукатурка
+                  h4
                   p Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer
                     |ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit
                     |amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut
@@ -91,7 +83,7 @@ html(lang='ru')
               li.second-service__item
                 //+icon('user','success_mod')
                 div
-                  h4 Сопровождение проекта
+                  h4
                   p Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer
                     |ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit
                     |amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut
@@ -107,6 +99,16 @@ html(lang='ru')
 
           .third__column--1_3
             img(src="img/370x570.jpg" width="370" height="570" alt="")
+
+    section
+      .catalog
+        .container
+          .row .row-flex
+            .catalog-item
+            .catalog-item
+            .catalog-item
+            .catalog-item
+
 
 
     section.products
@@ -128,56 +130,23 @@ html(lang='ru')
               li.products-menu__item
                 a(href="#").products-menu__item-link Accessories
         .products__column-wrap
-
             .row
-              .products__col--1_4
-                .products__img
-                  img(src="img/270x340.jpg")
-                .products__caption
-                  a.products__actions
-                    +icon('search-symbol','white_mod')
-              .products__col--1_4
-                .products__img
-                  img(src="img/270x340.jpg")
-                .products__caption
-                  a.products__actions
-                    +icon('search-symbol','white_mod')
-              .products__col--1_4
-                .products__img
-                  img(src="img/270x340.jpg")
-                .products__caption
-                  a.products__actions
-                    +icon('search-symbol','white_mod')
-              .products__col--1_4
-                .products__img
-                  img(src="img/270x340.jpg")
-                .products__caption
-                  a.products__actions
-                    +icon('search-symbol','white_mod')
-              .products__col--1_4
-                .products__img
-                  img(src="img/270x340.jpg")
-                .products__caption
-                  a.products__actions
-                    +icon('search-symbol','white_mod')
-              .products__col--1_4
-                .products__img
-                  img(src="img/270x340.jpg")
-                .products__caption
-                  a.products__actions
-                    +icon('search-symbol','white_mod')
-              .products__col--1_4
-                .products__img
-                  img(src="img/270x340.jpg")
-                .products__caption
-                  a.products__actions
-                    +icon('search-symbol','white_mod')
-              .products__col--1_4
-                .products__img
-                  img(src="img/270x340.jpg")
-                .products__caption
-                  a.products__actions
-                    +icon('search-symbol','white_mod')
+              +products ("270x340")
+                +icon('search-symbol','white_mod')
+              +products ("270x340")
+                +icon('search-symbol','white_mod')
+              +products ("270x340")
+                +icon('search-symbol','white_mod')
+              +products ("270x340")
+                +icon('search-symbol','white_mod')
+              +products ("270x340")
+                +icon('search-symbol','white_mod')
+              +products ("270x340")
+                +icon('search-symbol','white_mod')
+              +products ("270x340")
+                +icon('search-symbol','white_mod')
+              +products ("270x340")
+                +icon('search-symbol','white_mod')
                   .btn-group
                     a(href="#").btn.btn_right.btn_sm Add to cart
 

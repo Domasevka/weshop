@@ -1,37 +1,55 @@
 .container {
+  max-width: $site-width;
   width: 100%;
   margin-right: auto;
   margin-left: auto;
   padding-right: $gutter;
   padding-left: $gutter;
-  @media (min-width: $breakpoint) and (max-width: $xxl - 1) {
-    max-width: 1170px;
-  }
-  @media (min-width: $xxl) {
-    max-width: 1230px;
-  }
 }
 
+// используется в сочетании с основным контейнером .container
+// аналог row у bootstrap, но с учетом flex-wrap: wrap
 .row {
   display: flex;
   flex-wrap: wrap;
-  margin: 0 -15px;
-  min-width: 100%;
-  /*@media (max-width: $lg) {
-    margin: 0;
-  }*/
-}
-
-.column--1_2 {
-  width: calc(50% - 30px);
-  margin-left: 15px;
-  margin-right: 15px;
-  //padding: 40px;
-  @media (max-width: $md) {
-    width: 100%;
+  margin-left: -$gutter;
+  margin-right: -$gutter;
+  &_center {
+    justify-content: center;
   }
+}
 
+// миксин задаёт ширину элемента, в колонках сетки
+// по-умолчанию - 12 колонок
+// использовать в сочетании с .row или @mixin flex-wrap
+//@include $span; // см. _grid
+//@include span(4);  // элемент занимает 4 колонки
+//@include span(6);  // элемент занимает 6 колонок
+//@include span(12); // элемент занимает всю ширину
+@mixin span($qty: 4, $columns: 12, $gutter: $gutter) {
+  width: calc(#{percentage($qty/$columns)} - #{$gutter * 2});
+  margin-left: $gutter;
+  margin-right: $gutter;
 }
 
 
+.catalog {
+  background: green;
 
+  padding-top: 50px;
+  padding-bottom: 70px;
+}
+
+.catalog-item {
+  @include span(12);  // элемент занимает 4 колонки
+  border: 1px solid #000;
+  height: 100px;
+  font-size: 30px;
+  color: black;
+  @media (min-width: $md) and (max-width: $breakpoint - 1) {
+    @include span(6);  // элемент занимает 4 колонки
+  }
+  @media (min-width: $breakpoint) {
+    @include span(4);  // элемент занимает 4 колонки
+  }
+}

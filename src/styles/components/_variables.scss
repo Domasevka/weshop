@@ -1,11 +1,11 @@
-$site-width: 1170px;    // ширина сайта
+$site-width: 1200px;    // ширина сайта
 $gutter: 15px;
 
 $color-main: #48689a;
 $color-secondary: #fff;
 
-$color-success: #faa71a;
-$color-success--light: #f9b848;
+$color-success: #00cdc6;
+$color-success--light: #02e0d8;
 
 $btn-main-bg: $color-success;
 $btn-main-color: $color-secondary;
@@ -22,7 +22,7 @@ $gray--darken: #15232d;
 $font-family: OpenSans, sans-serif;
 //$font: OpenSans, serif;
 
-$breakpoint: 1170px;
+$breakpoint: 1200px;
 
 $sm: 544px;     // Small screen / phone
 $md: 768px;     // Medium screen / tablet

@@ -30,13 +30,11 @@
     margin-top: 60px;
   }
 
-  &__col--1_4 {
+  &__col {
     position: relative;
-    width: calc((100% / 4) - 30px);
-    margin: 0 15px 30px 15px;
-    display: block;
     box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.05);
     background-color: $gray--lightest;
+    display: block;
 
     @media (max-width: $md) {
       width: 100%;
@@ -55,7 +53,6 @@
       width: 100%;
     }
   }
-
 
   &__caption {
     display: flex;

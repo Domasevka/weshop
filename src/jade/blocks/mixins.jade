@@ -12,6 +12,15 @@ mixin services (imageName, title, text)
     .btn-group
       a(href="#").btn.btn_center.btn_sm View collection
 
+mixin products (imgName)
+  div.products__col.column--1_4
+    div.products__img
+      img(src="img/#{imgName}.jpg" width="270" height="340" alt="img")
+    div.products__caption
+      a.products__actions
+
+
+
 mixin blog (imgName, title)
   article
     a(href="img/#{imgName}_1.jpg").blog__img
