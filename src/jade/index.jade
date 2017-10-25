@@ -35,7 +35,7 @@ html(lang='ru')
                 ul.main-menu__list
                   each val in ['Home', 'Shop', 'Men', 'Women', 'Page', 'Blog', 'Contact us']
                     li.main-menu__item
-                      a.main-menu__item-link(href="#")= val
+                      a(href="#").main-menu__item-link= val
               ul.nav-cart__items
                 li.nav-cart__item
                   a(href="#") cart
@@ -51,43 +51,37 @@ html(lang='ru')
               .btn-group
                 a(href="#").btn.btn_left.btn_md Shop Now
 
+    section
+      .info-block
+        .container
+          .row
+        a(href="#").second__column-content
+          h2 Men’s t-shirt<br> <span>collection</span><br>2016
+        //img(src="img/555x250.jpg" width="555" height="250" alt="")
+      .column--1_2.second__column
+        h2 50% OFFER<br> BELT<span>COLLECTION</span>
+        a(href="#") see more...
 
-    section.second
-      .container
-        .row
-          .column--1_2.second__column
-            a(href="#").second__column-content
-              h2 Men’s t-shirt<br> <span>collection</span><br>2016
-            //img(src="img/555x250.jpg" width="555" height="250" alt="")
-          .column--1_2.second__column
-            h2 50% OFFER<br> BELT<span>COLLECTION</span>
-            a(href="#") see more...
-          .second-service__wrapper
-            ul.second-service__items
-              li.second-service__item
-                //+icon('house-sketch','success_mod')
+    section
+      .service
+        .container
+          .service__list-wrap
+            ul.service__list
+              li.service__item
+                img.svg-img(src="img/headset.svg" width="161" height="52" alt="headset")
                 div
-                  h4
-                  p Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer
-                   |ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit
-                   |amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut
-                   |odio. Curabitur malesuada.
-              li.second-service__item
-                //+icon('paint-brush','success_mod')
+                  h4 24/7 Hour Support
+                  p Our online support section is available and regularly updated if you'd prefer.
+              li.service__item
+                img.svg-img(src="img/headset.svg" width="161" height="52" alt="headset")
                 div
-                  h4
-                  p Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer
-                    |ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit
-                    |amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut
-                    |odio. Curabitur malesuada.
-              li.second-service__item
-                //+icon('user','success_mod')
+                  h4 Easy service
+                  p Our online support section is available and regularly updated if you'd prefer.
+              li.service__item
+                img.svg-img(src="img/headset.svg" width="161" height="52" alt="headset")
                 div
-                  h4
-                  p Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer
-                    |ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit
-                    |amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut
-                    |odio. Curabitur malesuada.
+                  h4 Home delivery
+                  p Our online support section is available and regularly updated if you'd prefer.
     section.third
       .container
         .row
@@ -103,11 +97,17 @@ html(lang='ru')
     section
       .catalog
         .container
-          .row .row-flex
+          .row.row-flex
             .catalog-item
             .catalog-item
             .catalog-item
             .catalog-item
+    section
+      .cols
+        .col.col-1
+        .col.col-2
+        .col.col-3
+        .col.col-4
 
 
 

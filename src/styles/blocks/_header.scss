@@ -1,4 +1,4 @@
-.header { 
+.header {
 
   &__container {
     background-color: $color-main;
@@ -81,7 +81,7 @@
   }
 
   &__item {
-    @include font(12px, 200, 12px);
+    @include font(12px, 200);
     margin-right: 20px;
   }
 }
@@ -98,7 +98,7 @@
   &__item {
     margin-right: 20px;
     a {
-      @include font(12px, 200, 12px);
+      @include font(12px, 200);
       display: block;
       padding: 5px 10px;
 
@@ -147,7 +147,7 @@
   }
 
   &__item-link {
-    @include font(14px, 200, 14px);
+    @include font(14px, 200);
     display: block;
     padding: 10px 10px;
 

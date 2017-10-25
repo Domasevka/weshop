@@ -35,7 +35,6 @@
 
 .catalog {
   background: green;
-
   padding-top: 50px;
   padding-bottom: 70px;
 }
@@ -53,3 +52,52 @@
     @include span(4);  // элемент занимает 4 колонки
   }
 }
+
+$num: 3;
+
+@while $num > 0 {
+  $width: $num * 10%;
+  .col-#{$num} {
+    width: $width;
+    height: 3 * $width;
+  }
+  $num: $num - 1;
+}
+
+.cols {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  flex-direction: row-reverse;
+  background: gray;
+  padding-top: 50px;
+  padding-bottom: 70px;
+  width: 100%;
+  min-height: 800px;
+  height: 1px;
+}
+
+.col {
+  display: block;
+  box-sizing: border-box;
+  background-color: white;
+}
+
+
+//@each $animal in puma, sea-slug, egret, salamander {
+  //.#{$animal}-icon {
+   // background-image: url('/images/#{$animal}.png');
+ // }
+//}
+
+
+
+//.puma-icon {
+ // background-image: url('/images/puma.png'); }
+//.sea-slug-icon {
+ // background-image: url('/images/sea-slug.png'); }
+//.egret-icon {
+ // background-image: url('/images/egret.png'); }
+//.salamander-icon {
+ // background-image: url('/images/salamander.png'); }
+

@@ -1,12 +1,8 @@
-.second {
+.service {
   background-color: $gray--lighten;
 
   &__columns {
-    margin-top: 50px;
-  }
-
-  @media (max-width: $md) {
-    margin: 50px 0;
+    margin-bottom: 50px;
   }
 
   &__column {
