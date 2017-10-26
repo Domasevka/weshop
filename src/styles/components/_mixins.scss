@@ -4,7 +4,7 @@
 }
 
 // @include font($font-size, $font-weight: 400, $line-height: 1.5, $font-style: normal, $font-family: $font); // Font берется из _variables.scss
-@mixin font( $font-size, $font-weight: 400, $line-height: 1.2, $font-style: normal, $font-family: $font-family) {
+@mixin font( $font-size, $font-weight: 400, $line-height: 1.2, $font-style: normal, $font-family: $font) {
   font: $font-weight $font-style #{$font-size} / #{$line-height} $font-family;
 }
 
@@ -15,12 +15,6 @@
 
 
 
-@mixin title {
-  display: inline-block;
-  text-transform: uppercase;
-  position: relative;
-  padding-bottom: 0;
-}
 
 
 

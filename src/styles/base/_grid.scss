@@ -33,26 +33,6 @@
 }
 
 
-.catalog {
-  background: green;
-  padding-top: 50px;
-  padding-bottom: 70px;
-}
-
-.catalog-item {
-  @include span(12);  // элемент занимает 4 колонки
-  border: 1px solid #000;
-  height: 100px;
-  font-size: 30px;
-  color: black;
-  @media (min-width: $md) and (max-width: $breakpoint - 1) {
-    @include span(6);  // элемент занимает 4 колонки
-  }
-  @media (min-width: $breakpoint) {
-    @include span(4);  // элемент занимает 4 колонки
-  }
-}
-
 $num: 3;
 
 @while $num > 0 {
@@ -73,7 +53,7 @@ $num: 3;
   padding-top: 50px;
   padding-bottom: 70px;
   width: 100%;
-  min-height: 800px;
+  min-height: 300px;
   height: 1px;
 }
 
@@ -84,20 +64,24 @@ $num: 3;
 }
 
 
-//@each $animal in puma, sea-slug, egret, salamander {
-  //.#{$animal}-icon {
-   // background-image: url('/images/#{$animal}.png');
- // }
-//}
+@for $i from 1 through 10 {
+  $width: percentage(1 / $i);
 
+    .grid__col-#{$i} {
+    width: $width;
+    height: 3 * $width;
+  }
+}
 
+.grid__col-wrap {
+  display: flex;
+  width: 100%;
+  height: 300px;
+  background-color: #02e0d8;
+}
 
-//.puma-icon {
- // background-image: url('/images/puma.png'); }
-//.sea-slug-icon {
- // background-image: url('/images/sea-slug.png'); }
-//.egret-icon {
- // background-image: url('/images/egret.png'); }
-//.salamander-icon {
- // background-image: url('/images/salamander.png'); }
+.grid-col {
+   background-color: white;
+  max-height: 100%;
+}
 
