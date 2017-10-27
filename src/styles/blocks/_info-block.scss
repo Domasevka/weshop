@@ -23,90 +23,74 @@
   padding-top: 100px;
 
   & .row {
-    flex-direction: row-reverse;
+    //flex-direction: row-reverse;
     text-align: right;
   }
 
   &__column {
     @include span(6);  // элемент занимает 4 колонки
-
     border: 5px solid $gray--lightest;
     color: black;
+    text-align: right;
+
     @media (min-width: $md) and (max-width: $breakpoint - 1) {
       @include span(6);  // элемент занимает 4 колонки
     }
+
   }
 
-  &__photo {
-    background-image: url(../img/555x250.jpg);
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
+  &__preview {
+    position: absolute;
+  }
+}
+
+.widget {
+  width: 100%;
+  height: 100%;
+  display: block;
+  overflow: hidden;
+  position: relative;
+  font-size: 13px;
+  //font-family: 'Open Sans',Arial,Helvetica,Verdana,sans-serif;
+  text-align: right;
+  cursor: pointer;
+  padding: -35px;
+
+  &__preview {
+    display: block;
+    overflow: hidden;
     width: 100%;
-    height: 250px;
-    text-align: right;
-    padding: 30px 0;
-    div {
+    height: 100%;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &__title {
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    padding: 15px 30px;
+
+    span {
+      display: block;
+      width: 100%;
+      height: 100%;
+      padding: 70px;
+      border: 5px solid $color-main;
       text-align: right;
 
     }
   }
 
 }
-
-
-
-
-.second-service {
-  &__wrapper {
-    margin-top: 60px;
-  }
-
-  &__items {
-    display: flex;
-  }
-
-  &__item {
-    width: calc((100% / 3) - 30px);
-    margin-left: 15px;
-    margin-right: 15px;
-
-    h4 {
-      position: relative;
-      text-transform: uppercase;
-      outline-color: $gray--lighten;
-      border: 1px solid $gray--lighten;
-      text-align: left;
-
-      span {
-        position: absolute;
-        right: 20px;
-        top: 22px;
-      }
-    }
-    div {
-      border: 1px solid $gray--lighten;
-      border-top: none;
-      padding: 15px;
-    }
-
-    h3:not(:first-child) {
-      margin: 10px 0 0;
-    }
-
-    .icon {
-      position: absolute;
-      left: 20px;
-      top: 7px;
-    }
-
-    p {
-      text-align: left;
-    }
-
-  }
-}
-
 
 /*
 .icon_down_arrow {
