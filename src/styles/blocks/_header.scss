@@ -34,13 +34,14 @@
     //background-position: center center;
     //background-repeat: no-repeat;
     //background-size: cover;
-    min-height: 710px;
+    min-height: 930px;
     //max-width: 1400px;
     display: block;
     margin: 0 auto;
     width: 100%;
     position: relative;
-    padding-top: 70px;
+    text-transform: uppercase;
+    padding-top: 340px;
     &:after {
       content: '';
       position: absolute;

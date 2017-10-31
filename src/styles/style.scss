@@ -1,15 +1,15 @@
 @import "base/normalize";
 @import "components/variables";
+@import "components/mixins";
 @import "base/fonts";
 @import "base/reset";
 @import "base/grid";
-@import "components/mixins";
 @import "components/sprite";
 @import "base/typography";
 @import "blocks/header";
 @import "blocks/service";
 @import "blocks/info-block";
-@import "blocks/third";
+@import "blocks/tiles";
 @import "blocks/services";
 @import "blocks/products";
 @import "blocks/offer";

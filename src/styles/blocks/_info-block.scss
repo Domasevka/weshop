@@ -13,6 +13,7 @@
   @media (min-width: $md) and (max-width: $breakpoint - 1) {
     @include span(6);  // элемент занимает 4 колонки
   }
+
   @media (min-width: $breakpoint) {
     @include span(4);  // элемент занимает 4 колонки
   }
@@ -28,20 +29,38 @@
   }
 
   &__column {
+
     @include span(6);  // элемент занимает 4 колонки
     border: 5px solid $gray--lightest;
-    color: black;
-    text-align: right;
 
     @media (min-width: $md) and (max-width: $breakpoint - 1) {
       @include span(6);  // элемент занимает 4 колонки
     }
-
   }
 
-  &__preview {
+  &:first-child  {
+
+    .widget__title-brd {
+      padding: 70px 100px;
+      text-align: right;
+
+      &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin: 15px 30px;
+        width: calc(100% - 60px);
+        height: calc(100% - 30px);
+        border: 5px solid $color-main;
+      }
+    }
+  }
+
+  /*&__preview {
     position: absolute;
-  }
+  }*/
 }
 
 .widget {
@@ -50,11 +69,9 @@
   display: block;
   overflow: hidden;
   position: relative;
-  font-size: 13px;
   //font-family: 'Open Sans',Arial,Helvetica,Verdana,sans-serif;
-  text-align: right;
   cursor: pointer;
-  padding: -35px;
+  color: $gray--dark;
 
   &__preview {
     display: block;
@@ -71,26 +88,44 @@
     position: absolute;
     top: 0;
     display: flex;
-    justify-content: flex-end;
-    align-items: center;
+    flex-direction: column;
+    text-align: left;
 
     width: 100%;
     height: 100%;
     z-index: 10;
-    padding: 15px 30px;
+    padding: 75px 30px;
+  }
+}
 
-    span {
-      display: block;
-      width: 100%;
-      height: 100%;
-      padding: 70px;
-      border: 5px solid $color-main;
-      text-align: right;
+.widget__title {
 
+  strong {
+    color: $color-main;
+  }
+
+  &-name {
+    @include font (24px, 600);
+
+    strong {
+      @include font (36px, 600);
+    }
+
+    & + span {
+      letter-spacing: 8px;
     }
   }
 
+  &-text {
+    @include font (24px, 600, 1.5);
+    text-transform: uppercase;
+  }
+
+  &-text + &-text {
+    margin-bottom: 20px;
+  }
 }
+
 
 /*
 .icon_down_arrow {

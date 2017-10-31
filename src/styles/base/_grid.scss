@@ -32,56 +32,52 @@
   margin-right: $gutter;
 }
 
-
-$num: 3;
-
-@while $num > 0 {
-  $width: $num * 10%;
-  .col-#{$num} {
-    width: $width;
-    height: 3 * $width;
-  }
-  $num: $num - 1;
-}
-
-.cols {
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
-  flex-direction: row-reverse;
-  background: gray;
-  padding-top: 50px;
-  padding-bottom: 70px;
-  width: 100%;
-  min-height: 300px;
-  height: 1px;
-}
-
-.col {
-  display: block;
-  box-sizing: border-box;
-  background-color: white;
-}
-
-
-@for $i from 1 through 10 {
-  $width: percentage(1 / $i);
-
-    .grid__col-#{$i} {
-    width: $width;
-    height: 3 * $width;
-  }
-}
-
-.grid__col-wrap {
-  display: flex;
-  width: 100%;
-  height: 300px;
-  background-color: #02e0d8;
-}
-
-.grid-col {
-   background-color: white;
-  max-height: 100%;
-}
-
+/*
+* $num: 3;
+* @while $num > 0 {
+*  $width: $num * 10%;
+*   .col-#{$num} {
+*     width: $width;
+*     height: 3 * $width;
+* }
+*  $num: $num - 1;
+* }
+* .cols {
+*  display: flex;
+*  justify-content: flex-end;
+*  align-items: flex-end;
+*  flex-direction: row-reverse;
+*  background: gray;
+*  padding-top: 50px;
+*  padding-bottom: 70px;
+*  width: 100%;
+*  min-height: 300px;
+*  height: 1px;
+* }
+* .col {
+*  display: block;
+*  box-sizing: border-box;
+*  background-color: white;
+* }
+* каждый 3-ий i
+* @for $i from 1 through 10 {
+*  @if i%3 == 0 {
+*    $width: percentage(1 / $i);
+*
+*    .grid__col-#{$i} {
+*      width: $width;
+*      height: 3 * $width;
+*    }
+*  }
+* }
+* .grid__col-wrap {
+*  display: flex;
+*  width: 100%;
+*  height: 300px;
+*  background-color: #02e0d8;
+* }
+* .grid-col {
+*   background-color: white;
+*   max-height: 100%;
+* }
+*/

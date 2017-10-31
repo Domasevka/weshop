@@ -6,13 +6,12 @@ h1,
   //letter-spacing: 8px;
 
   @media (min-width: $breakpoint) {
-    @include font(70px, 200, 1.25);
+    @include font(50px, 200, 1.25);
   }
 
   @media (max-width: $md) {
     @include font(50px, 200, 1.25);
   }
-
 }
 
 h2,
@@ -40,8 +39,8 @@ h3,
   @media (max-width: 480px) {
     font-size: 14px;
   }
-
 }
+
 h4,
 .h4 {
   @include font(18px, 400, 1.2);
@@ -59,6 +58,7 @@ h5,
 
   color: #262626;
 }
+
 h6,
 .h6 {
   @include font(16px, 600, 1.22);
