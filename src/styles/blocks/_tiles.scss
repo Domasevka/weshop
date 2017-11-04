@@ -6,7 +6,13 @@
 
   &__column {
     @include span(4);  // элемент занимает 4 колонки
-    //border: 5px solid $gray--lightest;
+
+    @media (max-width: $md) {
+      @include span(6);
+    }
+    @media (max-width: $sm) {
+      @include span(12);
+    }
   }
 
   &__item  {

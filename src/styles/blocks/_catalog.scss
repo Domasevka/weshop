@@ -1,0 +1,128 @@
+.catalog {
+
+  &__menu-wrap{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 90px;
+    margin-bottom: 40px;
+  }
+
+  &__menu {
+    display: flex;
+  }
+
+  &__menu-list {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__menu-link {
+    display: block;
+    color: $gray--darken;
+    text-transform: uppercase;
+    padding: 10px 20px;
+  }
+
+  &__column-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    min-width: 100%;
+  }
+
+  &__item {
+    @include span(3);
+    position: relative;
+    box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.05);
+    background-color: $gray--lightest;
+    display: block;
+    margin-bottom: 20px;
+    overflow: hidden;
+
+    @media (max-width: $md) {
+      width: 100%;
+    }
+  }
+
+  &__img {
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    img {
+      width: 100%;
+    }
+  }
+
+  &__inner {
+    @include transition();
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    //top: 100%;
+    bottom: 0;
+    right: 0;
+    opacity: 0;
+  }
+
+  &__item:hover &__inner {
+    //top: 0;
+    opacity: 1;
+  }
+
+  &__item:hover .btn__sm {
+    background-color: $btn-main-color;
+    border-color: $btn-main-color;
+    color: $color-secondary;
+
+    &:hover {
+      background-color: $btn-main-bg;
+      border-color: $btn-main-bg;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    justify-content: center;
+    //position: absolute;
+    bottom: 20px;
+    //right: 0;
+    z-index: 1;
+    margin-top: 118px;
+    outline: none;
+
+    .btn__sm {
+
+      i {
+        margin-left: 12px;
+      }
+    }
+
+    button {
+      margin-bottom: 20px;
+    }
+
+    button:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+  .btn-cart {
+    position: absolute;
+    bottom: 20px;
+    right: 0;
+  }
+
+.products .btn-group {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  justify-content: center;
+  pointer-events: none;
+  //background-color: rgba(250,167,26,0.9);
+  opacity: 0;
+  z-index: 1;
+}
+

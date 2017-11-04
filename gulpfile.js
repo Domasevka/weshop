@@ -22,10 +22,10 @@ var mqpacker = require('css-mqpacker'),
     csso = require('gulp-csso');
 
 // plugins for svg
-/*var svgSprite = require('gulp-svg-sprite'),
+var svgSprite = require('gulp-svg-sprite'),
 	svgmin = require('gulp-svgmin'),
 	cheerio = require('gulp-cheerio'),
-	replace = require('gulp-replace');*/
+	replace = require('gulp-replace');
 
 var srcDir = 'src/';
 var outputDir = 'dist/';
@@ -55,12 +55,12 @@ gulp.task('sass', function () {
 		.pipe(notify('Sass is compile!'));
 });
 
-/*gulp.task('jsConcat', function () {
+gulp.task('jsConcat', function () {
     return gulp.src(srcDir + 'js/all/!**!/!*.js')
         .pipe(concat('all.js', {newLine: ';'}))
         .pipe(gulp.dest(outputDir + 'js/'))
         .pipe(browserSync.stream());
-});*/
+});
 
 gulp.task('imageSync', function () {
          return gulp.src(srcDir + 'img/**/*.*')
@@ -76,27 +76,27 @@ gulp.task('fontsSync', function () {
         .pipe(browserSync.stream());
 });
 
-/*gulp.task('jsSync', function () {
+gulp.task('jsSync', function () {
     return gulp.src(srcDir + 'js/!*.js')
         .pipe(plumber())
         .pipe(gulp.dest(outputDir + 'js/'))
         .pipe(browserSync.stream());
-});*/
+});
 
 
 gulp.task('watch', function(){
     gulp.watch(srcDir + 'jade/**/*.jade', ['jade']);
     gulp.watch(srcDir +'styles/**/*.scss', ['sass']);
-    //gulp.watch(srcDir + 'js/**/*.js', ['jsSync']);
-    //gulp.watch(srcDir + 'js/all/**/*.js', ['jsConcat']);
+    gulp.watch(srcDir + 'js/**/*.js', ['jsSync']);
+    gulp.watch(srcDir + 'js/all/**/*.js', ['jsConcat']);
     gulp.watch(srcDir + 'img/**/*', ['imageSync']);
     gulp.watch(srcDir + 'fonts/**/*', ['fontsSync']);
 });
 
 
-/*
+
 gulp.task('svgSpriteBuild', function (){
-    return gulp.src(srcDir + 'i/icons/!*.svg')
+    return gulp.src(srcDir + 'i/icons/*.svg')
     // minify svg
         .pipe(svgmin({
             js2svg: {
@@ -104,14 +104,14 @@ gulp.task('svgSpriteBuild', function (){
             }
         }))
         // remove all fill, style and stroke declarations in out shapes
-       /!* .pipe(cheerio({
+       /* .pipe(cheerio({
             run: function ($) {
                 $('[fill]').removeAttr('fill');
                 $('[stroke]').removeAttr('stroke');
                 $('[style]').removeAttr('style');
             },
             parserOptions: {xmlMode: true}
-        }))*!/
+        }))*/
         // cheerio plugin create unnecessary string '&gt;', so replace it.
         .pipe(replace('&gt;', '>'))
         // build svg sprite
@@ -132,7 +132,7 @@ gulp.task('svgSpriteBuild', function (){
         //.pipe(gulp.dest(buildDir + 'i/sprite/'));
         .pipe(gulp.dest(outputDir + 'i/sprite/'));
 });
-*/
+
 
 // for build folder
 gulp.task('cleanBuildDir', function (cb) {
@@ -163,11 +163,11 @@ gulp.task('htmlBuild', function () {
 });
 
 //copy and minify js
-/*gulp.task('jsBuild', function () {
-    return gulp.src(outputDir + 'js/!**!/!*')
+gulp.task('jsBuild', function () {
+    return gulp.src(outputDir + 'js/**/*')
         //.pipe(uglify('index.min.js'))
         .pipe(gulp.dest(buildDir + 'js/'))
-});*/
+});
 
 //copy, minify css
 gulp.task('cssBuild', function () {
@@ -185,7 +185,7 @@ gulp.task('cssBuild', function () {
 
 gulp.task('build', function (callback) {
     runSequence('cleanBuildDir',
-        ['imgBuild', 'fontsBuild', 'htmlBuild', /*'jsBuild',*/ 'cssBuild'/*,'svgSpriteBuild'*/],
+        ['imgBuild', 'fontsBuild', 'htmlBuild', 'jsBuild', 'cssBuild','svgSpriteBuild'],
         callback);
 });
 

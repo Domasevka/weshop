@@ -5,8 +5,110 @@
   &__header {
     display: block;
     text-align: center;
-    margin: 60px 0;
+    margin-bottom: 43px;
+    padding-top: 94px;
+  }
+}
+
+.blog-post {
+
+  @include span(6); // элемент занимает 6 колонок
+  display: flex;
+  min-height: 160px;
+  color: $gray--dark;
+  margin-bottom: 50px;
+  position: relative;
+
+
+
+  /*@media (min-width: $md) and (max-width: $breakpoint - 1) {
+    @include span(12); // элемент занимает 4 колонки
+    flex-direction: column;
+  }*/
+  &__date {
+    position: absolute;
+    background-color: $color-main;
+    color: $color-secondary;
+    text-align: center;
+    padding: 10px 8px;
+    top: 6px;
+    left: 7px;
+    @include font (12px, 600, 1);
+    text-transform: uppercase;
+    z-index: 2;
   }
 
+  &__image {
+    width: 400px;
+    padding-left: 28px;
+    padding-top: 28px;
+    position: relative;
 
+    &:after {
+      position: absolute;
+      content: '';
+      height: 44px;
+      width: 44px;
+      padding: 10px;
+      top: 0;
+      left: 0;
+      border: 2px solid $color-main;
+      display: inline-block;
+    }
+
+
+    img {
+      width: auto;
+      max-width: 100%;
+      height: auto;
+      max-height: 100%;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    @include font (14px, 400, 1.8);
+    padding: 35px 0 0 30px;
+  }
+
+  &__title {
+    display: block;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  &__social {
+    display: flex;
+    justify-content: space-between;
+    ul {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    a {
+      display: block;
+    }
+  }
+
+  &__full {
+    display: block;
+    align-self: flex-start;
+    margin-top: auto;
+    line-height: 1.2;
+    margin-bottom: 10px;
+
+    &:hover {
+      color: $color-main;
+    }
+  }
+
+  &__author {
+
+
+
+  }
 }
+
+
+

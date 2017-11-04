@@ -21,14 +21,6 @@
   &:disabled {
     cursor: default;
   }
-  /*&_center {
-    display: block;
-    margin: 0 auto;
-  }
-  &_left {
-    display: block;
-    text-align: left;
-  }*/
 }
 
 .btn__main-back-fill {
@@ -69,8 +61,10 @@
 
 .btn__sm {
   @include font(14px, 400, 14px);
+  letter-spacing: 0;
+  word-spacing: 0;
 
-  padding: 17px 20px;
+  padding: 10px;
 }
 
 .to-top {
@@ -101,21 +95,21 @@
 }
 
 .label {
-  &:after {
-    @include font(14px, 500, 40px);
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    height: 40px;
-    width: 40px;
-    border-radius: 50%;
-    text-transform: uppercase;
-    color: $color-secondary;
-    border: none;
-    text-align: center;
-    display: inline-block;
-  }
-}
+   &:after {
+     @include font(14px, 500, 40px);
+     position: absolute;
+     top: 20px;
+     left: 20px;
+     height: 40px;
+     width: 40px;
+     border-radius: 50%;
+     text-transform: uppercase;
+     color: $color-secondary;
+     border: none;
+     text-align: center;
+     display: inline-block;
+   }
+ }
 
 .label-new {
   &:after {
@@ -124,3 +118,35 @@
   }
 }
 
+// buttons in catalog with price
+.flags {
+  &:after {
+    @include font(14px, 500);
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 6px 12px;
+    text-transform: uppercase;
+    color: $color-secondary;
+    border: none;
+    text-align: center;
+    display: inline-block;
+  }
+}
+
+.flags-price {
+
+  &:after {
+    content: '$888';
+    background-color: $color-main;
+  }
+}
+
+
+// buttons in catalog
+.btn-flag {
+  background-color: transparent;
+  color: $color-main;
+  border: 1px solid $color-main;
+  padding: 10px;
+}

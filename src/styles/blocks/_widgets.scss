@@ -1,0 +1,199 @@
+/*
+.catalog {
+  background: green;
+  padding-top: 50px;
+  padding-bottom: 70px;
+}
+
+.catalog-item {
+  @include span(12);  // элемент занимает 4 колонки
+  border: 2px solid $gray--lightest;
+  height: 100px;
+  font-size: 30px;
+  color: black;
+  @media (min-width: $md) and (max-width: $breakpoint - 1) {
+    @include span(6);  // элемент занимает 4 колонки
+  }
+
+  @media (min-width: $breakpoint) {
+    @include span(4);  // элемент занимает 4 колонки
+  }
+}
+*/
+
+.widgets {
+
+  background-color: $gray--lighten;
+  padding-top: 100px;
+
+  & .row {
+    //flex-direction: row-reverse;
+    text-align: right;
+  }
+}
+
+.widget {
+
+  &__column {
+    position: relative;
+
+    @include span(6); // элемент занимает 4 колонки
+
+
+    @media (min-width: $md) and (max-width: $breakpoint - 1) {
+      @include span(6); // элемент занимает 4 колонки
+    }
+  }
+
+  &__link {
+    width: 100%;
+    height: 100%;
+    display: block;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    color: $gray--dark;
+
+    &-bord {
+      border: 5px solid $gray--lightest;
+    }
+  }
+
+  &__image {
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    img {
+      width: 100%;
+    }
+  }
+
+  &__title {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    position: absolute;
+    top: 0;
+
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    color: $gray--dark;
+    padding: 75px 30px;
+
+    &-bord {
+      padding: 70px 100px;
+      text-align: right;
+      height: 100%;
+
+      &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        width: calc(100% - 60px);
+        height: calc(100% - 30px);
+        border: 5px solid $color-main;
+        margin: 15px 30px;
+        cursor: pointer;
+      }
+    }
+
+    &-back {
+      padding-right: 20px;
+      text-align: center;
+
+      &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: calc(100% - 40px);
+        height: calc(100% - 40px);
+        background-color: $gray--lighten;
+        opacity: 0.8;
+        margin: 20px;
+        cursor: pointer;
+      }
+
+      span {
+        @include font (24px, 400);
+        text-transform: uppercase;
+        z-index: 11;
+      }
+    }
+
+    strong {
+      color: $color-main;
+    }
+
+    &-name {
+      @include font (24px, 600);
+      margin-bottom: 10px;
+
+      strong {
+        @include font (36px, 600);
+      }
+
+      & + span {
+        letter-spacing: 8px;
+      }
+    }
+
+    &-text {
+      @include font (24px, 600, 1.5);
+      text-transform: uppercase;
+    }
+
+    &-text + &-text {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.widget__banner {
+  width: 100%;
+  height: 100%;
+  min-height: 250px;
+  display: block;
+  //overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  color: $gray--dark;
+  background-color: $gray--lighten;
+  text-align: center;
+  padding: 30px 100px;
+
+  h2 {
+    margin-bottom: 10px;
+  }
+
+  p {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+}
+
+
+/*
+  .icon_down_arrow {
+    border: solid $gray--light;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(45deg);
+  }
+
+  .icon_up_arrow {
+    border: solid $gray--light;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(-135deg);
+  }
+*/
+

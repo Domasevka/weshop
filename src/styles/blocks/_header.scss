@@ -1,9 +1,7 @@
 .header {
 
-  &__container {
-    background-color: $color-main;
-    padding-top: 10px;
-  }
+  background-color: $color-main;
+  padding-top: 10px;
 
   &__topline {
     display: flex;
@@ -50,6 +48,7 @@
       top: 0;
       left: 0;
       background-color: rgba(0, 0, 0, 0.15);
+      z-index: -1;
     }
 
     @media (max-width: $lg) {
@@ -98,6 +97,7 @@
 
   &__item {
     margin-right: 20px;
+
     a {
       @include font(12px, 200);
       display: block;

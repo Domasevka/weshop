@@ -10,24 +10,49 @@ mixin services (imageName, title, text)
     h5.services__title= title
     p.services__text= text
     .btn-group
-      a(href="#").btn.btn_center.btn_sm View collection
+      a(href="#").btn.btn__main-back.btn__md View collection
 
-mixin products (imgName)
-  div.products__col.column--1_4
-    div.products__img
+mixin catalog (imgName)
+  div.catalog__item
+    div.catalog__img
       img(src="img/#{imgName}.jpg" width="270" height="340" alt="img")
-    div.products__caption
-      a.products__actions
-
+    button.btn.btn-flag.btn-cart
+      a(href="#")
+        +icon('shopping-cart','gray_mod')
+    div.catalog__inner
+      span.flags.flags-price
+      div.catalog__buttons
+        button.btn.btn-flag.btn-cart-back
+          a(href="#")
+            +icon('view','gray_mod')
+        button.btn.btn-flag.btn-wishlist
+          a(href="#")
+            +icon('heart', 'gray_mod')
+        button.btn.btn-flag.btn__sm Add to cart
+          i
+            a(href="#")
+              +icon('shopping-cart','white_mod')
 
 
 mixin blog (imgName, title)
-  article
-    a(href="img/#{imgName}_1.jpg").blog__img
+  .blog-post
+    span.blog-post__date 15<br>June
+    a(href="#").blog-post__image
       img(src="img/#{imgName}.jpg" width="250" height="160" alt="img")
-    h5= title
-    ul
-      li Admin
-    a(href="#") Read full article...
+    .blog-post__content
+      h5.blog-post__title= title
+      .blog-post__social
+        a(href="#").blog-post__author Admin
+        ul
+          li
+            a(href="#")
+              +icon('facebook')
+          li
+            a(href="#")
+              +icon('twitter')
+          li
+            a(href="#")
+              +icon('google')
+      a(href="#").blog-post__full Read full article...
 
 
