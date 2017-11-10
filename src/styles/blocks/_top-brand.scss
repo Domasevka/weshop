@@ -1,0 +1,125 @@
+.top-brand {
+  padding-top: 100px;
+  margin-bottom: 70px;
+
+  &__column {
+    @include span(4);
+
+    &:nth-child(2n) {
+      text-align: center;
+    }
+
+    &:last-child {
+      text-align: right;
+    }
+
+    &:last-child > .top-brand__item {
+      flex-direction: row-reverse;
+      .top-brand__image {
+        margin-right: 0;
+      }
+      .top-brand__content {
+        margin-right: 20px;
+      }
+    }
+  }
+
+  h4 {
+    text-transform: uppercase;
+    display: inline-block;
+    position: relative;
+    margin-bottom: 33px;
+    padding-bottom: 10px;
+  }
+
+  &__item {
+    display: flex;
+    padding-bottom: 26px;
+  }
+
+  &__item:not(:last-child) {
+    border-bottom: 1px solid $gray--lighten;
+    margin-bottom: 28px;
+  }
+
+  &__image {
+    margin-right: 20px;
+  }
+
+  &__title {
+    line-height: 1.2;
+    margin-bottom: 8px;
+  }
+
+  &__price {
+    margin-bottom: 10px;
+    color: $color-main;
+  }
+
+  &__btn {
+    display: flex;
+  }
+
+  .btn {
+    display: block;
+    width: 27px;
+    height: 27px;
+    overflow: hidden;
+    padding: 3px;
+    margin-right: 10px;
+    &:first-child:hover {
+      width: 110px;
+    }
+  }
+}
+
+.title__line {
+  &:after {
+    content: '';
+    border-bottom: solid 2px $btn-main-bg;
+    width: 50px;
+    position: absolute;
+    left: 0;
+    top: 100%;
+  }
+
+  &-center {
+
+    &:after {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  &-right {
+
+    &:after {
+      left: inherit;
+      right: 0;
+    }
+  }
+}
+
+// buttons in catalog with price
+.flags {
+  &:after {
+    @include font(14px, 500);
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 6px 12px;
+    text-transform: uppercase;
+    color: $color-secondary;
+    border: none;
+    text-align: center;
+    display: inline-block;
+  }
+}
+
+.flags-price {
+
+  &:after {
+    content: '$888';
+    background-color: $color-main;
+  }
+}

@@ -3,16 +3,16 @@ $gutter: 15px;
 
 $color-main: #48689a;
 $color-secondary: #fff;
-
 $color-success: #5b84c3;
 $color-success--light: #02e0d8;
 
-$btn-main-bg: $color-success;
-$btn-main-color: $color-main;
+$btn-main-bg: $color-main;
+$btn-main-color: $color-secondary;
 $btn-main-border: $color-success;
 
 $gray--lightest: #eee;
-$gray--lighten: #f7f7f7;
+//$gray--lighten: #f7f7f7;
+$gray--lighten: #e1e1e1;
 $gray--light: #8f8f8f;
 $gray: #444;
 $gray--dark: #3c4852;

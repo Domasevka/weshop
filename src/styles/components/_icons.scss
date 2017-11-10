@@ -3,6 +3,11 @@
   height: 33px;
   width: 33px;
   vertical-align: middle;
+  //opacity: 0.8;
+  &:hover {
+    fill: $color-success;
+    //opacity: 1;
+  }
 }
 
 .icon {
@@ -41,8 +46,6 @@
 .success_mod {
   color: $color-success;
 }
-
-
 
 
 

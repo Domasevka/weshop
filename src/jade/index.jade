@@ -11,35 +11,45 @@ html(lang='ru')
     header
       .header
         .container
-          .header__topline
-            ul.contacts-nav__items
-              li.contacts-nav__item
-                a(href="#") (00)-123-456-789
-              li.contacts-nav__item
-                a(href="#") weshop@gmail.com
-            .header__search
-              form
-                input
-            ul.user-nav__items
-              each val in ['English', 'USD', 'Login']
-                li.user-nav__item
-                  a(href="#")= val
+          .row
+            .header__column
+              ul.contacts-nav__list
+                li.contacts-nav__item
+                  +icon('call-answer','white_mod')
+                  a(href="#") (00)-123-456-789
+                li.contacts-nav__item
+                  +icon('mail','white_mod')
+                  a(href="#") weshop@gmail.com
+              a(href="#").header__logo
+                img(src="img/logo.jpg" width="161" height="52" alt="LoGo")
+              nav.main-menu
+                //.main-menu__mobile
+                  +icon('bar-menu','success_mod')
 
-          .header__botline
-            a(href="#").header__logo
-              img(src="img/logo.jpg" width="161" height="52" alt="LoGo")
-            nav.main-menu
-              //.main-menu__mobile
-                +icon('bar-menu','success_mod')
+            .header__column.header__column_search
+              form.header-search
+                input.header-search__input(type='search', name='search', placeholder='Enter your search term...')
+                button.header-search__submit
+                  +icon('search-symbol','success_mod')
               ul.main-menu__list
                 each val in ['Home', 'Shop', 'Men', 'Women', 'Page', 'Blog', 'Contact us']
                   li.main-menu__item
                     a(href="#").main-menu__item-link= val
-            ul.nav-cart__items
-              li.nav-cart__item
-                a(href="#") cart
-              li.nav-cart__item
-                span $25
+
+            .header__column.header__column_cart
+              ul.user-nav__list
+                each val in ['English', 'USD', 'Login']
+                  li.user-nav__item
+                    a(href="#")= val
+
+              .nav-cart
+                .nav-cart__item
+                  a(href="#").nav-cart__link
+                    span.nav-cart__img
+                      +icon('bag-outline','white_mod')
+                    span.nav-cart__counter 2
+                .nav-cart__item
+                  span.nav-cart__price $25.00
 
       .header__banner
         .container
@@ -47,10 +57,10 @@ html(lang='ru')
             h1 fashion is nothing
             h3 but mischief
           .btn-group
-            a(href="#").btn.btn__main-back-fill.btn__md Shop Now
+            a(href="#").btn.btn-fully_main.btn_md Shop Now
 
     section
-      .widgets
+      .widgets.widgets-style
         .container
           .row
             .widget__column
@@ -102,7 +112,7 @@ html(lang='ru')
                 //a(href="#").tiles__item.tiles__item-bot
                 a(href="#").tiles__item.tiles__item-bot
                 .btn-group
-                  a(href="#").btn.btn__main-back.btn__md Shop Now
+                  a(href="#").btn.btn-nofill.btn_md.btn_center Shop Now
                   //img(src="img/370x570.jpg" width="370" height="570" alt="")
             .tiles__column
               a(href="#").tiles__item.tiles__item-small
@@ -140,12 +150,13 @@ html(lang='ru')
               +catalog ("270x340")
               +catalog ("270x340")
 
-    section.services
-      .services-wrap
-        .container
-          .services__list-wrap
-            .services__list
-              +services ("", "PERSONAL ASSISTENT", "You don’t know what to choose? We will help you.")
+    section
+      .services
+        .services__wrap
+          .container
+            .services__list-wrap
+              .services__list
+                +services ("", "PERSONAL ASSISTENT", "You don’t know what to choose? We will help you.")
 
     section
       .feature
@@ -166,10 +177,8 @@ html(lang='ru')
               +catalog ("270x340")
               +catalog ("270x340")
 
-
-
     section
-      .offer
+      .widgets.widgets-offer
         .container
           .row
             .widget__column
@@ -196,35 +205,28 @@ html(lang='ru')
             +blog ("250x160", "4 Denim Shapes Worth Hanging Up Your SKINNY JEANS")
             +blog ("250x160", "4 Denim Shapes Worth Hanging Up Your SKINNY JEANS")
 
-
-    section.sellers
-
-
-
-
-    section.brands
-      .container
-        ul.brands__list
-          li.brands__item
-            a(href="#").brands__item-link
-              img(src="img/brands_1.jpg")
-          li.brands__item
-            a(href="#").brands__item-link
-              img(src="img/brands_2.jpg")
-          li.brands__item
-            a(href="#").brands__item-link
-              img(src="img/brands_3.jpg")
-          li.brands__item
-            a(href="#").brands__item-link
-              img(src="img/brands_4.jpg")
-          li.brands__item
-            a(href="#").brands__item-link
-              img(src="img/brands_5.jpg")
-          li.brands__item
-            a(href="#").brands__item-link
-              img(src="img/brands_6.jpg")
     section
-      .news
+      .top-brand
+        .container
+          .row
+            .top-brand__column
+              h4.title__line Trending
+              +top-brand ("70x80", "Denim t-shirt", "$289 - $250")
+              +top-brand ("70x80", "Denim t-shirt", "$289 - $250")
+              +top-brand ("70x80", "Denim t-shirt", "$289 - $250")
+            .top-brand__column
+              h4.title__line.title__line-center Top Rated
+              +top-brand ("70x80", "Denim t-shirt", "$289 - $250")
+              +top-brand ("70x80", "Denim t-shirt", "$289 - $250")
+              +top-brand ("70x80", "Denim t-shirt", "$289 - $250")
+            .top-brand__column
+              h4.title__line.title__line-right Date Updated
+              +top-brand ("70x80", "Denim t-shirt", "$289 - $250")
+              +top-brand ("70x80", "Denim t-shirt", "$289 - $250")
+              +top-brand ("70x80", "Denim t-shirt", "$289 - $250")
+
+    section
+      .widgets
         .container
           .row
             .widget__column
@@ -237,36 +239,69 @@ html(lang='ru')
               .widget__banner
                 h2.widget__title-text Newsletter<br>
                 p we are promising,we wil not spam.
-                a(href="#").btn.btn-flag.btn__sm Add to cart
+                a(href="#").btn.btn-nofill.btn_bg Add to cart
 
-    footer.footer
-      .footer-wrap
+    section
+      .brands
         .container
-          .footer__columns
-            .footer__col
-              p USA most-loved online fashion store featuring new deals.<br> When it comes to trend, we all love being in it — Seeping every bit of it in WESHOP.com
+          ul.brands__list
+            each imgName in ['brands_1', 'brands_2', 'brands_3', 'brands_4', 'brands_5', 'brands_6']
+              li.brands__item
+                a(href="#").brands__link
+                  img(src="img/#{imgName}.jpg")
 
-            .footer__col
-                ul.footer__actions
-                  li
-            .footer__col
-            .footer__col
-              i
-                a(href="#")
-                  +icon('facebook')
-              i
-                a(href="#")
-                  +icon('twitter')
-              i
-                a(href="#")
-                  +icon('google-plus')
-
-            //a(href="").to-top.js-to-top
-             +icon('left-arrow','white_mod')
-      .footer-copyright
+    footer
+      .footer
         .container
-          .footer-copyright-wrap
-            p © 2017
+          .row
+            .footer__columns
+              .footer__col
+                a(href="#").header__logo
+                  img(src="img/logo.jpg" width="161" height="52" alt="LoGo")
+                p USA most-loved online fashion store featuring new deals.<br>
+                p When it comes to trend, we all love being in it — Seeping every bit of it in WESHOP.com
+
+              .footer__col
+                h6 Support
+                ul.footer-nav
+                  each val in ['How to Order?', 'Payments', 'Assistance', 'Assistance', 'Delivery']
+                    li.footer-nav__item
+                      a(href="#").footer-nav__link= val
+
+              .footer__col
+                h6 Duties
+                ul.footer-nav
+                  li.footer-nav__item
+                    a(href="#").footer-nav__link Terms and Conditions
+                  li.footer-nav__item
+                    a(href="#").footer-nav__link Shop Policy
+                  li.footer-nav__item
+                    a(href="#").footer-nav__link Contact Us
+
+              .footer__col
+                h6 instagram feed
+                ul.insta
+                  each imgName in ['58x60', '58x60', '58x60', '58x60']
+                    li.insta__item
+                      a(href="#").insta__link
+                        img(src="img/#{imgName}.jpg")
+          .social
+            a(href="#").social__link
+              +icon('facebook')
+            a(href="#").social__link
+              +icon('twitter')
+            a(href="#").social__link
+                +icon('linkedin-letters')
+            a(href="#").social__link
+              +icon('youtube')
+            a(href="#").social__link
+              +icon('google-plus')
+
+              //a(href="").to-top.js-to-top
+               +icon('left-arrow','white_mod')
+    .footer-copyright
+      .container
+        p © 2017
 
     //script(type="text/javascript" src="js/vendor.js")
     script(type="text/javascript" src="js/all.js")

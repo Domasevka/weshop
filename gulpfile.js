@@ -56,7 +56,7 @@ gulp.task('sass', function () {
 });
 
 gulp.task('jsConcat', function () {
-    return gulp.src(srcDir + 'js/all/!**!/!*.js')
+    return gulp.src(srcDir + 'js/all/**/*.js')
         .pipe(concat('all.js', {newLine: ';'}))
         .pipe(gulp.dest(outputDir + 'js/'))
         .pipe(browserSync.stream());
@@ -77,7 +77,7 @@ gulp.task('fontsSync', function () {
 });
 
 gulp.task('jsSync', function () {
-    return gulp.src(srcDir + 'js/!*.js')
+    return gulp.src(srcDir + 'js/*.js')
         .pipe(plumber())
         .pipe(gulp.dest(outputDir + 'js/'))
         .pipe(browserSync.stream());

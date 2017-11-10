@@ -22,9 +22,18 @@
 */
 
 .widgets {
+  margin-bottom: 50px;
 
-  background-color: $gray--lighten;
-  padding-top: 100px;
+  &-style {
+    background-color: $gray--lighten;
+    padding-top: 100px;
+    margin-bottom: 0;
+  }
+
+  &-offer {
+    padding-top: 100px;
+    margin-bottom: 100px;
+  }
 
   & .row {
     //flex-direction: row-reverse;

@@ -1,6 +1,7 @@
 .brands {
 
-  //background-color: $gray--lightest;
+  background-color: $gray--lightest;
+  margin-bottom: 100px;
 
   &__header {
     text-align: center;
@@ -34,7 +35,8 @@
     }
   }
 
-  &__item-link {
+  &__link {
+
     img{
       display: block;
       -webkit-filter: opacity(0.5);
@@ -48,6 +50,6 @@
       }
     }
   }
-
 }
+
 

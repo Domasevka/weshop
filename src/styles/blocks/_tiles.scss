@@ -26,10 +26,9 @@
 
     .btn-group {
       position: absolute;
-      text-align: center;
       left: 0;
       width: 100%;
-      bottom: 45px;
+      bottom: 40px;
     }
   }
 
@@ -64,6 +63,31 @@
     clip-path: polygon(0 45%, 0% 100%, 1% 100%, 1% 46%, 99% 2%, 99% 98%, 1% 98%, 1% 100%, 100% 100%, 100% 0%);
   }
 }
+
+.label {
+  &:after {
+    @include font(14px, 500, 40px);
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    text-transform: uppercase;
+    color: $color-secondary;
+    border: none;
+    text-align: center;
+    display: inline-block;
+  }
+}
+
+.label-new {
+  &:after {
+    content: 'new';
+    background-color: $color-main;
+  }
+}
+
   /*&__item-bot {
    background-image: url(../img/370x570.jpg);
    background-position: bottom;

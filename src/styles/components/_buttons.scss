@@ -6,11 +6,8 @@
   text-align: center;
   text-decoration: none;
 
-  letter-spacing: 2.5px;
-  word-spacing: 5px;
-  
-  font-size: 24px;
-  padding: 25px 50px;
+  border: 1px solid $color-main;
+
 
   &:not(:disabled):hover {
     cursor: pointer;
@@ -21,132 +18,103 @@
   &:disabled {
     cursor: default;
   }
-}
-
-.btn__main-back-fill {
-  background-color: $color-main;
-  color: $color-secondary;
-  border-style: 1px solid $color-main;
-
-  &:hover {
-    border-color: $btn-main-bg;
-    color: $btn-main-color;
-    background-color: $btn-main-bg;
+  &_center {
+    margin: 0 auto;
   }
 }
 
-.btn__main-back {
-  background-color: transparent;
-  color: $gray--dark;
-  border: 2px solid $gray--dark;
-
-  &:hover {
-    border-color: $btn-main-bg;
-    color: $btn-main-color;
-    background-color: $btn-main-bg;
-  }
+.btn-group {
+  display: flex;
 }
 
-// button medium size
-.btn__md {
-  @include font(14px, 500, 18px);
-  font-family: $font-family;
-
-  text-transform: uppercase;
-  padding: 17px 20px;
-  //min-width: 200px;
-}
-
-// button small size
-
-.btn__sm {
+.btn_bg {
   @include font(14px, 400, 14px);
+
+  padding: 14px 30px;
+  width: 100%;
+}
+
+.btn_md {
+  @include font(16px, 400, 16px);
+
+  border: 3px solid $color-main;
   letter-spacing: 0;
   word-spacing: 0;
+  text-transform: uppercase;
 
-  padding: 10px;
+  padding: 16px 40px;
 }
 
-.to-top {
-  @include transition;
-  //position: absolute;
-  position: fixed;
-  z-index: 2;
-  top: 100px;
-  display: none;
-  right: 50px;
-  width: 60px;
-  height: 60px;
-  cursor: pointer;
-  border-radius: 50%;
-  transform: translateY(-50%);
-  color: $btn-main-color;
-  background-color: $color-success;
-  box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.2);
-  &:hover {
-    background-color: $color-success--light;
-    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
-  }
-  @media (max-width: $md) {
-    right: 20px;
-    width: 50px;
-    height: 50px;
-  }
+.btn_m {
+  @include font(14px, 400, 14px);
+
+  padding: 8px 10px;
 }
 
-.label {
-   &:after {
-     @include font(14px, 500, 40px);
-     position: absolute;
-     top: 20px;
-     left: 20px;
-     height: 40px;
-     width: 40px;
-     border-radius: 50%;
-     text-transform: uppercase;
-     color: $color-secondary;
-     border: none;
-     text-align: center;
-     display: inline-block;
-   }
- }
 
-.label-new {
-  &:after {
-    content: 'new';
-    background-color: $color-main;
+
+// генератор цвета кнопки
+@each $color-name, $color, $color-hover, $color-active, $color-disabled in
+                (main, $color-secondary, $color-success, $color-main, #e3e3e3),
+                (secondary, $color-secondary, $gray--lighten, $color-main),
+                (nofill, $gray--dark, $color-success, $color-secondary) {
+
+  // кнопка с рамкой и прозрачным фоном
+  .btn-#{$color-name} {
+
+      background-color: transparent;
+
+
+    &:not(:disabled),
+    &:not(:disabled):link,
+    &:not(:disabled):visited {
+      color: $color;
+      @if $color-name == nofill {
+        border-color: $gray--dark;
+      } @else {
+      border-color: $color-main;
+    }
   }
-}
+    &:not(:disabled):hover,
+    &:not(:disabled):active {
+      color: $color-active;
+      @if $color-name == nofill {
+        border-color: $color-hover;
+        background-color: $color-hover;
+      } @else {
+        border-color: $color-active;
+        background-color: $color-hover;
+      }
+    }
 
-// buttons in catalog with price
-.flags {
-  &:after {
-    @include font(14px, 500);
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding: 6px 12px;
-    text-transform: uppercase;
-    color: $color-secondary;
-    border: none;
-    text-align: center;
-    display: inline-block;
+    &:disabled {
+      color: $color-disabled;
+      border-color: $color-disabled;
+    }
   }
-}
 
-.flags-price {
+  // кнопка полностью одного цвета
+  .btn-fully_#{$color-name} {
 
-  &:after {
-    content: '$888';
-    background-color: $color-main;
+    background-color: $color-active;
+
+    &:not(:disabled),
+    &:not(:disabled):link,
+    &:not(:disabled):visited {
+      color: $color;
+      border-color: $color-active;
+    }
+    &:not(:disabled):hover,
+    &:not(:disabled):active {
+      color: $color;
+      border-color: $color-hover;
+      background-color: $color-hover;
+    }
+    &:disabled {
+      color: $color-disabled;
+      border-color: $color-disabled;
+    }
   }
 }
 
 
-// buttons in catalog
-.btn-flag {
-  background-color: transparent;
-  color: $color-main;
-  border: 1px solid $color-main;
-  padding: 10px;
-}
