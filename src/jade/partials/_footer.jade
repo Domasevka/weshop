@@ -1,0 +1,56 @@
+footer
+  .footer
+    .container
+      .row
+        .footer__columns
+          .footer__col
+            a(href="#").header__logo
+              img(src="img/logo.jpg" width="161" height="52" alt="LoGo")
+            p USA most-loved online fashion store featuring new deals.<br>
+            p When it comes to trend, we all love being in it — Seeping every bit of it in WESHOP.com
+
+          .footer__col
+            h6 Support
+            ul.footer-nav
+              each val in ['How to Order?', 'Payments', 'Assistance', 'Assistance', 'Delivery']
+                li.footer-nav__item
+                  a(href="#").footer-nav__link= val
+
+          .footer__col
+            h6 Duties
+            ul.footer-nav
+              li.footer-nav__item
+                a(href="#").footer-nav__link Terms and Conditions
+              li.footer-nav__item
+                a(href="#").footer-nav__link Shop Policy
+              li.footer-nav__item
+                a(href="#").footer-nav__link Contact Us
+
+          .footer__col
+            h6 instagram feed
+            ul.insta
+              each imgName in ['58x60', '58x60', '58x60', '58x60']
+                li.insta__item
+                  a(href="#").insta__link
+                    img(src="img/#{imgName}.jpg")
+      .social
+        a(href="#").social__link
+          +icon('facebook')
+        a(href="#").social__link
+          +icon('twitter')
+        a(href="#").social__link
+            +icon('linkedin-letters')
+        a(href="#").social__link
+          +icon('youtube')
+        a(href="#").social__link
+          +icon('google-plus')
+
+          //a(href="").to-top.js-to-top
+           +icon('left-arrow','white_mod')
+.footer-copyright
+  .container
+    p © 2017
+
+
+
+

@@ -1,0 +1,24 @@
+//- Базовая разметка страницы
+mixin base-page(page)
+  doctype html
+  html(lang='en')
+    head
+      include ../meta/_head
+    body
+      //include ../svg/svg
+      include ../partials/_header
+      if block
+        block
+      //-include ../_index
+      include ../partials/_footer
+      //- скрипты
+      include ../meta/_scripts
+
+//svg-icon
+
+mixin icon(name, mod)
+  - mod = mod || ''
+  svg(class="icon icon-" + name + " " + mod)
+    use(xlink:href="i/sprite/sprite.svg#" + name)
+
+

@@ -1,0 +1,98 @@
+include components/_page-title
+section
+  .product
+    .container
+      .row
+        .product__contant
+          .product__slider.product__slider-single
+            .product__item
+              .product__img
+                img(src="img/555х600.jpg")
+            .product__item
+              .product__img
+                img(src="img/555х600_1.jpg")
+            .product__item
+              .product__img
+                img(src="img/555х600_2.jpg")
+
+          .product__slider.product__slider-nav
+            .product__item
+              .product__img
+                img(src="img/555х600.jpg")
+            .product__item
+              .product__img
+                img(src="img/555х600_1.jpg")
+            .product__item
+              .product__img
+                img(src="img/555х600_2.jpg")
+
+        .product__aside
+          .product__specs
+            .product__price
+            .product__brand
+            .rating-stars
+              i
+                +icon('heart')
+              i
+                +icon('heart')
+              i
+                +icon('heart')
+            span Add review
+            h6.product__title Star Wars Boys' The Force Awakens Character Match Up T-Shirt
+            p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+              |et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+              |aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit.
+            .product__row
+              .product__column
+                .product__form
+                  label
+                  select
+              .product__column
+                .product__form
+                  label
+                  select
+              .product__column
+                .product__form
+                  label
+                  select
+
+section
+  .product-info
+    ul.tabs__list
+      li.tabs__item
+        span Description
+      li.tabs__item
+        span History
+      li.tabs__item
+        span History
+    .tabs__content
+      .tabs__info.active
+        p content 1
+      .tabs__info
+        p content 2
+      .tabs__info
+        p content 3
+
+section
+  .feature
+    .container
+      .feature__menu-wrap
+        h2.title Related items
+
+      .products__column-wrap.row
+        - for (var a = 0; a < 4; a++)
+          include components/_product-block
+
+section
+  .brands
+    .container
+      ul.brands__list
+        each imgName in ['brands_1', 'brands_2', 'brands_3', 'brands_4', 'brands_5', 'brands_6']
+          li.brands__item
+            a(href="#").brands__link
+              img(src="img/#{imgName}.jpg")
+
+
+
+
+

@@ -45,7 +45,7 @@
   padding: 16px 40px;
 }
 
-.btn_m {
+.btn_sm {
   @include font(14px, 400, 14px);
 
   padding: 8px 10px;
@@ -60,7 +60,7 @@
                 (nofill, $gray--dark, $color-success, $color-secondary) {
 
   // кнопка с рамкой и прозрачным фоном
-  .btn-#{$color-name} {
+  .btn_#{$color-name} {
 
       background-color: transparent;
 
@@ -118,3 +118,26 @@
 }
 
 
+.label {
+  &:after {
+    @include font(14px, 500, 40px);
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    text-transform: uppercase;
+    color: $color-secondary;
+    border: none;
+    text-align: center;
+    display: inline-block;
+  }
+}
+
+.label-new {
+  &:after {
+    content: 'new';
+    background-color: $color-main;
+  }
+}

@@ -1,0 +1,49 @@
+header
+  .header
+    .container
+      .row
+        .header__column
+          ul.contacts-nav__list
+            li.contacts-nav__item
+              +icon('call-answer','white_mod')
+              a(href="#") (00)-123-456-789
+            li.contacts-nav__item
+              +icon('mail','white_mod')
+              a(href="#") weshop@gmail.com
+          a(href="#").header__logo
+            img(src="img/logo.jpg" width="161" height="52" alt="LoGo")
+          nav.main-menu
+            //.main-menu__mobile
+              +icon('bar-menu','success_mod')
+
+        .header__column.header__column_search
+          form.header-search
+            input.header-search__input(type='search', name='search', placeholder='Enter your search term...')
+            button.header-search__submit
+              +icon('search-symbol','success_mod')
+          ul.main-menu__list
+            each val in ['Home', 'Shop', 'Men', 'Women', 'Page', 'Blog', 'Contact us']
+              li.main-menu__item
+                a(href="#").main-menu__item-link= val
+
+        .header__column.header__column_cart
+          ul.user-nav__list
+            each val in ['English', 'USD', 'Login']
+              li.user-nav__item
+                a(href="#")= val
+
+          .nav-cart
+            .nav-cart__item
+              a(href="#").nav-cart__link
+                span.nav-cart__img
+                  +icon('bag-outline','white_mod')
+                span.nav-cart__counter 2
+            .nav-cart__item
+              span.nav-cart__price $25.00
+
+
+
+
+
+
+

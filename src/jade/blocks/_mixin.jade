@@ -1,8 +1,3 @@
-mixin icon(name, mod)
-  - mod = mod || ''
-  svg(class="icon icon-" + name + " " + mod)
-    use(xlink:href="i/sprite/sprite.svg#" + name)
-
 mixin services (imageName, title, text)
   div.services__item
     span.services__photo
@@ -10,25 +5,7 @@ mixin services (imageName, title, text)
     h5.services__title= title
     p.services__text= text
     .btn-group
-      a(href="#").btn.btn-nofill.btn_md.btn_center View collection
-
-mixin catalog (imgName)
-  div.catalog__item
-    div.catalog__img
-      img(src="img/#{imgName}.jpg" width="270" height="340" alt="img")
-    button.btn.btn-secondary.btn_sm.btn-cart
-      +icon('shopping-cart','gray_mod')
-    div.catalog__inner
-      span.flags.flags-price
-      div.catalog__buttons
-        button.btn.btn-secondary.btn_sm
-          +icon('view','gray_mod')
-        button.btn.btn-secondary.btn_sm
-          +icon('heart', 'gray_mod')
-        button.btn.btn_sm.btn-fully_main Add to cart
-          i
-            +icon('shopping-cart','white_mod')
-
+      a(href="#").btn.btn_nofill.btn_md.btn_center View collection
 
 mixin blog (imgName, title)
   .blog-post
