@@ -1,0 +1,30 @@
+.shop-list {
+
+  &__toolbar {
+    @include span(3);
+  }
+
+  &__catalog {
+    @include span(9);
+  }
+
+  &__row {
+    display: flex;
+    border-bottom: 1px solid $gray--lighten;
+    margin-bottom: 50px;
+    padding-bottom: 20px;
+  }
+}
+
+.cart-item {
+  &__image {
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    margin-right: 30px;
+
+  }
+
+
+}
+

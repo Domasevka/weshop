@@ -8,6 +8,10 @@
   h1 {
     text-align: center;
   }
+
+  &_bgr {
+    background-color: $gray--lighten;
+  }
 }
 
 .breadcrumbs {
@@ -16,11 +20,20 @@
   margin-bottom: 15px;
 
   &__link {
-    color: $gray--dark;
+    color: $gray--light;
+  }
+
+  &__list:not(:last-child) {
+    margin-right: 10px;
   }
 
   &__list:not(:last-child) &__link:after {
-    content: "\2022";
-    padding: 0 15px;
+    content: "";
+    font-size: 14px;
+    border: solid $gray--light;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    transform: rotate(-45deg);
+    padding: 3px;
   }
 }
