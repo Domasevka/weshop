@@ -63,7 +63,7 @@
     cursor: pointer;
     color: $gray--dark;
 
-    &-bord {
+    &_bord {
       border: 5px solid $gray--lightest;
     }
   }
@@ -78,9 +78,10 @@
     }
   }
 
-  &__title {
+  &__content {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     text-align: left;
     position: absolute;
     top: 0;
@@ -91,9 +92,8 @@
     color: $gray--dark;
     padding: 75px 30px;
 
-    &-bord {
-      padding: 70px 100px;
-      text-align: right;
+    &_bord {
+      padding: 0;
       height: 100%;
 
       &:before {
@@ -111,7 +111,12 @@
       }
     }
 
-    &-back {
+    &_info {
+      text-align: right;
+      padding-right: 60px;
+    }
+
+    &_back {
       padding-right: 20px;
       text-align: center;
 

@@ -1,11 +1,11 @@
 h1,
 .h1 {
-  @include font(40px, 200, 1);
+  @include font(54px, 800, 1);
 
   color: $gray--darken;
   //letter-spacing: 8px;
 
-  @media (min-width: $breakpoint) {
+  @media (max-width: $breakpoint) {
     @include font(50px, 200, 1.25);
   }
 
@@ -16,11 +16,9 @@ h1,
 
 h2,
 .h2 {
-  @include font(24px, 400, 1);
-
-  position: relative;
-  color: #3c3c3a;
+  @include font(42px, 400, 1);
   text-transform: uppercase;
+  color: $gray--darken;
 
 
   @media (max-width: $md) {
@@ -29,11 +27,13 @@ h2,
   }
 }
 
+// catalog-menu
 h3,
 .h3 {
-  @include font(16px, 400, 1.2);
+  @include font(26px, 600, 1.2);
 
-  color: $color-main;
+  color: $gray--darken;
+  letter-spacing: -1px;
   text-transform: uppercase;
 
   @media (max-width: 480px) {

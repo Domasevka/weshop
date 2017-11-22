@@ -10,7 +10,7 @@
   width: 100%;
   position: relative;
   text-transform: uppercase;
-  padding-top: 340px;
+  padding-top: 350px;
   &:after {
     content: '';
     position: absolute;
@@ -29,10 +29,16 @@
   &__title {
 
     h1 {
-      margin-bottom: 20px;
+      letter-spacing: -1px;
+      margin-bottom: 10px;
     }
-    h3 {
-      margin-bottom: 20px;
+
+    h2 {
+      margin-bottom: 72px;
+
+      span {
+      color: $color-main;
+      }
     }
   }
 }
@@ -57,7 +63,9 @@
   &__item  {
     position: relative;
     display: block;
-    margin-bottom: 15px;
+    &_small {
+      margin-bottom: 15px;
+    }
   }
 
   &__item-wrap {
@@ -71,6 +79,7 @@
     }
   }
 
+
   &__item + &__item {
     margin-bottom: 0;
   }
@@ -79,7 +88,7 @@
     display: block;
     width: 100%;
     overflow: hidden;
-    max-height: 500px;
+    //max-height: 500px;
   }
 
   &__item-top {

@@ -25,6 +25,10 @@
 
 .btn-group {
   display: flex;
+
+  a {
+    letter-spacing: -1px;
+  }
 }
 
 .btn_bg {

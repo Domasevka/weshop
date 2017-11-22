@@ -16,4 +16,19 @@ $src-fonts-open-sans: '../fonts';
   }
 }
 
+$src-fonts-open-sans: 'fonts/RobotoSlab';
+@each $font-folder, $file-name, $font-weight, $font-style in
+                (RobotoSlabThin, RobotoSlabThin, 100, normal),
+                (RobotoSlabLight, RobotoSlabLight, 200, normal),
+                (RobotoSlabRegular, RobotoSlabRegular, 400, normal),
+                (RobotoSlabBold, RobotoSlabBold, 700, normal), {
+  @font-face {
+    font-family: RobotoSlab;
+    font-weight: $font-weight;
+    font-style: $font-style;
 
+    src: url('#{$src-fonts-open-sans}/#{$font-folder}/#{$file-name}.woff2') format('woff2'),
+    url('#{$src-fonts-open-sans}/#{$font-folder}/#{$file-name}.woff') format('woff'),
+    url('#{$src-fonts-open-sans}/#{$font-folder}/#{$file-name}.ttf') format('truetype');
+  }
+}
