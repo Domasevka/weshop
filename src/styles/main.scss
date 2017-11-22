@@ -1,15 +1,17 @@
 @import "base/normalize";
 @import "components/variables";
 @import "components/mixins";
+@import "components/sprite";
+@import "components/buttons";
+@import "components/slick";
+@import "components/icons";
 @import "base/fonts";
 @import "base/reset";
 @import "base/grid";
-@import "components/sprite";
 @import "base/typography";
 @import "blocks/header";
 @import "blocks/service";
 @import "blocks/widgets";
-@import "blocks/tiles";
 @import "blocks/catalog";
 @import "blocks/services";
 @import "blocks/feature";
@@ -17,14 +19,10 @@
 @import "blocks/top-brand";
 @import "blocks/brands";
 @import "blocks/footer";
-@import "blocks/product";
 @import "blocks/product-block";
+@import "blocks/product-card";
 @import "blocks/page-title";
-@import "blocks/shop-list";
-@import "components/buttons";
-@import "components/slick";
-@import "components/icons";
-
-
-
+@import "home";
+@import "product";
+@import "shop";
 

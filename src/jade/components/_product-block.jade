@@ -1,19 +1,18 @@
-each imgName in productBlock
-  .product-block__item
-    .product-block__img
-      img(src="img/#{imgName.name}.jpg" width="270" height="340" alt="img")
-    button.btn.btn-secondary.btn_sm.btn_cart
-      +icon('shopping-cart','gray_mod')
-    div.product-block__inner
-      span.flags.flags-price
-      div.product-block__buttons
-        button.btn.btn_secondary.btn_sm
-          +icon('view','gray_mod')
-        button.btn.btn_secondary.btn_sm
-          +icon('heart', 'gray_mod')
-        button.btn.btn_sm.btn-fully_main Add to cart
-          i
-            +icon('shopping-cart','white_mod')
+.product-block__item
+  .product-block__img
+    img(src="img/270x340.jpg" width="270" height="340" alt="img")
+  button.btn.btn-secondary.btn_sm.btn_cart
+    +icon('shopping-cart','gray_mod')
+  div.product-block__inner
+    span.flags.flags-price
+    .product-block__buttons
+      button.btn.btn_secondary.btn_sm
+        +icon('view','gray_mod')
+      button.btn.btn_secondary.btn_sm
+        +icon('heart', 'gray_mod')
+      button.btn.btn_sm.btn-fully_main Add to cart
+        i
+          +icon('shopping-cart','white_mod')
 
 
 

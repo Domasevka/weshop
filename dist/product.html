@@ -5,7 +5,7 @@
     <title>weshop</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/main.css">
   </head>
   <body>
     <!--include ../svg/svg-->
@@ -54,9 +54,9 @@
             </div>
             <div class="header__column header__column_cart">
               <ul class="user-nav__list">
-                <li class="user-nav__item"><a href="#">English</a></li>
-                <li class="user-nav__item"><a href="#">USD</a></li>
-                <li class="user-nav__item"><a href="#">Login</a></li>
+                <li class="user-nav__item"><a href="#" class="user-nav__link">English</a></li>
+                <li class="user-nav__item"><a href="#" class="user-nav__link">USD</a></li>
+                <li class="user-nav__item"><a href="#" class="user-nav__link">Login</a></li>
               </ul>
               <div class="nav-cart">
                 <div class="nav-cart__item"><a href="#" class="nav-cart__link"><span class="nav-cart__img">
@@ -75,7 +75,7 @@
         <ul class="breadcrumbs">
           <li class="breadcrumbs__list"><a href="#" class="breadcrumbs__link">Home</a></li>
           <li class="breadcrumbs__list"><a href="#" class="breadcrumbs__link">shop</a></li>
-          <li class="breadcrumbs__list breadcrumbs__list active"><a href="#" class="breadcrumbs__link">details</a></li>
+          <li class="breadcrumbs__list"><a href="#" class="breadcrumbs__link">details</a></li>
         </ul>
         <h1>Product DETAILS</h1>
       </div>
@@ -84,7 +84,7 @@
       <div class="product">
         <div class="container">
           <div class="row">
-            <div class="product__contant">
+            <div class="product__container">
               <div class="product__slider product__slider-single">
                 <div class="product__item">
                   <div class="product__img"><img src="img/555х600.jpg"></div>
@@ -110,42 +110,91 @@
             </div>
             <div class="product__aside">
               <div class="product__specs">
-                <div class="product__price"></div>
-                <div class="product__brand"></div>
-                <div class="rating-stars"><i>
-                    <svg class="icon icon-heart ">
-                      <use xlink:href="i/sprite/sprite.svg#heart"></use>
-                    </svg></i><i>
-                    <svg class="icon icon-heart ">
-                      <use xlink:href="i/sprite/sprite.svg#heart"></use>
-                    </svg></i><i>
-                    <svg class="icon icon-heart ">
-                      <use xlink:href="i/sprite/sprite.svg#heart"></use>
-                    </svg></i></div><span>Add review</span>
-                <h6 class="product__title">Star Wars Boys' The Force Awakens Character Match Up T-Shirt</h6>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
-                  et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                  aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit.
-                </p>
-                <div class="product__row">
-                  <div class="product__column">
-                    <div class="product__form">
-                      <label></label>
-                      <select></select>
+                <div class="product-price">
+                  <div class="product-price__text">$589</div>
+                </div>
+                <div class="product-brand"><a href="#" class="product-brand__text">Star Wars Boys' The Force Awakens Character Match Up T-Shirt</a></div>
+                <div class="product-rating">
+                  <div class="product-rating__stars"><i>
+                      <svg class="icon icon-star-half-empty main_mod">
+                        <use xlink:href="i/sprite/sprite.svg#star-half-empty"></use>
+                      </svg>
+                      <svg class="icon icon-star-half-empty main_mod">
+                        <use xlink:href="i/sprite/sprite.svg#star-half-empty"></use>
+                      </svg>
+                      <svg class="icon icon-star-half-empty main_mod">
+                        <use xlink:href="i/sprite/sprite.svg#star-half-empty"></use>
+                      </svg>
+                      <svg class="icon icon-star-half-empty main_mod">
+                        <use xlink:href="i/sprite/sprite.svg#star-half-empty"></use>
+                      </svg>
+                      <svg class="icon icon-star-half-empty main_mod">
+                        <use xlink:href="i/sprite/sprite.svg#star-half-empty"></use>
+                      </svg></i>
+                  </div>
+                  <div class="product-rating__text">|Add review</div>
+                </div>
+                <div class="product__info">
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                    aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit.
+                  </p>
+                </div>
+                <div class="product-specs__row">
+                  <div class="product-specs__column">
+                    <div class="product-specs__form">
+                      <label>
+                        <select name="20">
+                          <option>20</option>
+                          <option>2</option>
+                          <option>3</option>
+                        </select>
+                      </label>
                     </div>
                   </div>
-                  <div class="product__column">
-                    <div class="product__form">
-                      <label></label>
-                      <select></select>
+                  <div class="product-specs__column">
+                    <div class="product-specs__form">
+                      <label>
+                        <select name="size">
+                          <option>size</option>
+                          <option>2</option>
+                          <option>3</option>
+                        </select>
+                      </label>
                     </div>
                   </div>
-                  <div class="product__column">
-                    <div class="product__form">
-                      <label></label>
-                      <select></select>
+                  <div class="product-specs__column">
+                    <div class="product-specs__form">
+                      <label>
+                        <select name="color">
+                          <option>color</option>
+                          <option>2</option>
+                          <option>3</option>
+                        </select>
+                      </label>
                     </div>
+                  </div>
+                </div>
+                <div class="product-btn__wrap">
+                  <div class="btn-group product-btn"><a href="#" class="btn btn_nofill btn_md">Add to cart</a></div>
+                  <div class="btn-group"><a href="#" class="btn btn-fully_main btn_md">Add to wishlist</a></div>
+                </div>
+                <div class="social__wrap">
+                  <h6 class="title__line">Share</h6>
+                  <div class="social"><a href="https://www.facebook.com/" target="_blank" class="social__linkfacebook">
+                      <svg class="icon icon-facebook ">
+                        <use xlink:href="i/sprite/sprite.svg#facebook"></use>
+                      </svg></a><a href="https://twitter.com/" target="_blank" class="social__linktwitter">
+                      <svg class="icon icon-twitter ">
+                        <use xlink:href="i/sprite/sprite.svg#twitter"></use>
+                      </svg></a><a href="https://linkedin.com/" target="_blank" class="social__linklinkedin-letters">
+                      <svg class="icon icon-linkedin-letters ">
+                        <use xlink:href="i/sprite/sprite.svg#linkedin-letters"></use>
+                      </svg></a><a href="https://www.google.com/" target="_blank" class="social__linkgoogle-plus">
+                      <svg class="icon icon-google-plus ">
+                        <use xlink:href="i/sprite/sprite.svg#google-plus"></use>
+                      </svg></a>
                   </div>
                 </div>
               </div>
@@ -156,20 +205,36 @@
     </section>
     <section>
       <div class="product-info">
-        <ul class="tabs__list">
-          <li class="tabs__item"><span>Description</span></li>
-          <li class="tabs__item"><span>History</span></li>
-          <li class="tabs__item"><span>History</span></li>
-        </ul>
+        <div class="tabs__row">
+          <div class="container">
+            <ul class="tabs__list">
+              <li class="tabs__item tabs__item_active"><span>Description</span></li>
+              <li class="tabs__item"><span>History</span></li>
+              <li class="tabs__item"><span>History</span></li>
+            </ul>
+          </div>
+        </div>
         <div class="tabs__content">
-          <div class="tabs__info active">
-            <p>content 1</p>
-          </div>
-          <div class="tabs__info">
-            <p>content 2</p>
-          </div>
-          <div class="tabs__info">
-            <p>content 3</p>
+          <div class="container">
+            <div class="tabs__pane tabs_active">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit.
+              </p>
+            </div>
+            <div class="tabs__pane">
+              <p>
+                content 2 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit.
+              </p>
+            </div>
+            <div class="tabs__pane">
+              <p>content 3 content 3</p>
+              <p>content 3 content 3</p>
+              <p>content 3 content 3</p>
+            </div>
           </div>
         </div>
       </div>
@@ -341,24 +406,37 @@
               </div>
             </div>
           </div>
-          <div class="social"><a href="#" class="social__link">
+          <div class="social"><a href="https://www.facebook.com/" target="_blank" class="social__linkfacebook">
               <svg class="icon icon-facebook ">
                 <use xlink:href="i/sprite/sprite.svg#facebook"></use>
-              </svg></a><a href="#" class="social__link">
+              </svg></a><a href="https://twitter.com/" target="_blank" class="social__linktwitter">
               <svg class="icon icon-twitter ">
                 <use xlink:href="i/sprite/sprite.svg#twitter"></use>
-              </svg></a><a href="#" class="social__link">
+              </svg></a><a href="https://linkedin.com/" target="_blank" class="social__linklinkedin-letters">
               <svg class="icon icon-linkedin-letters ">
                 <use xlink:href="i/sprite/sprite.svg#linkedin-letters"></use>
-              </svg></a><a href="#" class="social__link">
+              </svg></a><a href="https://www.youtube.com/" target="_blank" class="social__linkyoutube">
               <svg class="icon icon-youtube ">
                 <use xlink:href="i/sprite/sprite.svg#youtube"></use>
-              </svg></a><a href="#" class="social__link">
+              </svg></a><a href="https://www.google.com/" target="_blank" class="social__linkgoogle-plus">
               <svg class="icon icon-google-plus ">
                 <use xlink:href="i/sprite/sprite.svg#google-plus"></use>
-              </svg>
-              <!--a(href="").to-top.js-to-top+icon('left-arrow','white_mod')
-              --></a></div>
+              </svg></a>
+            <!--a(href="#").social__link
+            +icon('facebook')
+            a(href="#").social__link
+              +icon('twitter')
+            a(href="#").social__link
+                +icon('linkedin-letters')
+            a(href="#").social__link
+              +icon('youtube')
+            a(href="#").social__link
+              +icon('google-plus')
+            
+            //a(href="").to-top.js-to-top
+             +icon('left-arrow','white_mod')
+            -->
+          </div>
         </div>
       </div>
     </footer>

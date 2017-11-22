@@ -1,9 +1,15 @@
-include components/_page-title
+.page-title
+  .container
+    ul.breadcrumbs
+      each val in prodBreadcrumbs
+        li.breadcrumbs__list
+          a.breadcrumbs__link(href=val.href)=val.name
+    h1 Product DETAILS
 section
   .product
     .container
       .row
-        .product__contant
+        .product__container
           .product__slider.product__slider-single
             .product__item
               .product__img
@@ -28,50 +34,83 @@ section
 
         .product__aside
           .product__specs
-            .product__price
-            .product__brand
-            .rating-stars
-              i
-                +icon('heart')
-              i
-                +icon('heart')
-              i
-                +icon('heart')
-            span Add review
-            h6.product__title Star Wars Boys' The Force Awakens Character Match Up T-Shirt
-            p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
-              |et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-              |aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit.
-            .product__row
-              .product__column
-                .product__form
+            .product-price
+              .product-price__text $589
+            .product-brand
+              a(href="#").product-brand__text Star Wars Boys' The Force Awakens Character Match Up T-Shirt
+            .product-rating
+              .product-rating__stars
+                - var n = 0
+                  i
+                    while n < 5
+                      - n++
+                        +icon('star-half-empty', 'main_mod')
+              .product-rating__text |Add review
+            .product__info
+              p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                |et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                |aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit.
+            .product-specs__row
+              .product-specs__column
+                .product-specs__form
                   label
-                  select
-              .product__column
-                .product__form
+                    select(name="20")
+                      option 20
+                      option 2
+                      option 3
+              .product-specs__column
+                .product-specs__form
                   label
-                  select
-              .product__column
-                .product__form
+                    select(name="size")
+                      option size
+                      option 2
+                      option 3
+              .product-specs__column
+                .product-specs__form
                   label
-                  select
-
+                    select(name="color")
+                      option color
+                      option 2
+                      option 3
+            .product-btn__wrap
+              .btn-group.product-btn
+                a(href="#").btn.btn_nofill.btn_md Add to cart
+              .btn-group
+                a(href="#").btn.btn-fully_main.btn_md Add to wishlist
+            .social__wrap
+              h6.title__line Share
+              .social
+                each item, i in productSocials
+                  a(href=item.href, target="_blank", class='social__link' + item.icon)
+                    - mod = mod || ''
+                    svg(class="icon icon-" + item.icon + " " + mod)
+                      use(xlink:href="i/sprite/sprite.svg#" + item.icon)
 section
   .product-info
-    ul.tabs__list
-      li.tabs__item
-        span Description
-      li.tabs__item
-        span History
-      li.tabs__item
-        span History
+    .tabs__row
+      .container
+        ul.tabs__list
+          li.tabs__item.tabs__item_active
+            span Description
+          li.tabs__item
+            span History
+          li.tabs__item
+            span History
     .tabs__content
-      .tabs__info.active
-        p content 1
-      .tabs__info
-        p content 2
-      .tabs__info
-        p content 3
+      .container
+        .tabs__pane.tabs_active
+          p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+            | et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            | aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit.
+
+        .tabs__pane
+          p content 2 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+            |et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            |aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit.
+        .tabs__pane
+          p content 3 content 3
+          p content 3 content 3
+          p content 3 content 3
 
 section
   .feature

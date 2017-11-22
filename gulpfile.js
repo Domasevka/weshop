@@ -31,7 +31,6 @@ var srcDir = 'src/';
 var outputDir = 'dist/';
 var buildDir = 'build/';
 
-
 // for build folder
 gulp.task('cleanBuildDir', function (cb) {
     rimraf(outputDir, cb);
@@ -48,8 +47,8 @@ gulp.task('jade', function(){
 
 gulp.task('sass', function () {
 	return gulp.src(srcDir + 'styles/**/*.scss')
-		.pipe(plumber())
         .pipe(sourcemaps.init())
+        .pipe(plumber())
 		.pipe(sass())
 		.pipe(autoprefixer({
 			browsers: ['last 3 versions', "> 2%"],
@@ -61,13 +60,21 @@ gulp.task('sass', function () {
             })
         ]))
         .pipe(csso())
-        .pipe(concat("style.css"))
+        .pipe(sourcemaps.write())
 		.pipe(gulp.dest(outputDir + 'styles/'))
         .pipe(browserSync.stream())
+        //.pipe(browserSync.reload({stream: true}))
 		.pipe(notify('Sass is compile!'));
 });
 
-
+gulp.task('jsSync', function () {
+    return gulp.src(srcDir + 'js/*.js')
+        .pipe(plumber())
+        .pipe(concat('index.js', {newLine: ';'}))
+        //.pipe(uglify())
+        .pipe(gulp.dest(outputDir + 'js/'))
+        .pipe(browserSync.stream());
+});
 
 /*gulp.task('jsConcat', function () {
     return gulp.src(srcDir + 'js/all/!**!/!*.js')
@@ -94,14 +101,6 @@ gulp.task('fontsSync', function () {
         .pipe(browserSync.stream());
 });
 
-gulp.task('jsSync', function () {
-    return gulp.src(srcDir + 'js/*.js')
-        .pipe(plumber())
-        .pipe(gulp.dest(outputDir + 'js/'))
-        .pipe(browserSync.stream());
-});
-
-
 gulp.task('bower', function() {
     //return gulp.src(mainBowerFiles('**/*.js' ,{debugging:true}))
     return gulp.src([
@@ -112,17 +111,7 @@ gulp.task('bower', function() {
     ])
         .pipe(concat("vendor.js"))
         .pipe(uglify()) // Сжимаем JS файл
-        .pipe(gulp.dest(outputDir + 'js/')); // Выгружаем в папку app/js
-});
-
-
-gulp.task('watch', function(){
-    gulp.watch(srcDir + '*.jade', ['jade']);
-    gulp.watch(srcDir +'styles/**/*.scss', ['sass']);
-    gulp.watch(srcDir + 'js/*.js', ['jsSync']);
-    //gulp.watch(srcDir + 'js/all/**/*.js', ['jsConcat']);
-    gulp.watch(srcDir + 'img/**/*', ['imageSync']);
-    gulp.watch(srcDir + 'fonts/**/*', ['fontsSync']);
+        .pipe(gulp.dest(outputDir + 'js/')); // Выгружаем в папку
 });
 
 gulp.task('svgSpriteBuild', function (){
@@ -164,6 +153,27 @@ gulp.task('svgSpriteBuild', function (){
 });
 
 
+
+gulp.task('watch', function(){
+    gulp.watch(srcDir + '**/*.jade', ['jade']);
+    gulp.watch(srcDir +'styles/**/*.scss', ['sass']);
+    gulp.watch(srcDir + 'js/*.js', ['jsSync']);
+    gulp.watch(srcDir + 'img/**/*', ['imageSync']);
+    gulp.watch(srcDir + 'fonts/**/*', ['fontsSync']);
+});
+
+gulp.task('browser-sync', function () {
+    browserSync.init({
+        server: {
+            baseDir: outputDir
+        },
+        host: 'localhost',
+        port: 9000,
+        injectChanges: true,
+        logPrefix: 'App Front-End'
+    });
+});
+
 //minify images
 /*gulp.task('imgBuild', function () {
     return gulp.src(outputDir + 'img/!**!/!*')
@@ -190,22 +200,23 @@ gulp.task('htmlBuild', function () {
 });*/
 
 //copy, minify css
+
 /*gulp.task('cssBuild', function () {
- return gulp.src(outputDir + 'styles/!**!/!*')
- .pipe(postcss([
- mqpacker({
- sort: true
- })
- ]))
- .pipe(csso())
- .pipe(concat("style.css"))
- .pipe(gulp.dest(outputDir + 'styles/'))
+     return gulp.src(srcDir + 'css/!**!/!*')
+         .pipe(postcss([
+             mqpacker({
+                sort: true
+            })
+         ]))
+         .pipe(csso())
+         .pipe(concat("style.css"))
+         .pipe(gulp.dest(outputDir + 'styles/'))
  });*/
 
 
 gulp.task('build', function (callback) {
      runSequence('cleanBuildDir',
-     ['bower', 'jade', 'sass', 'imageSync','fontsSync', 'jsSync', 'svgSpriteBuild'],
+        ['jade', 'sass', 'bower', 'jsSync', 'imageSync', 'fontsSync', 'svgSpriteBuild'],
      callback);
  });
 
@@ -216,22 +227,10 @@ gulp.task('build', function (callback) {
 });*/
 
 
-gulp.task('browser-sync', function () {
-         browserSync.init({
-         server: {
-         baseDir: outputDir
-         },
-         host: 'localhost',
-         port: 9000,
-         injectChanges: true,
-         logPrefix: 'App Front-End'
-     });
- });
-
 gulp.task('default', function (callback) {
     runSequence('build', 'watch', 'browser-sync', callback);
 });
 
-//gulp.task('default', ['jade', 'sass', 'imageSync', 'fontsSync', /*'jsConcat', 'jsSync',*/ 'watch', 'browser-sync']);
+gulp.task('default', ['jade', 'sass', 'bower', 'jsSync', 'imageSync', 'fontsSync', 'svgSpriteBuild', 'watch', 'browser-sync']);
 
 

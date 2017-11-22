@@ -81,14 +81,21 @@
   &__social {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+
     ul {
       display: flex;
       justify-content: space-between;
     }
+  }
 
-    a {
-      display: block;
+  &__author {
+    display: block;
+
+    span {
+      margin-left: 10px;
     }
+
   }
 
   &__full {

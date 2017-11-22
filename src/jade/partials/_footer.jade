@@ -34,16 +34,21 @@ footer
                   a(href="#").insta__link
                     img(src="img/#{imgName}.jpg")
       .social
-        a(href="#").social__link
+        each item, i in socials
+          a(href=item.href, target="_blank", class='social__link' + item.icon)
+            - mod = mod || ''
+            svg(class="icon icon-" + item.icon + " " + mod)
+              use(xlink:href="i/sprite/sprite.svg#" + item.icon)
+        //a(href="#").social__link
           +icon('facebook')
-        a(href="#").social__link
-          +icon('twitter')
-        a(href="#").social__link
-            +icon('linkedin-letters')
-        a(href="#").social__link
-          +icon('youtube')
-        a(href="#").social__link
-          +icon('google-plus')
+          a(href="#").social__link
+            +icon('twitter')
+          a(href="#").social__link
+              +icon('linkedin-letters')
+          a(href="#").social__link
+            +icon('youtube')
+          a(href="#").social__link
+            +icon('google-plus')
 
           //a(href="").to-top.js-to-top
            +icon('left-arrow','white_mod')

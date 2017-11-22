@@ -53,6 +53,9 @@
 
   &__price {
     margin-bottom: 10px;
+  }
+
+  &__price_main {
     color: $color-main;
   }
 
@@ -65,10 +68,24 @@
     width: 27px;
     height: 27px;
     overflow: hidden;
-    padding: 3px;
+    padding: 0;
     margin-right: 10px;
+    line-height: 1.5;
+
     &:first-child:hover {
       width: 110px;
+      @include transition;
+      color: $color-secondary;
+      background-color: $color-success;
+    }
+    &:first-child:hover .icon {
+      color: $color-secondary;
+    }
+  }
+
+  .btn_flag {
+    span {
+      margin-left: 5px;
     }
   }
 }

@@ -1,0 +1,37 @@
+.product-card
+  a(href="#").product-card__image
+    img(src="img/270x300.jpg" width="270" height="300" alt="img")
+  .product-card__content
+    h5.product-card__title Denim t-shirt
+    .product-card__price $589
+    .product-rating
+      .product-rating__text
+        p Availavility :
+          span IN STOCK
+      .product-rating__stars
+        - var n = 0
+        i
+          while n < 5
+            - n++
+            +icon('star-half-empty', 'main_mod')
+
+    .product-card__info
+      p Retro tennis rackets make this garment-dyed jersey tee stand out.
+        |- crew neck - Hilfiger Denim flag logo on the sleeve Our model is 1.86m
+        |and is wearing a size M Hilfiger Denim T-shirt.
+    .product-card__buttons
+      button.btn.btn_secondary.btn_sm
+        +icon('heart', 'gray_mod')
+      button.btn.btn_secondary.btn_sm
+        +icon('view','gray_mod')
+      button.btn.btn_sm.btn-fully_main Add to cart
+        i
+          +icon('shopping-cart','white_mod')
+
+
+
+
+
+
+
+

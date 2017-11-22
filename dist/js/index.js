@@ -17,8 +17,7 @@ $(document).ready(function () {
 
 
 
-
-    // Product slider
+// Product slider
 
     $('.product__slider-single').slick({
         slidesToShow: 1,
@@ -77,17 +76,46 @@ $(document).ready(function () {
         $('.product__slider-single').slick('slickGoTo', goToSingleSlide);
     });
 
-    var tabs = document.getElementsByClassName('tabs__item');
-    var contents = document.getElementsByClassName('tabs__info');
+
+// Product tabs
+    $( function() {
+        var tabs = document.getElementsByClassName('tabs__item');
+        var contents = document.getElementsByClassName('tabs__pane');
 
 
-    for (let i = 0; i < tabs.length; i++) {
-        tabs[i].addEventListener('click' ,function(){
+        for (let i = 0; i < tabs.length; i++) {
+            tabs[i].addEventListener('click' ,function(){
 
-            document.querySelector('.active').classList.remove('active');
-            contents[i].classList.add("active")
-        })
-    }
+                document.querySelector('.tabs_active').classList.remove('tabs_active');
+                contents[i].classList.add("tabs_active")
+            });
+
+        }
+
+        for (let i = 0; i < tabs.length; i++) {
+            tabs[i].addEventListener('click', function () {
+
+                document.querySelector('.tabs__item_active').classList.remove('tabs__item_active');
+                tabs[i].classList.add("tabs__item_active")
+            })
+        }
+    } );
+
+    // shop slider
+    $( function() {
+        $( "#slider-range" ).slider({
+            range: true,
+            min: 0,
+            max: 500,
+            values: [ 75, 300 ],
+            slide: function( event, ui ) {
+                $( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
+            }
+        });
+        $( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) +
+            " - $" + $( "#slider-range" ).slider( "values", 1 ) );
+    } );
+
 
     initServicesSlider();
     //initProductSlider();

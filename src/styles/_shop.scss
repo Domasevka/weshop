@@ -1,0 +1,82 @@
+.shop {
+  color: $gray--dark;
+  padding-top: 30px;
+
+  &__toolbar {
+    @include span(3);
+  }
+
+  &__catalog {
+    @include span(9);
+  }
+}
+
+.cat-nav {
+  margin-bottom: 26px;
+
+  &__title {
+    border-bottom: 1px solid $gray--lighten;
+    text-transform: uppercase;
+    padding-bottom: 16px;
+    margin-bottom: 36px;
+  }
+
+  &__item {
+    display: flex;
+    padding-bottom: 16px;
+    margin-bottom: 12px;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  &__item:not(:last-child) {
+    border-bottom: 1px solid $gray--lighten;
+  }
+
+  &__count {
+    align-self: flex-end;
+    margin-left: auto;
+    font-size: 13 px;
+  }
+
+  &__input {
+    display: flex;
+    align-items: center;
+    width: 100%;
+
+    span {
+      display: block;
+    }
+  }
+
+  &__checkbox {
+    border: 2px solid #666;
+    border-radius: 50%;
+    clear: left;
+    height: 12px;
+    width: 12px;
+    line-height: 0;
+    //text-indent: -99999px;
+    margin-right: 20px;
+  }
+
+  &__count {
+    align-self: flex-end;
+    margin-left: auto;
+  }
+}
+
+.filter {
+  height: 30px;
+  border-bottom: 1px solid $gray--lighten;
+  margin-bottom: 42px;
+}
+
+
+
+

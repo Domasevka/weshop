@@ -1,0 +1,82 @@
+.page-title.page-title_bgr
+  .container
+    ul.breadcrumbs
+      each item in breadcrumbs
+
+        li.breadcrumbs__list
+            a.breadcrumbs__link(href=item.href)=item.name
+    h1 Product
+
+
+section
+ .shop
+  .container
+    .row
+      .shop__toolbar
+        .cat-nav
+          h6.cat-nav__title Category
+          ul.cat-nav__nav
+            each catItem in cat
+              li.cat-nav__item
+                a.cat-nav__link(href=catItem.href)=catItem.name
+                 span.cat-nav__count=catItem.count
+        .cat-nav
+          h6.cat-nav__title Price By Filter
+          p
+            label(for="amount") Price range:
+            input(type="text" id="amount" style="border:0; color:#f6931f; font-weight:bold;")
+          div(id="slider-range")
+        .cat-nav
+          h6.cat-nav__title Size
+          ul
+            each item in checkbox
+              li.cat-nav__item
+                a.cat-nav__link(href=item.href)
+                  span.cat-nav__checkbox
+                  span.cat-nav__description=item.name
+                  span.cat-nav__count=item.count
+        .cat-nav
+          h6.cat-nav__title Best sale
+          .top-brand__item
+            a(href="#").top-brand__image
+              img(src="img/70x80.jpg" width="250" height="160" alt="img")
+            .top-brand__content
+              h5.top-brand__title Denim t-shirt
+              .product-rating__stars
+                - var n = 0
+                i
+                  while n < 5
+                    - n++
+                    +icon('star-half-empty', 'main_mod')
+              p.top-brand__price $289 - $250
+
+
+      .shop__catalog
+        .filter
+          .filter_wrap
+        - for (var a = 0; a < 4; a++)
+           include components/_product-card
+
+section
+  .top-brand
+    .container
+      .row
+        .top-brand__column
+            h4.title__line Trending
+            - for (var a = 0; a < 3; a++)
+                include components/_top-brand
+        .top-brand__column
+            h4.title__line.title__line-center Top Rated
+            - for (var a = 0; a < 3; a++)
+                include components/_top-brand
+        .top-brand__column
+            h4.title__line.title__line-right Date Updated
+            - for (var a = 0; a < 3; a++)
+                include components/_top-brand
+
+section
+    include components/_widgets
+
+
+
+

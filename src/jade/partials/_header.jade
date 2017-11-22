@@ -22,15 +22,15 @@ header
             button.header-search__submit
               +icon('search-symbol','success_mod')
           ul.main-menu__list
-            each val in ['Home', 'Shop', 'Men', 'Women', 'Page', 'Blog', 'Contact us']
+            each val in menu
               li.main-menu__item
-                a(href="#").main-menu__item-link= val
+                a.main-menu__item-link(href=val.href)=val.name
 
         .header__column.header__column_cart
           ul.user-nav__list
             each val in ['English', 'USD', 'Login']
               li.user-nav__item
-                a(href="#")= val
+                a.user-nav__link(href="#")= val
 
           .nav-cart
             .nav-cart__item

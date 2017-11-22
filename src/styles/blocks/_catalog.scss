@@ -1,43 +1,48 @@
-.catalog {
+.catalog-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 90px;
+  margin-bottom: 45px;
 
-  &__menu-wrap{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 90px;
-    margin-bottom: 40px;
-  }
-
-  &__menu {
+  &__nav {
     display: flex;
   }
 
-  &__menu-list {
+  &__list {
     display: flex;
     justify-content: space-between;
   }
 
-  &__menu-link {
+  &__link {
     display: block;
     color: $gray--darken;
     text-transform: uppercase;
     padding: 10px 20px;
+
+    &:hover {
+      @include transition;
+      color: $color-success;
+    }
   }
 
-  &__column-wrap {
+}
+.catalog-column {
+
+  &__wrap {
     display: flex;
     flex-wrap: wrap;
     min-width: 100%;
   }
-}
 
-
-// catalog, featured
-
-.catalog, .feature, .top-brand, .blog {
-  .icon {
-    height: 18px;
-    width: 18px;
+  &__title {
+    display: inline-block;
+    text-transform: uppercase;
+    position: relative;
+    padding-bottom: 0;
   }
 }
+
+
+
 

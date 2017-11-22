@@ -1,9 +1,9 @@
-div.header-banner
-  div.container
-    div.header-banner__title
+.header-banner
+  .container
+    .header-banner__title
       h1 fashion is nothing
       h3 but mischief
-    div.btn-group
+    .btn-group
       a(href="#").btn.btn-fully_main.btn_md Shop Now
 
 section
@@ -27,26 +27,25 @@ section
               span.widget__title-text belt <strong> collection </strong>
               span see more...
 
-section
-  .service
-    .container
-      .service__list-wrap
-        ul.service__list
-          li.service__item
-            img.svg-img(src="img/headset.svg" width="161" height="52" alt="headset")
-            div
-              h4 24/7 Hour Support
-              p Our online support section is available and regularly updated if you'd prefer.
-          li.service__item
-            img.svg-img(src="img/truck.svg" width="161" height="52" alt="headset")
-            div
-              h4 Easy service
-              p Our online support section is available and regularly updated if you'd prefer.
-          li.service__item
-            img.svg-img(src="img/house.svg" width="161" height="52" alt="headset")
-            div
-              h4 Home delivery
-              p Our online support section is available and regularly updated if you'd prefer.
+
+      .service
+        .service__list-wrap
+          ul.service__list
+            li.service__item
+              img.svg-img(src="img/headset.svg" width="161" height="52" alt="headset")
+              div
+                h4 24/7 Hour Support
+                p Our online support section is available and regularly updated if you'd prefer.
+            li.service__item
+              img.svg-img(src="img/truck.svg" width="161" height="52" alt="headset")
+              div
+                h4 Easy service
+                p Our online support section is available and regularly updated if you'd prefer.
+            li.service__item
+              img.svg-img(src="img/house.svg" width="161" height="52" alt="headset")
+              div
+                h4 Home delivery
+                p Our online support section is available and regularly updated if you'd prefer.
 
 section
   .tiles
@@ -77,16 +76,14 @@ section
 section
   .catalog
     .container
-      .catalog__menu-wrap
-        h2.title New collection
-        nav.catalog__menu
-          //.products-menu__mobile
-            +icon('bar-menu','success_mod')
-          ul.catalog__menu-list
-            each val in ['All', 'Men', 'Women', 'Shop', 'Accessories']
-              li.catalog__menu-item
-                a(href="#").catalog__menu-link= val
-      .catalog__column-wrap
+      .catalog-menu
+        h2.catalog-menu__title New collection
+        .catalog-menu__nav
+          ul.catalog-menu__list
+            each val in catalogMenu
+              li.catalog-menu__item
+                a.catalog-menu__link(href=val.href)=val.name
+      .catalog-column__wrap
         .row
           - for (var a = 0; a < 8; a++)
             include components/_product-block
@@ -107,10 +104,11 @@ section
         nav.catalog__menu
           //.products-menu__mobile
             +icon('bar-menu','success_mod')
-          ul.catalog__menu-list
-            each val in ['All', 'Men', 'Women', 'Shop', 'Accessories']
-              li.catalog__menu-item
-                a(href="#").catalog__menu-link= val
+          ul.catalog-menu__list
+            each val in catalogMenu
+              li.catalog-menu__item
+                a.catalog-menu__link(href=val.href)=val.name
+
 
       .products__column-wrap.row
         - for (var a = 0; a < 4; a++)
@@ -139,10 +137,8 @@ section
       header.blog__header
         h2.title.title_center Latest news
       .row
-        +blog ("250x160", "4 Denim Shapes Worth Hanging Up Your SKINNY JEANS")
-        +blog ("250x160", "4 Denim Shapes Worth Hanging Up Your SKINNY JEANS")
-        +blog ("250x160", "4 Denim Shapes Worth Hanging Up Your SKINNY JEANS")
-        +blog ("250x160", "4 Denim Shapes Worth Hanging Up Your SKINNY JEANS")
+        - for (var a = 0; a < 4; a++)
+          include components/_blog-post
 
 section
   .top-brand
@@ -150,35 +146,19 @@ section
       .row
         .top-brand__column
           h4.title__line Trending
-          +top-brand ("70x80", "Denim t-shirt", "$289 - $250")
-          +top-brand ("70x80", "Denim t-shirt", "$289 - $250")
-          +top-brand ("70x80", "Denim t-shirt", "$289 - $250")
+          - for (var a = 0; a < 3; a++)
+            include components/_top-brand
         .top-brand__column
           h4.title__line.title__line-center Top Rated
-          +top-brand ("70x80", "Denim t-shirt", "$289 - $250")
-          +top-brand ("70x80", "Denim t-shirt", "$289 - $250")
-          +top-brand ("70x80", "Denim t-shirt", "$289 - $250")
+          - for (var a = 0; a < 3; a++)
+            include components/_top-brand
         .top-brand__column
           h4.title__line.title__line-right Date Updated
-          +top-brand ("70x80", "Denim t-shirt", "$289 - $250")
-          +top-brand ("70x80", "Denim t-shirt", "$289 - $250")
-          +top-brand ("70x80", "Denim t-shirt", "$289 - $250")
+          - for (var a = 0; a < 3; a++)
+            include components/_top-brand
 
 section
-  .widgets
-    .container
-      .row
-        .widget__column
-          a(href="#").widget__link
-            span.widget__image
-              img(src="img/555x250.jpg" width="555" height="250" alt="")
-            span.widget__title.widget__title-bord
-
-        .widget__column
-          .widget__banner
-            h2.widget__title-text Newsletter<br>
-            p we are promising,we wil not spam.
-            a(href="#").btn.btn_nofill.btn_bg Add to cart
+  include components/_widgets
 
 section
   .brands

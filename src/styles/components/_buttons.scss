@@ -52,7 +52,6 @@
 }
 
 
-
 // генератор цвета кнопки
 @each $color-name, $color, $color-hover, $color-active, $color-disabled in
                 (main, $color-secondary, $color-success, $color-main, #e3e3e3),
@@ -64,7 +63,6 @@
   .btn_#{$color-name} {
 
       background-color: transparent;
-
 
     &:not(:disabled),
     &:not(:disabled):link,
@@ -83,7 +81,7 @@
         border-color: $color-hover;
         background-color: $color-hover;
       } @else {
-        border-color: $color-active;
+        border-color:  $color-active;
         background-color: $color-hover;
       }
     }
