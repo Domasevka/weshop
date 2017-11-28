@@ -1,8 +1,8 @@
-.top-brand__item
-  a(href="#").top-brand__image
+.top-brand
+  a(href="#").top-brand__image-link
     img(src="img/70x80.jpg" width="250" height="160" alt="img")
-  .top-brand__content
-    h5.top-brand__title Denim t-shirt
+  span.top-brand__content
+    span.top-brand__title Denim t-shirt
       //if topBrand == 'toolbar'
         .product-rating__stars
           - var n = 0
@@ -12,13 +12,13 @@
                 +icon('star-half-empty', 'main_mod')
         p.top-brand__price $289 - $250
       //else if topBrand == 'brand'
-      p.top-brand__price.top-brand__price_main $289 - $250
-        .top-brand__btn
-          button.btn.btn_flag
-            +icon('shopping-cart', 'gray_mod')
-            span Add to cart
-          button.btn.btn-flag.btn-wishlist
-            +icon('heart', 'gray_mod')
+    span.top-brand__price.top-brand__price_main $289 - $250
+    span.top-brand__link
+      a(href='#').btn.btn_flag
+        +icon('shopping-cart', 'gray_mod')
+        span Add to cart
+      a(href='#').btn.btn-flag.btn-wishlist
+        +icon('heart', 'gray_mod')
 
 
 

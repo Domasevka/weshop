@@ -1,20 +1,6 @@
 .footer {
-
   margin-bottom: 30px;
-
-  &__columns {
-    display: flex;
-    flex-wrap: wrap;
-    box-sizing: border-box;
-    color: $gray--dark;
-
-    min-width: 100%;
-    margin: 0 -15px;
-
-    @media (max-width: $md) {
-      padding-top: 20px;
-    }
-  }
+  color: $gray--dark;
 
   &__col {
     @include span(3);
@@ -38,8 +24,8 @@
 
     &:nth-of-type(2) {
       padding-left: 70px;
-
     }
+
     @media (max-width: $md) {
       width: calc(100% - 30px);
       padding-left: 0;
@@ -97,14 +83,12 @@
 
   &__item:not(:last-child) {
     margin-bottom: 20px;
-
   }
 }
 
 .footer-copyright {
   display: flex;
   background-color: $color-main;
-
 
   p {
     color: $color-secondary;

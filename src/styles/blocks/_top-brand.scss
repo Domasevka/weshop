@@ -1,4 +1,4 @@
-.top-brand {
+.brand {
   padding-top: 100px;
   margin-bottom: 70px;
 
@@ -13,43 +13,72 @@
       text-align: right;
     }
 
-    &:last-child > .top-brand__item {
+    /*&:last-child > .top-brand {
       flex-direction: row-reverse;
-      .top-brand__image {
-        margin-right: 0;
-      }
-      .top-brand__content {
-        margin-right: 20px;
-      }
-    }
+
+    }*/
   }
 
-  h4 {
+  &__title {
     text-transform: uppercase;
     display: inline-block;
     position: relative;
+    color: $gray--dark;
     margin-bottom: 33px;
     padding-bottom: 10px;
+    width: 100%;
+  }
+}
+
+.brand__column_left {
+
+  .top-brand {
+    flex-direction: row-reverse;
+
+    .btn {
+      margin-right: 0;
+      margin-left: 10px;
+    }
+
   }
 
-  &__item {
-    display: flex;
-    padding-bottom: 26px;
+  .top-brand__link {
+    flex-direction: row-reverse;
   }
 
-  &__item:not(:last-child) {
+
+}
+
+.top-brand {
+  display: flex;
+  padding-bottom: 26px;
+
+  &:not(:last-child) {
     border-bottom: 1px solid $gray--lighten;
     margin-bottom: 28px;
   }
 
-  &__image {
-    margin-right: 20px;
+  &__image-link {
+    display: block;
+  }
+
+  &__content {
+    padding: 0 20px;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
   }
 
   &__title {
+    @include font(18px 400 1.2);
+    color: $gray--dark;
     line-height: 1.2;
     margin-bottom: 8px;
   }
+
 
   &__price {
     margin-bottom: 10px;
@@ -59,7 +88,7 @@
     color: $color-main;
   }
 
-  &__btn {
+  &__link {
     display: flex;
   }
 
@@ -89,6 +118,7 @@
     }
   }
 }
+
 
 .title__line {
   &:after {

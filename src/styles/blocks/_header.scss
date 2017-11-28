@@ -19,6 +19,12 @@
     align-items: flex-end;
   }
 
+  &__subcolumn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
   &__logo {
     img {
       width: 161px;
@@ -101,7 +107,7 @@
 
 .user-nav {
 
-  &__list {
+  &__items {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -127,12 +133,10 @@
   }
 }
 
-.nav-cart {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.cart {
+  position: relative;
 
-  &__item:not(:last-child) {
+  &__item {
     margin-right: 20px;
     position: relative;
   }
@@ -166,8 +170,6 @@
 }
 
 .main-menu {
-  z-index: 10;
-
   /*&__mobile {
     display: none;
     width: 100%;
@@ -177,7 +179,8 @@
     }
   }*/
 
-  &__list {
+  &__items {
+    z-index: 10;
     display: flex;
     justify-content: center;
   }
@@ -192,7 +195,7 @@
     margin-right: 0;
   }
 
-  &__item-link {
+  &__link {
     @include font(14px, 200);
     display: block;
     padding: 10px 10px;

@@ -101,6 +101,25 @@ $(document).ready(function () {
         }
     } );
 
+
+// pagination
+    $(function () {
+        window.pagObj = $('.pagination').twbsPagination({
+            totalPages: 6,
+            visiblePages: 5,
+            first: '',
+            prev: 'Prev',
+            next: 'Next',
+            last: '',
+            onPageClick: function (event, page) {
+                console.info(page + ' (from options)');
+            }
+        }).on('page', function (event, page) {
+            console.info(page + ' (from event listening)');
+        });
+    });
+
+
     // shop slider
     $( function() {
         $( "#slider-range" ).slider({

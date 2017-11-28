@@ -1,4 +1,4 @@
-.shop {
+.catalog {
   color: $gray--dark;
   padding-top: 30px;
 
@@ -6,9 +6,13 @@
     @include span(3);
   }
 
-  &__catalog {
+  &__container {
     @include span(9);
   }
+}
+
+.filter-block {
+  display: flex;
 }
 
 .cat-nav {
@@ -75,6 +79,34 @@
   height: 30px;
   border-bottom: 1px solid $gray--lighten;
   margin-bottom: 42px;
+}
+
+.tag {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+
+  &__item {
+    margin-bottom: 5px;
+
+    &:not(:last-child) {
+      margin-right: 5px;
+    }
+  }
+
+  &__link {
+    @include font(14px, 400, 14px);
+    @include transition;
+    padding: 8px 10px;
+    background-color: $gray--lighten;
+    display: inline-block;
+    color: $gray--dark;
+
+    &:hover {
+      background-color: $color-main;
+      color: $color-secondary;
+    }
+  }
 }
 
 

@@ -6,17 +6,10 @@
     margin-top: 50px;
   }
 
-  &__wrap {
-    padding: 50px 0;
-    margin: 70px 0;
-    @media (max-width: $md) {
-      margin: 50px 0 0;
-    }
-  }
+  &__container-wrap {
+    padding: 70px 0;
 
-  &__list-wrap {
-    margin-left: -15px;
-    margin-right: -15px;
+
     @media (max-width: $lg) {
       margin-top: 70px;
     }
@@ -25,14 +18,13 @@
     }
   }
 
-  &__list {
+  &__container {
     display: flex;
     flex-flow: row;
     justify-content: flex-end;
     align-items: center;
     max-width: 800px;
     margin: 0 auto;
-    padding-top: 10px;
     text-align: center;
     @media (max-width: $lg) {
       max-width: 500px;
@@ -48,6 +40,7 @@
     padding-right: 15px;
 
   }
+
   &__photo {
     display: block;
     overflow: hidden;

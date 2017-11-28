@@ -5,6 +5,7 @@
 @import "components/buttons";
 @import "components/slick";
 @import "components/icons";
+@import "components/pagination";
 @import "base/fonts";
 @import "base/reset";
 @import "base/grid";
@@ -12,9 +13,8 @@
 @import "blocks/header";
 @import "blocks/service";
 @import "blocks/widgets";
-@import "blocks/catalog";
 @import "blocks/services";
-@import "blocks/feature";
+@import "blocks/product-list";
 @import "blocks/blog";
 @import "blocks/top-brand";
 @import "blocks/brands";
@@ -24,5 +24,5 @@
 @import "blocks/page-title";
 @import "home";
 @import "product";
-@import "shop";
+@import "catalog";
 

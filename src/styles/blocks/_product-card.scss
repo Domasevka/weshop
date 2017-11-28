@@ -1,8 +1,14 @@
-.product-card {
+.product-card__container > .product-card {
+  margin-bottom: 50px;
 
+  &:last-child  {
+    margin-bottom: 0;
+  }
+}
+
+.product-card {
   display: flex;
   border-bottom: 1px solid $gray--lighten;
-  margin-bottom: 50px;
   padding-bottom: 47px;
 
   &__image {
@@ -27,7 +33,6 @@
     text-transform: uppercase;
     line-height: 1;
     margin-bottom: 20px;
-
   }
 
   &__price {
@@ -35,29 +40,31 @@
     margin-bottom: 16px;
   }
 
+  /*&__info {
+    margin-bottom: 30px;
+  }*/
 
-
-  &__info {
-    p {
-      margin-bottom: 30px;
-    }
-  }
-
-  &__buttons {
+  &__link {
     margin-top: auto;
-    margin-bottom: 10px;
 
-    button {
+    .btn {
       margin-right: 15px;
     }
   }
+
+  .product-rating {
+
+    &__text {
+      padding-bottom: 22px;
+    }
+  }
 }
+
 
 .product-rating {
 
   &__text {
     position: relative;
-    padding-bottom: 22px;
 
     p {
       margin-right: 30px;

@@ -106,7 +106,7 @@ gulp.task('bower', function() {
     return gulp.src([
         'bower_components/jquery/dist/jquery.js',
         //'bower_components/jquery-ui/jquery-ui.js',
-        //'bower_components/jquery-navScroll/jquery.navScroll.js',
+        'bower_components/twbs-pagination/jquery.twbsPagination.js',
         'bower_components/slick-carousel/slick/slick.min.js'
     ])
         .pipe(concat("vendor.js"))

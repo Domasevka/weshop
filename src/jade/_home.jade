@@ -8,7 +8,7 @@
       a(href="#").btn.btn-fully_main.btn_md Shop Now
 
 section
-  .widgets.widgets-style
+  .widgets.widgets_style
     .container
       .row
         .widget__column
@@ -16,7 +16,8 @@ section
             span.widget__image
               img(src="img/555x250.jpg" width="555" height="250" alt="")
             span.widget__content.widget__content_bord.widget__content_info
-              span.widget__content-name Men’s t-shirt<br><strong>collection</strong>
+              span.widget__content-name Men’s t-shirt<br>
+                strong.widget__content-text_main  collection
               span 2016
 
         .widget__column
@@ -25,7 +26,8 @@ section
               img(src="img/555x250.jpg" width="555" height="250" alt="")
             span.widget__content
               span.widget__content-text 50% offer
-              span.widget__content-text belt <strong> collection </strong>
+              span.widget__content-text belt
+                strong.widget__content-text_main  collection
               span see more...
 
 
@@ -33,20 +35,20 @@ section
         .service__list-wrap
           ul.service__list
             li.service__item
-              img.svg-img(src="img/headset.svg" width="161" height="52" alt="headset")
-              div
-                h4 24/7 Hour Support
-                p Our online support section is available and regularly updated if you'd prefer.
+              +icon('headset', 'main_mod')
+              div.service__content
+                h4.service__title 24/7 Hour Support
+                p.service__text Our online support section is available and regularly updated if you'd prefer.
             li.service__item
-              img.svg-img(src="img/truck.svg" width="161" height="52" alt="headset")
-              div
-                h4 Easy service
-                p Our online support section is available and regularly updated if you'd prefer.
+              +icon('truck', 'main_mod')
+              div.service__content
+                h4.service__title Easy service
+                p.service__text Our online support section is available and regularly updated if you'd prefer.
             li.service__item
-              img.svg-img(src="img/house.svg" width="161" height="52" alt="headset")
-              div
-                h4 Home delivery
-                p Our online support section is available and regularly updated if you'd prefer.
+              +icon('house', 'main_mod')
+              div.service__content
+                h4.service__title Home delivery
+                p.service__text Our online support section is available and regularly updated if you'd prefer.
 
 section
   .tiles
@@ -63,57 +65,50 @@ section
               //img(src="img/370x570.jpg" width="370" height="570" alt="")
         .tiles__column
           a(href="#").tiles__item.tiles__item_small
-            span.tiles__photo
-              img(src="img/370x242.jpg" width="370" height="242" alt="")
+            img(src="img/370x242.jpg" width="370" height="242" alt="")
           a(href="#").tiles__item.tiles__item_small.label.label-new
-            span.tiles__photo
-              img(src="img/370x242.jpg" width="370" height="242" alt="")
+            img(src="img/370x242.jpg" width="370" height="242" alt="")
         .tiles__column
           a(href="#").tiles__item.tiles__item_big.widget__content_bord
-            span.tiles__photo
-              img(src="img/370x500.jpg" width="370" height="500" alt="")
-            span
+            img(src="img/370x500.jpg" width="370" height="500" alt="")
 
 section
-  .catalog
-    .container
-      .catalog-menu
-        h3.catalog-menu__title New collection
-        .catalog-menu__nav
-          ul.catalog-menu__list
-            each val in catalogMenu
-              li.catalog-menu__item
-                a.catalog-menu__link(href=val.href)=val.name
-      .catalog-column__wrap
-        .row
-          - for (var a = 0; a < 8; a++)
-            include components/_product-block
+  .container
+    .product-block
+      h3.product-block__title New collection
+      nav.product-block__nav
+        ul.product-block__list
+          each val in productBlock
+            li.product-block__item
+              a.product-block__link(href=val.href)=val.name
+    .product-block__content
+      .row
+        - for (var a = 0; a < 8; a++)
+          include components/_product-list
 
 section
   .services
-    .services__wrap
-      .container
-        .services__list-wrap
-          .services__list
-            +services ("", "PERSONAL ASSISTENT", "You don’t know what to choose? We will help you.")
+    .container
+      .services__container-wrap
+        .services__container
+          +services ("", "PERSONAL ASSISTENT", "You don’t know what to choose? We will help you.")
 
 section
-  .feature
-    .container
-      .feature__menu-wrap
-        h3.title Featured
-        nav.catalog__menu
-          //.products-menu__mobile
-            +icon('bar-menu','success_mod')
-          ul.catalog-menu__list
-            each val in catalogMenu
-              li.catalog-menu__item
-                a.catalog-menu__link(href=val.href)=val.name
+  .container
+    .product-block
+      h3.product-block__title Featured
+        //.products-menu__mobile
+          +icon('bar-menu','success_mod')
+      nav.product-block__nav
+        ul.product-block__list
+          each val in productBlock
+            li.product-block__item
+              a.product-block__link(href=val.href)=val.name
 
-
-      .products__column-wrap.row
+    .product-block__content
+      .row
         - for (var a = 0; a < 4; a++)
-          include components/_product-block
+          include components/_product-list
 
 section
   .widgets.widgets-offer
@@ -135,26 +130,25 @@ section
 section
   .blog
     .container
-      header.blog__header
-        h3.title.title_center Latest news
+      h3.title.title_center Latest news
       .row
         - for (var a = 0; a < 4; a++)
           include components/_blog-post
 
 section
-  .top-brand
+  .brand
     .container
       .row
-        .top-brand__column
-          h4.title__line Trending
+        .brand__column
+          span.brand__title.title__line Trending
           - for (var a = 0; a < 3; a++)
             include components/_top-brand
-        .top-brand__column
-          h4.title__line.title__line-center Top Rated
+        .brand__column
+          span.brand__title.title__line.title__line-center Top Rated
           - for (var a = 0; a < 3; a++)
             include components/_top-brand
-        .top-brand__column
-          h4.title__line.title__line-right Date Updated
+        .brand__column.brand__column_left
+          span.brand__title.title__line.title__line-right Date Updated
           - for (var a = 0; a < 3; a++)
             include components/_top-brand
 

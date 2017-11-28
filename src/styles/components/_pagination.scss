@@ -1,0 +1,51 @@
+.pagination-block {
+  display: flex;
+  justify-content: center;
+  color: $gray--dark;
+  text-align: center;
+  width: 100%;
+  padding-top: 50px;
+  margin-bottom: 50px;
+  //border-bottom: 1px solid $gray--lighten;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  color: $gray--dark;
+
+  .page-item {
+    display: block;
+    position: relative;
+
+    &.next {
+      &:before {
+        content: '';
+        height: 2px;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        bottom: -12px;
+        background-color: $color-main;
+        z-index: 1;
+      }
+
+      &.disabled {
+
+        &:before {
+          background-color: transparent;
+        }
+      }
+    }
+
+    &:not(:last-child) {
+      margin-right: 35px;
+    }
+
+    &.active {
+      color: $color-main;
+    }
+
+  }
+
+}

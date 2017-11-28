@@ -5,13 +5,14 @@
         a(href="#").widget__link
           span.widget__image
             img(src="img/555x250.jpg" width="555" height="250" alt="")
-          span.widget__content.widget__content_bord
+          span.widget__content.widget__content_bord.bord_secondary
 
       .widget__column
-        .widget__banner
-          h2.widget__content-text Newsletter<br>
-          p we are promising,we wil not spam.
-          a(href="#").btn.btn_nofill.btn_bg Add to cart
+        span.widget__column-name Newsletter
+        span.widget__column-text we are promising,we wil not spam.
+        .btn-group
+          a(href="#").btn.btn_nofill.btn_bg Enter your email
+            +icon('right-arrow','dray_mod')
 
 
 

@@ -1,5 +1,6 @@
 .product {
   background-color: $gray--lighten;
+  padding-top: 100px;
 
   &__container {
     @include span(6);
@@ -9,6 +10,12 @@
     @include span(6);
     z-index: 2;
   }
+
+  &__features {
+    margin-bottom: 30px;
+    border-bottom: 1px solid $gray--darken;
+  }
+
 
   &__img {
     display: block;
@@ -41,16 +48,13 @@
     background-color: $gray--light;
   }
 
-  &__specs {
-    padding-top: 60px;
-  }
-
   &__info {
     margin-bottom: 40px;
   }
 
   &-price {
-    margin-bottom: 25px;
+    padding-top: 60px;
+    margin-bottom: 20px;
   }
 
   &-price__text {
@@ -62,7 +66,7 @@
 .product-brand {
   margin-bottom: 12px;
 
-  &__text {
+  &__title {
     font-size: 18px;
     color: $gray--dark;
   }
@@ -86,18 +90,12 @@
 }
 
 .product-specs {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 60px;
 
-  &__row {
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 60px;
-  }
+  &__item {
 
-  &__form {
-    select {
-      height: 40px;
-      margin-right: 30px;
-    }
   }
 }
 
@@ -114,6 +112,8 @@
 }
 
 .tabs {
+  background-color: $color-main;
+  margin-bottom: 40px;
 
   .js &__slider-single > &__item:nth-child(1n+2) {
     display: none;
@@ -121,11 +121,6 @@
 
   .js &__slider-single.slick-initialized > &__item:nth-child(1n+2) {
     display: block;
-  }
-
-  &__row {
-    background-color: $color-main;
-    margin-bottom: 40px;
   }
 
   &__list {
@@ -154,7 +149,6 @@
 
   &__pane {
     display: none;
-
   }
 
   &_active {
@@ -164,6 +158,13 @@
   &__item_active {
 
     &:after {
+      /*content: '';
+      position: absolute;
+      height: 20px;
+      width: 20px;
+      transform: rotate(45deg);
+      background-color: #fff;
+      box-shadow: 0 3px 10px 0 rgba(0,0,0,.09);*/
       position: absolute;
       bottom: -2px;
       right: 50%;
