@@ -1,23 +1,26 @@
 .service {
-  background-color: $gray--lighten;
-
-  &__list-wrap {
-    //padding-bottom: 70px;
-    padding-top: 70px;
-  }
+  padding-top: 70px;
+  padding-bottom: 50px;
 
   &__list {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
   }
 
   &__item {
+    @include span(12);
     display: flex;
     justify-content: center;
     align-items: center;
-    width: percentage(400px / 1200px);
-    margin-left: 15px;
-    margin-right: 15px;
+
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+
+    @media (min-width: $md) {
+      @include span(4);
+    }
 
     .icon {
       width: 60px;

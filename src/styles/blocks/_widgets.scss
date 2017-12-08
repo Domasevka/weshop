@@ -22,28 +22,27 @@
 */
 
 .widgets {
-  margin-bottom: 50px;
 
-  &_style {
-    background-color: $gray--lighten;
-    padding-top: 100px;
-    margin-bottom: 0;
-  }
 
   &-offer {
     padding-top: 100px;
     margin-bottom: 100px;
   }
 
+}
+
+.widget {
+  background-color: $gray--lighten;
+  padding-top: 100px;
+
+
   & .row {
     //flex-direction: row-reverse;
     text-align: right;
   }
-}
-
-.widget {
 
   &__column {
+    @include span(12); // элемент занимает 4 колонки
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -51,12 +50,21 @@
     position: relative;
     background-color: $gray--lighten;
 
-    @include span(6); // элемент занимает 4 колонки
+    &:not(:last-child) {
+      margin-bottom: 30px;
 
-
-    @media (min-width: $md) and (max-width: $breakpoint - 1) {
-      @include span(6); // элемент занимает 4 колонки
+      @media (min-width: $md) {
+        margin-bottom: 0;
+      }
     }
+
+    @media (min-width: $md) {
+      @include span(6);
+    }
+
+    /*@media (min-width: $md) and (max-width: $breakpoint - 1) {
+      @include span(6); // элемент занимает 4 колонки
+    }*/
 
     &-name {
       @include font(24px, 600, 1);
@@ -67,7 +75,6 @@
 
     &-text {
       color: $gray--dark;
-
     }
 
     .btn-group {

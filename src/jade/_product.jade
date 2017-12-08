@@ -51,25 +51,29 @@ section
             p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
               |et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
               |aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit.
+
           .product-specs
-            .product-specs__item
-              button.btn
-              span 1
-              button.btn
+            .product-specs__wrap
+              .product-specs__quantyty
+                button(type="button", data-field="quantity").btn.btn_nofill.product-specs__btn.btn_plus
+                  +icon('minus-sign', 'gray_mod')
+                input(name="quantity", value="1", type="text").product-specs__btn
+                button(type="button", data-field="quantity").btn.btn_nofill.product-specs__btn.btn_minus
+                  +icon('plus', 'gray_mod')
 
-            .product-specs__item
-              select(name="size")
-                option(value="")
-                option(value="S") S
-                option(value="M") M
-                option(value="L") L
-                option(value="XL") XL
+              .product-specs__item
+                select(title="size")
+                  option(value="") Size
+                  option(value="S") Small
+                  option(value="M") Medium
+                  option(value="L") Large
+                  option(value="XL") X-Large
 
-            .product-specs__item
-              select(name="color")
-                option(value="")
-                  option(value="black") black
-                  option(value="white") white
+              .product-specs__item
+                select(title="color")
+                  option(value="") Color
+                    option(value="black") black
+                    option(value="white") white
           .product-btn__wrap
             .btn-group.product-btn
               a(href="#").btn.btn_nofill.btn_md Add to cart

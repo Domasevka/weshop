@@ -1,17 +1,25 @@
 .product-block {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   padding-top: 90px;
   margin-bottom: 45px;
+
+
 
   &__nav {
     display: flex;
   }
 
   &__list {
+    flex-wrap: wrap;
     display: flex;
     justify-content: space-between;
+
+    @media (min-width: $md) {
+
+    }
   }
 
   &__link {
@@ -19,6 +27,7 @@
     color: $gray--darken;
     text-transform: uppercase;
     padding: 10px 20px;
+    padding-left: 0;
 
     &:hover {
       @include transition;
@@ -30,7 +39,11 @@
     display: inline-block;
     text-transform: uppercase;
     position: relative;
-    padding-bottom: 0;
+    margin-bottom: 20px;
+
+    @media (min-width: $md) {
+      margin-bottom: 0;
+    }
   }
 }
 

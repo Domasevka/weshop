@@ -29,7 +29,6 @@ var svgSprite = require('gulp-svg-sprite'),
 
 var srcDir = 'src/';
 var outputDir = 'dist/';
-var buildDir = 'build/';
 
 // for build folder
 gulp.task('cleanBuildDir', function (cb) {
@@ -46,7 +45,7 @@ gulp.task('jade', function(){
 });
 
 gulp.task('sass', function () {
-	return gulp.src(srcDir + 'styles/**/*.scss')
+	return gulp.src(srcDir + 'styles/main.scss')
         .pipe(sourcemaps.init())
         .pipe(plumber())
 		.pipe(sass())
@@ -105,8 +104,9 @@ gulp.task('bower', function() {
     //return gulp.src(mainBowerFiles('**/*.js' ,{debugging:true}))
     return gulp.src([
         'bower_components/jquery/dist/jquery.js',
-        //'bower_components/jquery-ui/jquery-ui.js',
+        'bower_components/jquery-ui-slider/jquery-ui.js',
         'bower_components/twbs-pagination/jquery.twbsPagination.js',
+        'bower_components/swiper/dist/js/swiper.min.js',
         'bower_components/slick-carousel/slick/slick.min.js'
     ])
         .pipe(concat("vendor.js"))

@@ -17,22 +17,26 @@ section
           ul.cat-nav__nav
             each catItem in category
               li.cat-nav__item
-                a.cat-nav__link(href=catItem.href)=catItem.name
+                a.cat-nav__item-link(href=catItem.href)=catItem.name
                  span.cat-nav__count=catItem.count
         .cat-nav
           h6.cat-nav__title Price By Filter
-          p
-            label(for="amount") Price range:
-            input(type="text" id="amount" style="border:0; color:#f6931f; font-weight:bold;")
-          div(id="slider-range")
+            //form(method='post')
+          div(data-min="15", data-max="300").slider
+          //label(for="price") Price:
+          //input(type="text", name="price", id="price", maxlength="10")
+          //div(id="slider_price")
+          p Price:
+            span.slider-value
+            span.slider-value_second
+          input(type="button", value="Filter").send.btn.btn_nofill.btn_sm
         .cat-nav
           h6.cat-nav__title Size
           ul
             each item in checkbox
               li.cat-nav__item
-                a.cat-nav__link(href=item.href)
-                  span.cat-nav__checkbox
-                  span.cat-nav__description=item.name
+                input(type="checkbox", checked=item.selected).cat-nav__selected
+                label.cat-nav__description=item.name
                   span.cat-nav__count=item.count
         .cat-nav
           h6.cat-nav__title Best sale
@@ -71,19 +75,30 @@ section
 
       .catalog__container
         .filter-block
-          .filter
-            span.filter__title Sort by
+          .filter-block__view
+            a(href="#").filter-block__view-el
+              +icon('list', 'main_mod')
+            a(href="#").filter-block__view-el
+              +icon('columns', 'main_mod')
+
+          ul.filter-block__color
+            each item in colorList
+              li.filter-block__item(class="filter-block__item_" + item.color)
+                a.filter-block__link(href=item.href)
+
+          .filter-block__el
+            span.filter-block__title Sort by:
             select(data-placeholder="Date" class="chosen-select" tabindex="2").filter__contant
-              option(value="")
+              option(value="") Date
               option(value="Relevance") Relevance
               option(value="New Arrivals") New Arrivals
 
-          .filter
-            span.filter__title Sort by
+          .filter-block__el
+            span.filter-block__title Shows
             select(data-placeholder="Date" class="chosen-select" tabindex="2").filter__contant
-              option(value="")
-              option(value="Relevance") Relevance
-              option(value="New Arrivals") New Arrivals
+              option(value="") 12
+              option(value="Relevance") 24
+              option(value="New Arrivals") 36
 
 
         .product-card__container
@@ -91,7 +106,7 @@ section
              include components/_product-card
 
         nav.pagination-block
-          ul.pagination
+          ul.pagination.js-pagination
 
 section
   .brand

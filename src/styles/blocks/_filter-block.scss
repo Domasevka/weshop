@@ -1,0 +1,108 @@
+.filter-block {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 42px;
+  border-bottom: 1px solid $gray--lighten;
+
+  &__view-el {
+
+    .icon {
+      height: 20px;
+      width: 20px;
+
+      &:hover {
+        color: $gray--light;
+      }
+
+      &:active {
+        color: $gray--light;
+      }
+    }
+
+    .icon-columns {
+      height: 17px;
+    }
+  }
+
+  &__color {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  &__item {
+    margin-right: 10px;
+    position: relative;
+
+    &:hover:after, &:hover:active {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -3px;
+      height: 2px;
+      width: 100%;
+      background-color: inherit;
+    }
+  }
+
+  &__item:not(:last-child) {
+    margin-right: 10px;
+  }
+
+  &__link {
+    display: block;
+    width: 15px;
+    height: 13px;
+    background-color: transparent;
+  }
+
+  &__item_red {
+    background-color: #f44336;
+  }
+
+  &__item_gr {
+    background-color: #4caf50;
+  }
+
+  &__item_bl {
+    background-color: #2196f3;
+  }
+
+  &__item_drc_bl {
+    background-color: #3f51b5;
+  }
+
+  &__item_yel {
+    background-color: #ffeb3b;
+  }
+
+  &__item_or {
+    background-color: #ff5722;
+  }
+
+  &__item_bl_gray {
+    background-color: #48689a;
+  }
+
+  &__el {
+    height: 30px;
+
+    select {
+      @include font-size(14);
+      height: 20px;
+      background-color: $color-secondary;
+      color: $gray--dark;
+      outline: none;
+      border: none;
+      padding: 0 10px;
+    }
+  }
+
+  &__title {
+    @include font-size(14);
+  }
+}
+
+
+
+

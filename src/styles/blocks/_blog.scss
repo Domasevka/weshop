@@ -15,12 +15,16 @@
 
 .blog-post {
 
-  @include span(6); // элемент занимает 6 колонок
+  @include span(12); // элемент занимает 6 колонок
   display: flex;
   min-height: 160px;
   color: $gray--dark;
   margin-bottom: 50px;
   position: relative;
+
+  @media (min-width: $md) {
+    @include span(6);
+  }
 
   /*@media (min-width: $md) and (max-width: $breakpoint - 1) {
    @include span(12); // элемент занимает 4 колонки
@@ -29,9 +33,14 @@
 
   &__wrap {
     display: flex;
+    flex-wrap: wrap;
     position: relative;
     padding-top: 28px;
     padding-left: 28px;
+
+    @media (min-width: $md) {
+      flex-wrap: nowrap;
+    }
   }
 
   &__date {
@@ -48,8 +57,13 @@
   }
 
   &__img-link {
-    width: 400px;
+    //width: 400px;
+    width: 100%;
     margin-right: 30px;
+
+    @media (min-width: $md) {
+      width: 100%;
+    }
 
     &:after {
       position: absolute;

@@ -3,19 +3,29 @@
   margin-bottom: 70px;
 
   &__column {
-    @include span(4);
+    @include span(12);
+
+    @media (min-width: $md) {
+      @include span(4);
+    }
 
     &:nth-child(2n) {
-      text-align: center;
+
+      @media (min-width: $md) {
+        text-align: center;
+      }
     }
 
     &:last-child {
-      text-align: right;
+      text-align: left;
+
+      @media (min-width: $md) {
+        text-align: right;
+      }
     }
 
     /*&:last-child > .top-brand {
       flex-direction: row-reverse;
-
     }*/
   }
 
@@ -33,20 +43,32 @@
 .brand__column_left {
 
   .top-brand {
-    flex-direction: row-reverse;
+    flex-direction: row;
 
     .btn {
       margin-right: 0;
       margin-left: 10px;
     }
-
   }
 
   .top-brand__link {
-    flex-direction: row-reverse;
+    flex-direction: row;
   }
 
+  @media (min-width: $md) {
+    .top-brand {
+      flex-direction: row-reverse;
 
+      .btn {
+        margin-right: 0;
+        margin-left: 10px;
+      }
+    }
+
+    .top-brand__link {
+      flex-direction: row-reverse;
+    }
+  }
 }
 
 .top-brand {
@@ -63,13 +85,10 @@
   }
 
   &__content {
-    padding: 0 20px;
-  }
-
-  &__content {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    padding: 0 20px;
   }
 
   &__title {
@@ -78,7 +97,6 @@
     line-height: 1.2;
     margin-bottom: 8px;
   }
-
 
   &__price {
     margin-bottom: 10px;
@@ -114,13 +132,14 @@
 
   .btn_flag {
     span {
+      @include font-size(14);
       margin-left: 5px;
     }
   }
 }
 
-
 .title__line {
+
   &:after {
     content: '';
     border-bottom: solid 2px $btn-main-bg;
@@ -133,16 +152,42 @@
   &-center {
 
     &:after {
-      left: 50%;
-      transform: translateX(-50%);
+      content: '';
+      border-bottom: solid 2px $btn-main-bg;
+      width: 50px;
+      position: absolute;
+      left: 0;
+      top: 100%;
+
+      @media (min-width: $md) {
+        display: none;
+      }
+    }
+
+    &:before {
+      display: none;
+
+      @media (min-width: $md) {
+        display: block;
+        content: '';
+        border-bottom: solid 2px $btn-main-bg;
+        width: 50px;
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+      }
     }
   }
 
   &-right {
 
     &:after {
-      left: inherit;
-      right: 0;
+
+      @media (min-width: $md) {
+        left: inherit;
+        right: 0;
+      }
     }
   }
 }

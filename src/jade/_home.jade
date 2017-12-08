@@ -1,14 +1,27 @@
-.header-banner
-  .container
-    .header-banner__title
-      h1 fashion is nothing
-      h2 but
-        span  mischief
-    .btn-group
-      a(href="#").btn.btn-fully_main.btn_md Shop Now
+.header-slider__container.swiper-container
+  .swiper-wrapper
+    .swiper-slide
+      .container
+        .header-slider__info
+          h1 fashion is nothing
+          h2 but
+            span  mischief
+          .btn-group
+            a(href="#").btn.btn-fully_main.btn_md Shop Now
+
+    .swiper-slide
+      .container
+        .header-slider__info
+          h1 fashion is nothing
+    .swiper-slide
+      .container
+        .header-slider__info
+          h1 fashion is nothing
+  .swiper-button-next.header-next-js n<br>e<br>x<br>t
+  .swiper-button-prev.header-prev-js p<br>r<br>e<br>v
 
 section
-  .widgets.widgets_style
+  .widget
     .container
       .row
         .widget__column
@@ -32,23 +45,22 @@ section
 
 
       .service
-        .service__list-wrap
-          ul.service__list
-            li.service__item
-              +icon('headset', 'main_mod')
-              div.service__content
-                h4.service__title 24/7 Hour Support
-                p.service__text Our online support section is available and regularly updated if you'd prefer.
-            li.service__item
-              +icon('truck', 'main_mod')
-              div.service__content
-                h4.service__title Easy service
-                p.service__text Our online support section is available and regularly updated if you'd prefer.
-            li.service__item
-              +icon('house', 'main_mod')
-              div.service__content
-                h4.service__title Home delivery
-                p.service__text Our online support section is available and regularly updated if you'd prefer.
+        ul.service__list
+          li.service__item
+            +icon('headset', 'main_mod')
+            div.service__content
+              h4.service__title 24/7 Hour Support
+              p.service__text Our online support section is available and regularly updated if you'd prefer.
+          li.service__item
+            +icon('truck', 'main_mod')
+            div.service__content
+              h4.service__title Easy service
+              p.service__text Our online support section is available and regularly updated if you'd prefer.
+          li.service__item
+            +icon('house', 'main_mod')
+            div.service__content
+              h4.service__title Home delivery
+              p.service__text Our online support section is available and regularly updated if you'd prefer.
 
 section
   .tiles
@@ -88,10 +100,20 @@ section
 
 section
   .services
-    .container
-      .services__container-wrap
-        .services__container
-          +services ("", "PERSONAL ASSISTENT", "You don’t know what to choose? We will help you.")
+    .services-slider__container.swiper-container
+      .container.services-slider__content
+        .services-slider__info
+          h5.services-slider__title personal
+            span  assistent
+          span.services-slider__text You don’t know what to choose? We will help you.
+          .btn-group
+            a(href="#").btn.btn_nofill.btn_md.btn_center View collection
+      .services-slider__wrap.swiper-wrapper
+        .swiper-slide.services-slider__slide(style='background-image:url(http://via.placeholder.com/1920x600)')
+        .swiper-slide.services-slider__slide(style='background-image:url(http://via.placeholder.com/1920x600)')
+      .swiper-button-next.services-slider__next
+      .swiper-button-prev.services-slider__prev
+
 
 section
   .container
@@ -125,7 +147,7 @@ section
         .widget__column
           a(href="#").widget__link
             span.widget__image
-              img(src="img/555x250.jpg" width="555" height="250" alt="")
+              img(src="img/555x250.jpg")
 
 section
   .blog

@@ -1,4 +1,4 @@
-.header-banner {
+/*.header-banner {
   //background-image: url(../img/banner.jpg);
   //background-position: center center;
   //background-repeat: no-repeat;
@@ -9,7 +9,6 @@
   margin: 0 auto;
   width: 100%;
   position: relative;
-  text-transform: uppercase;
   padding-top: 350px;
   &:after {
     content: '';
@@ -21,14 +20,23 @@
     //background-color: rgba(0, 0, 0, 0.15);
     z-index: -1;
   }
-
+}
   @media (max-width: $lg) {
     min-height: 600px;
   }
+*/
 
-  &__title {
+.header-slider {
+
+  &__info {
+    padding-top: 50px;
+
+    @media (min-width: $md) {
+      padding-top: 350px;
+    }
 
     h1 {
+      text-transform: uppercase;
       letter-spacing: -1px;
       margin-bottom: 10px;
     }
@@ -37,7 +45,7 @@
       margin-bottom: 72px;
 
       span {
-      color: $color-main;
+        color: $color-main;
       }
     }
   }
@@ -45,18 +53,19 @@
 
 .tiles {
   background-color: $gray--lighten;
-  padding-top: 100px;
+  padding-top: 0;
   padding-bottom: 30px;
   overflow: hidden;
 
-  &__column {
-    @include span(4);  // элемент занимает 4 колонки
+  @media (min-width: $md) {
+    padding-top: 100px;
+  }
 
-    @media (max-width: $md) {
-      @include span(6);
-    }
-    @media (max-width: $sm) {
-      @include span(12);
+  &__column {
+    @include span(12);  // элемент занимает 4 колонки
+
+    @media (min-width: $md) {
+      @include span(4);
     }
   }
 

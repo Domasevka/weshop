@@ -2,7 +2,7 @@ header
   .header
     .container
       .row
-        .header__column
+        .header__column.header__column_contacts
           ul.contacts-nav__list
             li.contacts-nav__item
               +icon('call-answer','white_mod')
@@ -12,23 +12,23 @@ header
               a(href="#") weshop@gmail.com
           a(href="#").header__logo
             img(src="img/logo.jpg" width="161" height="52" alt="LoGo")
-          nav.main-menu
-            //.main-menu__mobile
-              +icon('bar-menu','success_mod')
+
 
         .header__column.header__column_search
           form.header-search
             input.header-search__input(type='search', name='search', placeholder='Enter your search term...')
             button.header-search__submit
-              +icon('search-symbol','success_mod')
+              +icon('search-symbol','white_mod')
           .main-menu
             ul.main-menu__items
               each val in menu
                 li.main-menu__item
                   a.main-menu__link(href=val.href)=val.name
-
+        .header__column.header__column_nav-button
+          .nav__button
+            +icon('bar-menu','white_mod')
         .header__column.header__column_cart
-          .user-nav
+          .header__subcolumn
             ul.user-nav__items
               each val in ['English', 'USD', 'Login']
                 li.user-nav__item
