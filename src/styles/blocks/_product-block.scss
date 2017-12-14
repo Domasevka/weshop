@@ -7,7 +7,6 @@
   margin-bottom: 45px;
 
 
-
   &__nav {
     display: flex;
   }
@@ -29,6 +28,7 @@
     padding: 10px 20px;
     padding-left: 0;
 
+
     &:hover {
       @include transition;
       color: $color-success;
@@ -45,10 +45,18 @@
       margin-bottom: 0;
     }
   }
+
+  &__container {
+  }
 }
 
 .title_center {
   margin: 0 auto;
 }
 
+.btn_cart {
+  position: absolute;
+  bottom: 20px;
+  right: 0;
+}
 

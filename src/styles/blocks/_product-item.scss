@@ -1,4 +1,4 @@
-.product-list {
+.product-item {
 
   @include span(3);
   position: relative;
@@ -42,11 +42,10 @@
     align-items: flex-end;
     flex-direction: column;
     justify-content: center;
-    //position: absolute;
+    position: absolute;
     bottom: 20px;
-    //right: 0;
+    right: 0;
     z-index: 1;
-    margin-top: 172px;
 
     .btn_sm {
 
@@ -67,7 +66,7 @@
   right: 0;
 }
 
-.product-list .btn-group {
+.product-item .btn-group {
   display: flex;
   align-items: flex-end;
   flex-direction: column;

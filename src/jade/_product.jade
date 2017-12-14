@@ -9,28 +9,28 @@ section
   .product
     .container
       .row
-        .product__container
-          .product__slider.product__slider-single
-            .product__item
-              .product__img
+        .product-slider
+          .product-slider__container.gallery-top.swiper-container
+            .product-slider__slider.swiper-wrapper
+              .product-slider__slide.swiper-slide
+                img.product-slider__img(src="img/555х600.jpg")
+              .product-slider__slide.swiper-slide
+                img.product-slider__img(src="img/555х600_1.jpg")
+              .product-slider__slide.swiper-slide
+                img.product-slider__img(src="img/555х600_2.jpg")
+            .swiper-button-next.product-button__next
+            .swiper-button-prev.product-button__prev
+
+          .product-slider__container.product-slider__container_bot.gallery-thumbs.swiper-container
+            .product-slider__slider.swiper-wrapper
+              .product-slider__slide.swiper-slide
                 img(src="img/555х600.jpg")
-            .product__item
-              .product__img
+              .product-slider__slide.swiper-slide
                 img(src="img/555х600_1.jpg")
-            .product__item
-              .product__img
+              .product-slider__slide.swiper-slide
                 img(src="img/555х600_2.jpg")
 
-          .product__slider.product__slider-nav
-            .product__item
-              .product__img
-                img(src="img/555х600.jpg")
-            .product__item
-              .product__img
-                img(src="img/555х600_1.jpg")
-            .product__item
-              .product__img
-                img(src="img/555х600_2.jpg")
+
 
         .product__aside
           .product__features
@@ -118,10 +118,13 @@ section
     .product-block
       h3.product-block__title.title_center Related items
 
-    .product-block__content
-      .row
-        - for (var a = 0; a < 4; a++)
-          include components/_product-list
+    .category-slider
+      .category-slider__container.swiper-container
+        .category-slider__wrapper.swiper-wrapper
+          - for (var a = 0; a < 4; a++)
+            include components/_category-slide
+        .swiper-button-next.category-button__next
+        .swiper-button-prev.category-button__prev
 
 section
   .brands

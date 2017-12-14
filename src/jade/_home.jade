@@ -1,6 +1,6 @@
 .header-slider__container.swiper-container
-  .swiper-wrapper
-    .swiper-slide
+  .header-slider__wrapper.swiper-wrapper
+    .header-slider__slide.swiper-slide
       .container
         .header-slider__info
           h1 fashion is nothing
@@ -9,16 +9,16 @@
           .btn-group
             a(href="#").btn.btn-fully_main.btn_md Shop Now
 
-    .swiper-slide
+    .header-slider__slide.swiper-slide
       .container
         .header-slider__info
           h1 fashion is nothing
-    .swiper-slide
+    .header-slider__slide.swiper-slide
       .container
         .header-slider__info
           h1 fashion is nothing
-  .swiper-button-next.header-next-js n<br>e<br>x<br>t
-  .swiper-button-prev.header-prev-js p<br>r<br>e<br>v
+  .swiper-button-next.header-button__next n<br>e<br>x<br>t
+  .swiper-button-prev.header-button__prev p<br>r<br>e<br>v
 
 section
   .widget
@@ -96,7 +96,7 @@ section
     .product-block__content
       .row
         - for (var a = 0; a < 8; a++)
-          include components/_product-list
+          include components/_product-item
 
 section
   .services
@@ -111,8 +111,8 @@ section
       .services-slider__wrap.swiper-wrapper
         .swiper-slide.services-slider__slide(style='background-image:url(http://via.placeholder.com/1920x600)')
         .swiper-slide.services-slider__slide(style='background-image:url(http://via.placeholder.com/1920x600)')
-      .swiper-button-next.services-slider__next
-      .swiper-button-prev.services-slider__prev
+      .swiper-button-next.services-button__next
+      .swiper-button-prev.services-button__prev
 
 
 section
@@ -126,11 +126,13 @@ section
           each val in productBlock
             li.product-block__item
               a.product-block__link(href=val.href)=val.name
-
-    .product-block__content
-      .row
-        - for (var a = 0; a < 4; a++)
-          include components/_product-list
+    .category-slider
+      .category-slider__container.swiper-container
+        .category-slider__wrapper.swiper-wrapper
+          - for (var a = 0; a < 4; a++)
+            include components/_category-slide
+        .swiper-button-next.category-button__next
+        .swiper-button-prev.category-button__prev
 
 section
   .widgets.widgets-offer

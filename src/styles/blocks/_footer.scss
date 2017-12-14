@@ -1,9 +1,18 @@
 .footer {
+  padding-top: 50px;
   margin-bottom: 30px;
   color: $gray--dark;
 
+  @media (min-width: $md) {
+    padding-top: 100px;
+    margin-bottom: 30px;
+
+  }
+
   &__col {
-    @include span(3);
+    @include span(12);
+    margin-bottom: 30px;
+
 
     h6 {
       text-transform: uppercase;
@@ -17,18 +26,26 @@
       }
     }
 
-    p {
+    p:not(:last-child) {
       margin-bottom: 30px;
       color: $gray--darken;
     }
 
     &:nth-of-type(2) {
-      padding-left: 70px;
+      padding-left: 0;
+
+      @media (min-width: $md) {
+        padding-left: 70px;
+      }
     }
 
-    @media (max-width: $md) {
-      width: calc(100% - 30px);
+    @media (min-width: $md) {
+      @include span(3);
       padding-left: 0;
+    }
+
+    @media (min-width: $md) {
+      margin-bottom: 30px;
     }
   }
 }

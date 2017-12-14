@@ -16,12 +16,13 @@
     align-items: center;
 
     @media (min-width: $md) {
-      @include span(6);
+      @include span(4);
     }
   }
 
   &__column_nav-button {
     @include span(2);
+    display: block;
 
     @media (min-width: $md) {
       display: none;
@@ -33,6 +34,7 @@
     margin-bottom: 20px;
 
     @media (min-width: $md) {
+      @include span(4);
       margin-bottom: 0;
     }
   }

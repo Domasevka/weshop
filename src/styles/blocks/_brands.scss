@@ -1,7 +1,5 @@
 .brands {
-
   background-color: $gray--lightest;
-  margin-bottom: 100px;
 
   &__header {
     text-align: center;
@@ -23,13 +21,15 @@
     width: calc(100%/6 - 20px);
     height: 100px;
     margin: 60px 10px;
+
     @media (max-width: $xl) {
       width: calc(33.333% - 20px);
       margin: 20px 10px;
     }
-    @media (max-width: $lg) {
 
+    @media (max-width: $lg) {
     }
+
     @media (max-width: $md) {
       width: calc(50% - 20px);
     }

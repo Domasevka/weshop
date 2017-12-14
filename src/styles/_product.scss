@@ -2,8 +2,12 @@
   background-color: $gray--lighten;
   padding-top: 100px;
 
-  &__container {
-    @include span(6);
+  &-slider {
+    @include span(12);
+
+    @media (min-width: $md) {
+      @include span(6);
+    }
   }
 
   &__aside {
@@ -17,36 +21,15 @@
   }
 
 
-  &__img {
+  /*&__img {
     display: block;
     background: #f0f0f0;
     color: #3498db;
     margin: 0 10px;
     position: relative;
     text-align: center;
-  }
-
-  /*&__slider-single &__img {
-    line-height: 10rem;
   }*/
 
-  &__slider-nav &__img::before {
-    content: "";
-    display: block;
-    //padding-top: 75%;
-  }
-
-  /*&__slider-nav &__item:nth-child(3) > &__img {
-      padding-right: 0;
-  }*/
-
-  &__slider-nav .slick-slide {
-    cursor: pointer;
-  }
-
-  .slick-slide.is-active .product__img {
-    background-color: $gray--light;
-  }
 
   &__info {
     margin-bottom: 40px;
@@ -262,6 +245,10 @@
     justify-content: flex-start;
     padding: 0;
   }
+}
+
+.product-slider {
+
 }
 
 
