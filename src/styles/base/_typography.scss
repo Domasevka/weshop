@@ -1,16 +1,16 @@
 h1,
 .h1 {
-  @include font(54px, 800, 1);
+  @include font(24px, 600, 1);
 
   color: $gray--darken;
   //letter-spacing: 8px;
 
-  @media (max-width: $breakpoint) {
+  /*@media (min-width: $breakpoint) {
     @include font(50px, 200, 1.25);
-  }
+  }*/
 
-  @media (max-width: $md) {
-    @include font(50px, 200, 1.25);
+  @media (min-width: $md) {
+    @include font(50px, 800, 1);
   }
 }
 
@@ -40,7 +40,8 @@ h3,
     font-size: 24px;
   }
 }
-//top brands, service
+
+//top svg, service
 h4,
 .h4 {
   @include font(16px, 400, 1.2);

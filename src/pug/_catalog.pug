@@ -1,10 +1,9 @@
 .page-title.page-title_bgr
   .container
     ul.breadcrumbs
-      each item in breadcrumbs
-
+      each val in breadcrumbs
         li.breadcrumbs__list
-            a.breadcrumbs__link(href=item.href)=item.name
+            a.breadcrumbs__link(href=val.href)=val.name
     h1 Product
 
 section
@@ -33,18 +32,18 @@ section
         .cat-nav
           h6.cat-nav__title Size
           ul
-            each item in checkbox
+            each checkItem in checkbox
               li.cat-nav__item
-                input(type="checkbox", checked=item.selected).cat-nav__selected
-                label.cat-nav__description=item.name
-                  span.cat-nav__count=item.count
+                input(type="checkbox", checked=checkItem.selected).cat-nav__selected
+                label.cat-nav__description=checkItem.name
+                  span.cat-nav__count=checkItem.count
         .cat-nav
           h6.cat-nav__title Best sale
           .top-brand
             a(href="#").top-brand__image
               img(src="img/70x80.jpg" width="250" height="160" alt="img")
             .top-brand__content
-              h5.top-brand__title Denim t-shirt
+              h4.top-brand__title Denim t-shirt
               .product-rating__stars
                 - var n = 0
                 i
@@ -57,7 +56,7 @@ section
             a(href="#").top-brand__image
               img(src="img/70x80.jpg" width="250" height="160" alt="img")
             .top-brand__content
-              h5.top-brand__title Denim t-shirt
+              h4.top-brand__title Denim t-shirt
               .product-rating__stars
                 - var n = 0
                 i
@@ -121,7 +120,7 @@ section
             - for (var a = 0; a < 3; a++)
                 include components/_top-brand
         .brand__column.brand__column_left
-            h4.brand__title.brand__column.title__line.title__line-right Date Updated
+            h4.brand__title.title__line.title__line-right Date Updated
             - for (var a = 0; a < 3; a++)
                 include components/_top-brand
 

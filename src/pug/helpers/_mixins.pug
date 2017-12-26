@@ -21,6 +21,11 @@ mixin icon(name, mod)
   svg(class="icon icon-" + name + " " + mod)
     use(xlink:href="i/sprite/sprite.svg#" + name)
 
+mixin img-svg(name, mod)
+  - mod = mod || ''
+  svg(class="svg svg-" + name + " " + mod )
+    use(xlink:href="i/svg/sprite-svg.svg#" + name)
+
 //mixin services (imageName, title, text)
   div.services__item
     span.services__photo

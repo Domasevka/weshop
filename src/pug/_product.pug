@@ -31,7 +31,6 @@ section
                 img(src="img/555х600_2.jpg")
 
 
-
         .product__aside
           .product__features
             .product-price
@@ -46,6 +45,7 @@ section
                     while n < 5
                       - n++
                         +icon('star-half-empty', 'main_mod')
+
               .product-rating__text |Add review
           .product__info
             p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
@@ -54,64 +54,66 @@ section
 
           .product-specs
             .product-specs__wrap
-              .product-specs__quantyty
-                button(type="button", data-field="quantity").btn.btn_nofill.product-specs__btn.btn_plus
+              .product-specs__item.product-specs__item_quantyty
+                a(href="#", data-action="decrease").btn.btn_nofill.product-specs__btn.js-product-specs__btn.js-btn_active
                   +icon('minus-sign', 'gray_mod')
-                input(name="quantity", value="1", type="text").product-specs__btn
-                button(type="button", data-field="quantity").btn.btn_nofill.product-specs__btn.btn_minus
+                input(name="quantity", value="1", type="text").product-specs__btn.js-product-btn
+                a(href="#", data-action="increase").btn.btn_nofill.product-specs__btn.js-product-specs__btn
                   +icon('plus', 'gray_mod')
 
               .product-specs__item
                 select(title="size")
-                  option(value="") Size
-                  option(value="S") Small
-                  option(value="M") Medium
-                  option(value="L") Large
-                  option(value="XL") X-Large
+                  .menu
+                    option.menu__item(value="") Size
+                    option.menu__item(value="S") Small
+                    option.menu__item(value="M") Medium
+                    option.menu__item(value="L") Large
+                    option.menu__item(value="XL") X-Large
 
               .product-specs__item
                 select(title="color")
-                  option(value="") Color
-                    option(value="black") black
-                    option(value="white") white
-          .product-btn__wrap
-            .btn-group.product-btn
+                  .menu
+                    option.menu__item(value="") Color
+                    option.menu__item(value="black") black
+                    option.menu__item(value="white") white
+          .product-btn__row
+            .product-btn
               a(href="#").btn.btn_nofill.btn_md Add to cart
-            .btn-group
+            .product-btn
               a(href="#").btn.btn-fully_main.btn_md Add to wishlist
-          .social__wrap
-            h6.title__line Share
-            .social
-              each item, i in productSocials
+          .social
+            h6.social__title.title__line Share
+            .social__wrap
+              each item in productSocials
                 a(href=item.href, target="_blank", class='social__link' + item.icon)
                   - mod = mod || ''
                   svg(class="icon icon-" + item.icon + " " + mod)
-                    use(xlink:href="i/sprite/sprite.svg#" + item.icon)
+                      use(xlink:href="i/sprite/sprite.svg#" + item.icon)
 section
-  .tabs
+  .tabs.js-tabs
     .container
       ul.tabs__list
-        li.tabs__item.tabs__item_active
-          span Description
-        li.tabs__item
-          span History
-        li.tabs__item
-          span History
+        li.tabs__item.tabs__item_active.js-tabs__item.js-tabs__item_active
+          span.tabs__link Description
+        li.tabs__item.js-tabs__item
+          span.tabs__link History
+        li.tabs__item.js-tabs__item
+          span.tabs__link History
   .tabs__content
     .container
-      .tabs__pane.tabs_active
-        p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+      .tabs__pane.tabs_active.js-tabs__pane.js-tabs_active
+        p.tabs__info Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
           | et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
           | aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit.
 
-      .tabs__pane
-        p content 2 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+      .tabs__pane.js-tabs__pane
+        p.tabs__info content 2 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
           |et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
           |aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit.
-      .tabs__pane
-        p content 3 content 3
-        p content 3 content 3
-        p content 3 content 3
+      .tabs__pane.js-tabs__pane
+        p.tabs__info content 3 content 3
+        p.tabs__info content 3 content 3
+        p.tabs__info content 3 content 3
 
 section
   .container
@@ -129,11 +131,16 @@ section
 section
   .brands
     .container
-      ul.brands__list
-        each imgName in ['brands_1', 'brands_2', 'brands_3', 'brands_4', 'brands_5', 'brands_6']
-          li.brands__item
-            a(href="#").brands__link
-              img(src="img/#{imgName}.jpg")
+      .brands-slider
+        .brands-slider__container.swiper-container
+          div.brands__list.brands-slider__wrapper.swiper-wrapper
+            each val in brandsName
+              div.brands__item.swiper-slide
+                - mod = mod || 'gray_mod'
+                svg(class="svg svg-" + val.icon + " " + mod )
+                  use(xlink:href="i/svg/sprite-svg.svg#" + val.icon)
+
+
 
 
 

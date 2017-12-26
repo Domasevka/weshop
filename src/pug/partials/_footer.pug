@@ -28,12 +28,12 @@ footer
         .footer__col
           h6 instagram feed
           ul.insta
-            each imgName in ['58x60', '58x60', '58x60', '58x60']
+            each val in imgName
               li.insta__item
-                a(href="#").insta__link
-                  img(src="img/#{imgName}.jpg")
+                a(href=val.href).insta__link
+                  img(src="img/img_" + val.name)
     .social
-      each item, i in socials
+      each item in socials
         a(href=item.href, target="_blank", class='social__link' + item.icon)
           - mod = mod || ''
           svg(class="icon icon-" + item.icon + " " + mod)

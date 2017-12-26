@@ -1,12 +1,15 @@
 .icon {
-  display: inline-block;
-  height: 33px;
-  width: 33px;
-  vertical-align: middle;
-  opacity: 0.8;
-  &:hover {
-    opacity: 1;
+  svg {
+    display: inline-block;
+    height: 33px;
+    width: 33px;
+    vertical-align: middle;
+    opacity: 0.8;
+    &:hover {
+      opacity: 1;
+    }
   }
+
 }
 
 .icon {
@@ -33,6 +36,8 @@
   height: 24px;
   transform: translate(-50%,-50%) rotate(90deg);
 }
+
+
 
 .gray_mod {
   color: $gray;
@@ -82,4 +87,12 @@
     height: 18px;
     width: 18px;
   }
+}
+
+.svg {
+  display: inline-block;
+  vertical-align: middle;
+  width: 180px;
+  height: 55px;
+
 }

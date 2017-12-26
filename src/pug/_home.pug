@@ -47,17 +47,17 @@ section
       .service
         ul.service__list
           li.service__item
-            +icon('headset', 'main_mod')
+            +img-svg('headset', 'main_mod')
             div.service__content
               h4.service__title 24/7 Hour Support
               p.service__text Our online support section is available and regularly updated if you'd prefer.
           li.service__item
-            +icon('truck', 'main_mod')
+            +img-svg('truck', 'main_mod')
             div.service__content
               h4.service__title Easy service
               p.service__text Our online support section is available and regularly updated if you'd prefer.
           li.service__item
-            +icon('house', 'main_mod')
+            +img-svg('house', 'main_mod')
             div.service__content
               h4.service__title Home delivery
               p.service__text Our online support section is available and regularly updated if you'd prefer.
@@ -182,11 +182,14 @@ section
 section
   .brands
     .container
-      ul.brands__list
-        each imgName in ['brands_1', 'brands_2', 'brands_3', 'brands_4', 'brands_5', 'brands_6']
-          li.brands__item
-            a(href="#").brands__link
-              img(src="img/#{imgName}.jpg")
+      .brands-slider
+        .brands-slider__container.swiper-container
+          div.brands__list.brands-slider__wrapper.swiper-wrapper
+            each val in brandsName
+              div.brands__item.swiper-slide
+                - mod = mod || ''
+                svg(class="img_brands img_brands-" + val.icon + " " + mod)
+                  use(xlink:href="i/svg/svg.svg#" + val.icon)
 
 
 

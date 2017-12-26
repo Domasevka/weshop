@@ -1,6 +1,10 @@
 .product {
   background-color: $gray--lighten;
-  padding-top: 100px;
+  padding-top: 50px;
+
+  @media (min-width: $md) {
+    padding-top: 100px;
+  }
 
   &-slider {
     @include span(12);
@@ -11,8 +15,12 @@
   }
 
   &__aside {
-    @include span(6);
+    @include span(12);
     z-index: 2;
+
+    @media (min-width: $md) {
+      @include span(6);
+    }
   }
 
   &__features {
@@ -36,8 +44,12 @@
   }
 
   &-price {
-    padding-top: 60px;
+    padding-top: 0;
     margin-bottom: 20px;
+
+    @media (min-width: $md) {
+      padding-top: 60px;
+    }
   }
 
   &-price__text {
@@ -79,28 +91,19 @@
   &__wrap {
     display: flex;
     flex-wrap: wrap;
-    margin-bottom: 60px;
-  }
+    flex-direction: column;
+    margin-bottom: 20px;
 
-  &__item:not(:last-child) {
-    margin-right: 35px;
-  }
-
-  /*&__wrap > &__item:last-child {
-
-    &:last-child {
-      margin-right: 0;
+    @media (min-width: $md) {
+      flex-direction: row;
+      margin-bottom: 60px;
     }
-  }*/
-
-  &__quantyty {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    margin-right: 35px;
   }
 
   &__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 50px;
     height: 50px;
     border-color: $gray--morelight;
@@ -132,6 +135,16 @@
 
   &__item {
 
+    &:not(:last-child) {
+      margin-right: 0;
+      margin-bottom: 20px;
+
+      @media (min-width: $md) {
+        margin-bottom: 0;
+        margin-right: 35px;
+      }
+    }
+
     select {
       height: 50px;
       background-color: $gray--lighten;
@@ -139,22 +152,56 @@
       outline: transparent;
       padding: 0 10px;
       color: $gray--light;
-      min-width: 160px;
+      width: 100%;
+
+      @media (min-width: $md) {
+        min-width: 160px;
+      }
+    }
+  }
+
+  &__item_quantyty {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-right: 35px;
+  }
+}
+
+.js-btn_active {
+  background-color: $color-main;
+  color: $color-secondary;
+}
+
+.product-btn {
+
+  &__row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 30px;
+
+    @media (min-width: $md) {
+      justify-content: flex-start;
+    }
+  }
+
+  &:first-child {
+    margin-right: 0;
+    margin-bottom: 30px;
+
+    @media (min-width: $md) {
+      margin-bottom: 0;
+      margin-right: 20px;
     }
   }
 }
 
+.social__wrap {
+  margin-bottom: 30px;
 
-
-.product-btn {
-
-  &__wrap {
-    display: flex;
-    margin-bottom: 30px;
-  }
-
-  &:first-child {
-    margin-right: 20px;
+  @media (min-width: $md) {
+    margin-bottom: 0;
   }
 }
 
@@ -162,18 +209,42 @@
   background-color: $color-main;
   margin-bottom: 40px;
 
-  .js &__slider-single > &__item:nth-child(1n+2) {
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    //width: 750px;
+    margin: 0 auto;
+
+    @media (min-width: $md) {
+      width: 750px;
+    }
+  }
+
+  &__link {
+    display: block;
+    padding: 20px 0 27px;
+    text-transform: uppercase;
+  }
+
+  &__pane {
     display: none;
   }
 
-  .js &__slider-single.slick-initialized > &__item:nth-child(1n+2) {
-    display: block;
+  &__info {
+    max-width: 750px;
+    margin: 0 auto;
   }
 
-  &__list {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  &_active {
+    display: block;
+  }
+}
+
+.js-tabs {
+
+  &_active {
+    display: block;
   }
 
   &__item {
@@ -183,55 +254,32 @@
     text-align: center;
     line-height: 30px;
     cursor: pointer;
-
-    span {
-      display: block;
-      padding: 20px 90px 27px;
-    }
   }
 
   &__item:not(:last-child) {
     margin-right: 30px;
   }
 
-  &__pane {
-    display: none;
-  }
-
-  &_active {
-    display: block;
-  }
-
   &__item_active {
 
     &:after {
-      /*content: '';
-      position: absolute;
-      height: 20px;
-      width: 20px;
-      transform: rotate(45deg);
-      background-color: #fff;
-      box-shadow: 0 3px 10px 0 rgba(0,0,0,.09);*/
+      content: "";
       position: absolute;
       bottom: -2px;
       right: 50%;
       transform: translateX(50%);
-      content: "";
       border: 21px solid transparent;
       border-bottom: 11px solid $color-secondary;
     }
   }
-
-  &__pane {
-
-    p {
-      max-width: 750px;
-      margin: 0 auto;
-    }
-  }
 }
 
-.social__wrap {
+.social {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 0;
+
 
   h6 {
     text-transform: uppercase;
@@ -240,16 +288,12 @@
     padding-bottom: 7px;
     margin-bottom: 25px;
   }
-
-  .social {
-    justify-content: flex-start;
-    padding: 0;
-  }
 }
 
-.product-slider {
+.social__wrap {
 
 }
+
 
 
 

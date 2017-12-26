@@ -24,11 +24,11 @@
 .widgets {
 
   &-offer {
-    padding-top: 50px;
+    //padding-top: 50px;
     margin-bottom: 50px;
 
     @media (min-width: $md) {
-      padding-top: 100px;
+      //padding-top: 100px;
       margin-bottom: 100px;
     }
   }
@@ -84,10 +84,6 @@
     .btn-group {
       padding-top: 50px;
       width: 70%;
-
-      .icon {
-        height: 16px;
-      }
     }
   }
 
